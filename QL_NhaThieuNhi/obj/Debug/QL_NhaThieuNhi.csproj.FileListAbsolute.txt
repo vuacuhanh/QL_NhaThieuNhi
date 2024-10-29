@@ -11,3 +11,4 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Guna.UI2.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaTh.29C25C05.Up2Date
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Login.resources
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmTaiKhoan.resources
