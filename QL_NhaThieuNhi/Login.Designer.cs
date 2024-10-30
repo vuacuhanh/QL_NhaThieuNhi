@@ -36,9 +36,9 @@
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.tgRemember = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbforgot = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tgRemember = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +158,28 @@
             this.guna2Panel1.Size = new System.Drawing.Size(403, 520);
             this.guna2Panel1.TabIndex = 5;
             // 
+            // lbforgot
+            // 
+            this.lbforgot.BackColor = System.Drawing.Color.Transparent;
+            this.lbforgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbforgot.ForeColor = System.Drawing.Color.GhostWhite;
+            this.lbforgot.Location = new System.Drawing.Point(245, 334);
+            this.lbforgot.Name = "lbforgot";
+            this.lbforgot.Size = new System.Drawing.Size(130, 22);
+            this.lbforgot.TabIndex = 7;
+            this.lbforgot.Text = "Forgot Password";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(101, 334);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(113, 22);
+            this.guna2HtmlLabel1.TabIndex = 6;
+            this.guna2HtmlLabel1.Text = "Remember me";
+            // 
             // tgRemember
             // 
             this.tgRemember.CheckedState.BorderColor = System.Drawing.Color.DarkOrchid;
@@ -172,28 +194,6 @@
             this.tgRemember.UncheckedState.FillColor = System.Drawing.Color.GhostWhite;
             this.tgRemember.UncheckedState.InnerBorderColor = System.Drawing.Color.DarkOrchid;
             this.tgRemember.UncheckedState.InnerColor = System.Drawing.Color.DarkOrchid;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(101, 334);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(113, 22);
-            this.guna2HtmlLabel1.TabIndex = 6;
-            this.guna2HtmlLabel1.Text = "Remember me";
-            // 
-            // lbforgot
-            // 
-            this.lbforgot.BackColor = System.Drawing.Color.Transparent;
-            this.lbforgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbforgot.ForeColor = System.Drawing.Color.GhostWhite;
-            this.lbforgot.Location = new System.Drawing.Point(245, 334);
-            this.lbforgot.Name = "lbforgot";
-            this.lbforgot.Size = new System.Drawing.Size(130, 22);
-            this.lbforgot.TabIndex = 7;
-            this.lbforgot.Text = "Forgot Password";
             // 
             // Login
             // 

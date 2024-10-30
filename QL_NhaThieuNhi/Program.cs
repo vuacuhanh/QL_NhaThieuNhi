@@ -16,7 +16,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTaiKhoan());
+            Application.Run(new Login());
         }
     }
 }

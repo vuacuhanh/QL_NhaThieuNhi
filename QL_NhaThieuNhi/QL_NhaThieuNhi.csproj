@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLopHoc.Designer.cs">
+      <DependentUpon>FrmLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLopHoc.resx">
+      <DependentUpon>FrmLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
@@ -117,6 +126,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\printing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{2d8c86d5-0fd7-4029-be56-09308ee2c79e}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{051f97b1-67fe-4f4a-9781-cda47be534e3}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
