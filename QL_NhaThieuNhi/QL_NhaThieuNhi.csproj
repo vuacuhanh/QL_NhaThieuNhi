@@ -52,49 +52,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnect.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="TrangChu\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="TrangChu\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTaiKhoan.cs">
+    <Compile Include="NhanVien\AddNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTaiKhoan.Designer.cs">
+    <Compile Include="NhanVien\AddNhanVien.Designer.cs">
+      <DependentUpon>AddNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan\FrmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan\FrmTaiKhoan.Designer.cs">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyHocvVien.cs">
+    <Compile Include="HocVien\QuanLyHocvVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyHocvVien.Designer.cs">
+    <Compile Include="HocVien\QuanLyHocvVien.Designer.cs">
       <DependentUpon>QuanLyHocvVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyPhuHuynh.cs">
+    <Compile Include="PhuHuynh\QuanLyPhuHuynh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyPhuHuynh.Designer.cs">
+    <Compile Include="PhuHuynh\QuanLyPhuHuynh.Designer.cs">
       <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="TrangChu\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTaiKhoan.resx">
+    <EmbeddedResource Include="NhanVien\AddNhanVien.resx">
+      <DependentUpon>AddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoan\FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyHocvVien.resx">
+    <EmbeddedResource Include="HocVien\QuanLyHocvVien.resx">
       <DependentUpon>QuanLyHocvVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,7 +124,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanLyPhuHuynh.resx">
+    <EmbeddedResource Include="PhuHuynh\QuanLyPhuHuynh.resx">
       <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -135,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\printing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{54881325-F84F-4ABA-A59C-C5DB2799FE76}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

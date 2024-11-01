@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_NhaThieuNhi.NhanVien;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTaiKhoan());
+            Application.Run(new FrmNhanVien());
         }
     }
 }

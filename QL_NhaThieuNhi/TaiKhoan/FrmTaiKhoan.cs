@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace QL_NhaThieuNhi
 {
     public partial class FrmTaiKhoan : Form
     {
-        string connectionString = DBConnect.GetConnectionString();
+        string connectionString = ConnectionData.GetConnectionString();
         DataSet ds_HT = new DataSet();
         SqlDataAdapter da_HT;
         public FrmTaiKhoan()
