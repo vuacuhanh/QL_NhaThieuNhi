@@ -20,3 +20,4 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\DTO.pdb
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaTh.29C25C05.Up2Date
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.exe
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.TaiKhoan.AddTaiKhoan.resources

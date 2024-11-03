@@ -41,8 +41,17 @@ namespace QL_NhaThieuNhi
         private void FrmTaiKhoan_Load(object sender, EventArgs e)
         {
             Load_DuLieu_TK();
+            sort_By();
+        }
+        public void sort_By()
+        {
+            cb_SortBy.Items.Add("Xếp theo tên quyền");
+            cb_SortBy.Items.Add("Mới nhất");
+            cb_SortBy.Items.Add("Cũ nhất");
+        }
 
-
+        private void cb_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

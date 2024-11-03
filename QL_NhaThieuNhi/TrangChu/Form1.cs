@@ -49,7 +49,7 @@ namespace QL_NhaThieuNhi
 
         private void btn_QLNhanVien_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new FrmNhanVien());
         }
 
         private void btn_QLHocVien_Click(object sender, EventArgs e)

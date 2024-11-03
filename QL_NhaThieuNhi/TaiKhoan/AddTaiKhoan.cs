@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QL_NhaThieuNhi.NhanVien
+namespace QL_NhaThieuNhi.TaiKhoan
 {
-    public partial class AddNhanVien : Form
+    public partial class AddTaiKhoan : Form
     {
-        public AddNhanVien()
+        public AddTaiKhoan()
         {
             InitializeComponent();
-        }
-
-        private void link_img_MouseClick(object sender, MouseEventArgs e)
-        {
-
         }
     }
 }
