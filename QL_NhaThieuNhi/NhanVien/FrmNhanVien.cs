@@ -28,5 +28,10 @@ namespace QL_NhaThieuNhi
             AddNhanVien addNhanVien = new AddNhanVien();
             addNhanVien.ShowDialog();
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

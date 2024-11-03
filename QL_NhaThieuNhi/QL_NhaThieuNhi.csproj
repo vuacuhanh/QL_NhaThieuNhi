@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TaiKhoan\AddTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan\AddTaiKhoan.Designer.cs">
+      <DependentUpon>AddTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="PhuHuynh\QuanLyPhuHuynh.Designer.cs">
       <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TaiKhoan\AddTaiKhoan.resx">
+      <DependentUpon>AddTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrangChu\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,9 @@
       <Project>{54881325-F84F-4ABA-A59C-C5DB2799FE76}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

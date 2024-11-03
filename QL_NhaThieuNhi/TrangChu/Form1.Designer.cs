@@ -35,6 +35,10 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_Exit = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Khac = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_ThongKe = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_QLHocVien = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_QLLopHoc = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_QLNhanVien = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_QLTaiKhoan = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -42,10 +46,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_body = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_QLHocVien = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Khac = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_ThongKe = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Exit = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -118,6 +118,89 @@
             this.guna2Panel1.Size = new System.Drawing.Size(306, 887);
             this.guna2Panel1.TabIndex = 11;
             // 
+            // btn_Exit
+            // 
+            this.btn_Exit.BorderRadius = 25;
+            this.btn_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Exit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Exit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Exit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Exit.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Exit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Exit.FillColor = System.Drawing.Color.White;
+            this.btn_Exit.FillColor2 = System.Drawing.Color.White;
+            this.btn_Exit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Exit.ForeColor = System.Drawing.Color.Black;
+            this.btn_Exit.HoverState.FillColor = System.Drawing.Color.Purple;
+            this.btn_Exit.Location = new System.Drawing.Point(53, 769);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(216, 60);
+            this.btn_Exit.TabIndex = 15;
+            this.btn_Exit.Text = "EXIT";
+            // 
+            // btn_Khac
+            // 
+            this.btn_Khac.BorderRadius = 25;
+            this.btn_Khac.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Khac.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Khac.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Khac.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Khac.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Khac.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Khac.FillColor = System.Drawing.Color.White;
+            this.btn_Khac.FillColor2 = System.Drawing.Color.Transparent;
+            this.btn_Khac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Khac.ForeColor = System.Drawing.Color.Black;
+            this.btn_Khac.HoverState.FillColor = System.Drawing.Color.Purple;
+            this.btn_Khac.Location = new System.Drawing.Point(27, 510);
+            this.btn_Khac.Name = "btn_Khac";
+            this.btn_Khac.Size = new System.Drawing.Size(296, 60);
+            this.btn_Khac.TabIndex = 14;
+            this.btn_Khac.Text = "Khác";
+            this.btn_Khac.Click += new System.EventHandler(this.btn_Khac_Click);
+            // 
+            // btn_ThongKe
+            // 
+            this.btn_ThongKe.BorderRadius = 25;
+            this.btn_ThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_ThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_ThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_ThongKe.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_ThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_ThongKe.FillColor = System.Drawing.Color.White;
+            this.btn_ThongKe.FillColor2 = System.Drawing.Color.Transparent;
+            this.btn_ThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_ThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btn_ThongKe.HoverState.FillColor = System.Drawing.Color.Purple;
+            this.btn_ThongKe.Location = new System.Drawing.Point(27, 444);
+            this.btn_ThongKe.Name = "btn_ThongKe";
+            this.btn_ThongKe.Size = new System.Drawing.Size(296, 60);
+            this.btn_ThongKe.TabIndex = 13;
+            this.btn_ThongKe.Text = "Thống Kê";
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
+            // 
+            // btn_QLHocVien
+            // 
+            this.btn_QLHocVien.BorderRadius = 25;
+            this.btn_QLHocVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_QLHocVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_QLHocVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_QLHocVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_QLHocVien.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_QLHocVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_QLHocVien.FillColor = System.Drawing.Color.White;
+            this.btn_QLHocVien.FillColor2 = System.Drawing.Color.Transparent;
+            this.btn_QLHocVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_QLHocVien.ForeColor = System.Drawing.Color.Black;
+            this.btn_QLHocVien.HoverState.FillColor = System.Drawing.Color.Purple;
+            this.btn_QLHocVien.Location = new System.Drawing.Point(27, 312);
+            this.btn_QLHocVien.Name = "btn_QLHocVien";
+            this.btn_QLHocVien.Size = new System.Drawing.Size(296, 60);
+            this.btn_QLHocVien.TabIndex = 12;
+            this.btn_QLHocVien.Text = "Quản Lý Học Viên";
+            this.btn_QLHocVien.Click += new System.EventHandler(this.btn_QLHocVien_Click);
+            // 
             // btn_QLLopHoc
             // 
             this.btn_QLLopHoc.BorderRadius = 25;
@@ -127,10 +210,10 @@
             this.btn_QLLopHoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_QLLopHoc.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_QLLopHoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_QLLopHoc.FillColor = System.Drawing.Color.Transparent;
+            this.btn_QLLopHoc.FillColor = System.Drawing.Color.White;
             this.btn_QLLopHoc.FillColor2 = System.Drawing.Color.Transparent;
             this.btn_QLLopHoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_QLLopHoc.ForeColor = System.Drawing.Color.White;
+            this.btn_QLLopHoc.ForeColor = System.Drawing.Color.Black;
             this.btn_QLLopHoc.HoverState.FillColor = System.Drawing.Color.Purple;
             this.btn_QLLopHoc.Location = new System.Drawing.Point(27, 378);
             this.btn_QLLopHoc.Name = "btn_QLLopHoc";
@@ -148,11 +231,12 @@
             this.btn_QLNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_QLNhanVien.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_QLNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_QLNhanVien.FillColor = System.Drawing.Color.Transparent;
+            this.btn_QLNhanVien.FillColor = System.Drawing.Color.White;
             this.btn_QLNhanVien.FillColor2 = System.Drawing.Color.Transparent;
             this.btn_QLNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_QLNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btn_QLNhanVien.HoverState.FillColor = System.Drawing.Color.Purple;
+            this.btn_QLNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.btn_QLNhanVien.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_QLNhanVien.HoverState.FillColor2 = System.Drawing.Color.White;
             this.btn_QLNhanVien.Location = new System.Drawing.Point(27, 246);
             this.btn_QLNhanVien.Name = "btn_QLNhanVien";
             this.btn_QLNhanVien.Size = new System.Drawing.Size(296, 60);
@@ -169,11 +253,12 @@
             this.btn_QLTaiKhoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_QLTaiKhoan.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_QLTaiKhoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_QLTaiKhoan.FillColor = System.Drawing.Color.Transparent;
+            this.btn_QLTaiKhoan.FillColor = System.Drawing.Color.White;
             this.btn_QLTaiKhoan.FillColor2 = System.Drawing.Color.Transparent;
             this.btn_QLTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_QLTaiKhoan.ForeColor = System.Drawing.Color.White;
+            this.btn_QLTaiKhoan.ForeColor = System.Drawing.Color.Black;
             this.btn_QLTaiKhoan.HoverState.FillColor = System.Drawing.Color.Purple;
+            this.btn_QLTaiKhoan.HoverState.FillColor2 = System.Drawing.Color.White;
             this.btn_QLTaiKhoan.Location = new System.Drawing.Point(27, 180);
             this.btn_QLTaiKhoan.Name = "btn_QLTaiKhoan";
             this.btn_QLTaiKhoan.Size = new System.Drawing.Size(296, 60);
@@ -220,89 +305,6 @@
             this.panel_body.Name = "panel_body";
             this.panel_body.Size = new System.Drawing.Size(1274, 809);
             this.panel_body.TabIndex = 14;
-            // 
-            // btn_QLHocVien
-            // 
-            this.btn_QLHocVien.BorderRadius = 25;
-            this.btn_QLHocVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_QLHocVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_QLHocVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_QLHocVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_QLHocVien.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_QLHocVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_QLHocVien.FillColor = System.Drawing.Color.Transparent;
-            this.btn_QLHocVien.FillColor2 = System.Drawing.Color.Transparent;
-            this.btn_QLHocVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_QLHocVien.ForeColor = System.Drawing.Color.White;
-            this.btn_QLHocVien.HoverState.FillColor = System.Drawing.Color.Purple;
-            this.btn_QLHocVien.Location = new System.Drawing.Point(27, 312);
-            this.btn_QLHocVien.Name = "btn_QLHocVien";
-            this.btn_QLHocVien.Size = new System.Drawing.Size(296, 60);
-            this.btn_QLHocVien.TabIndex = 12;
-            this.btn_QLHocVien.Text = "Quản Lý Học Viên";
-            this.btn_QLHocVien.Click += new System.EventHandler(this.btn_QLHocVien_Click);
-            // 
-            // btn_Khac
-            // 
-            this.btn_Khac.BorderRadius = 25;
-            this.btn_Khac.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Khac.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Khac.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Khac.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Khac.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Khac.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Khac.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Khac.FillColor2 = System.Drawing.Color.Transparent;
-            this.btn_Khac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_Khac.ForeColor = System.Drawing.Color.White;
-            this.btn_Khac.HoverState.FillColor = System.Drawing.Color.Purple;
-            this.btn_Khac.Location = new System.Drawing.Point(27, 510);
-            this.btn_Khac.Name = "btn_Khac";
-            this.btn_Khac.Size = new System.Drawing.Size(296, 60);
-            this.btn_Khac.TabIndex = 14;
-            this.btn_Khac.Text = "Khác";
-            this.btn_Khac.Click += new System.EventHandler(this.btn_Khac_Click);
-            // 
-            // btn_ThongKe
-            // 
-            this.btn_ThongKe.BorderRadius = 25;
-            this.btn_ThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_ThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_ThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_ThongKe.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_ThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_ThongKe.FillColor = System.Drawing.Color.Transparent;
-            this.btn_ThongKe.FillColor2 = System.Drawing.Color.Transparent;
-            this.btn_ThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_ThongKe.ForeColor = System.Drawing.Color.White;
-            this.btn_ThongKe.HoverState.FillColor = System.Drawing.Color.Purple;
-            this.btn_ThongKe.Location = new System.Drawing.Point(27, 444);
-            this.btn_ThongKe.Name = "btn_ThongKe";
-            this.btn_ThongKe.Size = new System.Drawing.Size(296, 60);
-            this.btn_ThongKe.TabIndex = 13;
-            this.btn_ThongKe.Text = "Thống Kê";
-            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.BorderRadius = 25;
-            this.btn_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Exit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Exit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Exit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Exit.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Exit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Exit.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Exit.FillColor2 = System.Drawing.Color.Transparent;
-            this.btn_Exit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.HoverState.FillColor = System.Drawing.Color.Purple;
-            this.btn_Exit.Location = new System.Drawing.Point(64, 711);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(216, 60);
-            this.btn_Exit.TabIndex = 15;
-            this.btn_Exit.Text = "EXIT";
             // 
             // Form1
             // 
