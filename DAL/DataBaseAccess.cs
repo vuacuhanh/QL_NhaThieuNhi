@@ -8,6 +8,7 @@ namespace DAL
 {
     public class ConnectionData
     {
+<<<<<<< HEAD
         private static readonly string connectionString = @"Data Source=LAPTOP-0GJ5N2UI\SQLEXPRESS;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
 
         public static string GetConnectionString()
@@ -21,6 +22,13 @@ namespace DAL
         }
 
 
+=======
+        public static SqlConnection Connect()
+        {
+            string Strcon = @"Data Source=LAPTOP-0GJ5N2UI\SQLEXPRESS;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
+            return new SqlConnection(Strcon); // Tạo kết nối
+        }
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255
     }
 
     public class DataBaseAccess
@@ -100,6 +108,7 @@ namespace DAL
 
             return danhSachTaiKhoan;
         }
+<<<<<<< HEAD
 
         public static List<LopHoc> LoadLopHoc()
         {
@@ -346,3 +355,7 @@ namespace DAL
 
     }
 }
+=======
+    }
+}
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255

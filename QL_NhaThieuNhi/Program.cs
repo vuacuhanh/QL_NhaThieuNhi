@@ -17,7 +17,11 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new Form1());
+=======
+            Application.Run(new Login());
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255
         }
     }
 }

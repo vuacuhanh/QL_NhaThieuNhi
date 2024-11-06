@@ -38,7 +38,11 @@
             this.lbforgot = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tgRemember = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+<<<<<<< HEAD:QL_NhaThieuNhi/Login/Login.Designer.cs
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255:QL_NhaThieuNhi/Login.Designer.cs
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -147,8 +151,13 @@
             // 
             this.lbforgot.BackColor = System.Drawing.Color.Transparent;
             this.lbforgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD:QL_NhaThieuNhi/Login/Login.Designer.cs
             this.lbforgot.ForeColor = System.Drawing.Color.Black;
             this.lbforgot.Location = new System.Drawing.Point(286, 319);
+=======
+            this.lbforgot.ForeColor = System.Drawing.Color.GhostWhite;
+            this.lbforgot.Location = new System.Drawing.Point(245, 334);
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255:QL_NhaThieuNhi/Login.Designer.cs
             this.lbforgot.Name = "lbforgot";
             this.lbforgot.Size = new System.Drawing.Size(130, 22);
             this.lbforgot.TabIndex = 7;
@@ -158,8 +167,13 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD:QL_NhaThieuNhi/Login/Login.Designer.cs
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(142, 319);
+=======
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(101, 334);
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255:QL_NhaThieuNhi/Login.Designer.cs
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(113, 22);
             this.guna2HtmlLabel1.TabIndex = 6;
@@ -180,6 +194,7 @@
             this.tgRemember.UncheckedState.InnerBorderColor = System.Drawing.Color.DarkOrchid;
             this.tgRemember.UncheckedState.InnerColor = System.Drawing.Color.DarkOrchid;
             // 
+<<<<<<< HEAD:QL_NhaThieuNhi/Login/Login.Designer.cs
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -191,6 +206,8 @@
             this.guna2PictureBox1.TabIndex = 6;
             this.guna2PictureBox1.TabStop = false;
             // 
+=======
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255:QL_NhaThieuNhi/Login.Designer.cs
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

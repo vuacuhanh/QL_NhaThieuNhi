@@ -7,6 +7,7 @@ C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DAL\obj\Debug\DAL.csproj
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DAL\obj\Debug\DAL.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\bin\Debug\DAL.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\bin\Debug\DAL.pdb
 D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\bin\Debug\DTO.dll
@@ -16,3 +17,5 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\obj\Debug\DAL.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\DAL\obj\Debug\DAL.pdb
+=======
+>>>>>>> 7ca0bcebd288371c20329ac3812f1025c6559255
