@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_NhaThieuNhi.LopHoc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +40,7 @@ namespace QL_NhaThieuNhi
 
         private void btn_QLLopHoc_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new FrmLopHoc());
         }
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)

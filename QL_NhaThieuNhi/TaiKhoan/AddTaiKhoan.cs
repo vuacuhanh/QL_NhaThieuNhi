@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DTO;
+using BLL;
+
 namespace QL_NhaThieuNhi.TaiKhoan
 {
     public partial class AddTaiKhoan : Form
