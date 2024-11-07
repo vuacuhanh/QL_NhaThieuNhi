@@ -36,5 +36,45 @@ namespace BLL
         {
             return tkAccess.LoadTaiKhoan();
         }
+
+        public bool AddTaiKhoan(TaiKhoan t)
+        {
+            try
+            {
+                // Gọi phương thức AddTaiKhoan từ tkAccess
+                return tkAccess.AddTaiKhoan(t);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi thêm tài khoản: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteTaiKhoan(int maTaiKhoan)
+        {
+            try
+            {
+                return tkAccess.DeleteTaiKhoan(maTaiKhoan);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi xóa tài khoản: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool EditTaiKhoan(TaiKhoan t)
+        {
+            try
+            {
+                return tkAccess.EditTaiKhoan(t);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi sửa tài khoản: " + ex.Message);
+                return false;
+            }
+        }
     }
 }

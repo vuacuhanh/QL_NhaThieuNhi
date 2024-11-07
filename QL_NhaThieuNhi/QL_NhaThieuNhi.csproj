@@ -187,9 +187,17 @@
     <None Include="icon\search.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{46684d66-e12a-4fa4-84a0-2b6c9bfff76d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{54881325-F84F-4ABA-A59C-C5DB2799FE76}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5b3f6d76-4efb-42a1-a37f-64e93733b969}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

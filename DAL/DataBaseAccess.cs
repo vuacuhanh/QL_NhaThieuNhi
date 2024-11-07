@@ -46,7 +46,7 @@ namespace DAL
                             {
                                 while (reader.Read())
                                 {
-                                    user = reader.GetString(0); // Lấy thông tin người dùng
+                                    user = reader.GetString(0); 
                                 }
                             }
                             else
@@ -58,16 +58,15 @@ namespace DAL
                 }
                 catch (SqlException ex)
                 {
-                    // Xử lý lỗi kết nối hoặc thực thi câu lệnh SQL
                     return "Lỗi kết nối đến cơ sở dữ liệu: " + ex.Message;
                 }
                 finally
                 {
-                    conn.Close(); // Đóng kết nối
+                    conn.Close();
                 }
             }
 
-            return user; // Trả về tên người dùng nếu đăng nhập thành công
+            return user; 
         }
 
         public static List<TaiKhoan> LoadTaiKhoan()
