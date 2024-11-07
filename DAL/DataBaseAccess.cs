@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using DTO;
 using System.Data;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace DAL
 {
@@ -81,6 +80,7 @@ namespace DAL
                 using (SqlCommand command = new SqlCommand("SP_LoadTaiKhoan", conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -97,53 +97,8 @@ namespace DAL
                     }
                 }
             }
+
             return danhSachTaiKhoan;
         }
-        public static List<NhanViens> LoadNhanVien()
-        {
-            List<NhanViens> danhSachNhanVien = new List<NhanViens>();
-
-            using (SqlConnection conn = ConnectionData.Connect())
-            {
-                try
-                {
-                    conn.Open();         
-                    string query = "SELECT * FROM NhanVien"; 
-
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                NhanViens nv = new NhanViens
-                                {
-                                    MaNhanVien = reader.GetInt32(0),        // Cột 0 là MaNhanVien
-                                    TenNhanVien = reader.GetString(1),
-                                    HinhAnh = reader.IsDBNull(2) ? null : reader.GetString(2),  
-                                    NgaySinh = reader.GetDateTime(3),       
-                                    GioiTinh = reader.GetString(4),         
-                                    SoDienThoai = reader.GetString(5),      
-                                    ChuyenMon = reader.GetString(6),        
-                                    TrangThai = reader.GetString(7),        
-                                    Email = reader.GetString(8),            
-                                    Luong = reader.GetDecimal(9),           
-                                    ChucVu = reader.GetString(10)
-                                };
-                                danhSachNhanVien.Add(nv);
-                            }
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    // Xử lý lỗi kết nối hoặc truy vấn SQL
-                    MessageBox.Show("Lỗi kết nối hoặc truy vấn: " + ex.Message);
-                }
-            }
-
-            return danhSachNhanVien;
-        }
-
     }
 }
