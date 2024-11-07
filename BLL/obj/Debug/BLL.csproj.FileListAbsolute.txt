@@ -21,3 +21,15 @@ E:\QL_NhaThieuNhi-ThaiHoangQuan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 E:\QL_NhaThieuNhi-ThaiHoangQuan\BLL\obj\Debug\BLL.csproj.Up2Date
 E:\QL_NhaThieuNhi-ThaiHoangQuan\BLL\obj\Debug\BLL.dll
 E:\QL_NhaThieuNhi-ThaiHoangQuan\BLL\obj\Debug\BLL.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\BLL.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\BLL.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\DAL.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\DTO.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Guna.UI2.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\DAL.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\DTO.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.pdb

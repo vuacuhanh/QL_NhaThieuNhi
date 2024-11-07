@@ -4,12 +4,6 @@ C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DTO\obj\Debug\DTO.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\DTO\obj\Debug\DTO.pdb
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.pdb
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.pdb
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\bin\Debug\DTO.dll
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\bin\Debug\DTO.pdb
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\bin\Debug\Guna.UI2.dll
@@ -18,3 +12,11 @@ E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.csproj.Up2Date
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.dll
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\Guna.UI2.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.pdb
