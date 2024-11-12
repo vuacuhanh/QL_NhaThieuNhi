@@ -47,7 +47,7 @@
             this.btn_ThemNhanVien = new Guna.UI2.WinForms.Guna2GradientButton();
             this.img_NV = new Guna.UI2.WinForms.Guna2PictureBox();
             this.link_img = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_AddImg = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.rd_Nu = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rd_Nam = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.btn_edit = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_NV)).BeginInit();
@@ -318,9 +319,9 @@
             this.btn_ThemNhanVien.FillColor2 = System.Drawing.Color.Black;
             this.btn_ThemNhanVien.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.btn_ThemNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btn_ThemNhanVien.Location = new System.Drawing.Point(440, 638);
+            this.btn_ThemNhanVien.Location = new System.Drawing.Point(387, 638);
             this.btn_ThemNhanVien.Name = "btn_ThemNhanVien";
-            this.btn_ThemNhanVien.Size = new System.Drawing.Size(467, 45);
+            this.btn_ThemNhanVien.Size = new System.Drawing.Size(294, 45);
             this.btn_ThemNhanVien.TabIndex = 26;
             this.btn_ThemNhanVien.Text = "Thêm Nhân Viên";
             // 
@@ -357,25 +358,25 @@
             this.link_img.TabIndex = 28;
             this.link_img.MouseClick += new System.Windows.Forms.MouseEventHandler(this.link_img_MouseClick);
             // 
-            // guna2GradientButton2
+            // btn_AddImg
             // 
-            this.guna2GradientButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.BorderRadius = 20;
-            this.guna2GradientButton2.BorderThickness = 1;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Black;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(701, 363);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(99, 55);
-            this.guna2GradientButton2.TabIndex = 29;
-            this.guna2GradientButton2.Text = "Img";
+            this.btn_AddImg.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_AddImg.BorderRadius = 20;
+            this.btn_AddImg.BorderThickness = 1;
+            this.btn_AddImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_AddImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_AddImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_AddImg.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_AddImg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_AddImg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_AddImg.FillColor2 = System.Drawing.Color.Black;
+            this.btn_AddImg.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.btn_AddImg.ForeColor = System.Drawing.Color.White;
+            this.btn_AddImg.Location = new System.Drawing.Point(701, 363);
+            this.btn_AddImg.Name = "btn_AddImg";
+            this.btn_AddImg.Size = new System.Drawing.Size(99, 55);
+            this.btn_AddImg.TabIndex = 29;
+            this.btn_AddImg.Text = "Img";
             // 
             // label1
             // 
@@ -508,11 +509,32 @@
             this.rd_Nam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rd_Nam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
+            // btn_edit
+            // 
+            this.btn_edit.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_edit.BorderRadius = 20;
+            this.btn_edit.BorderThickness = 1;
+            this.btn_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_edit.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_edit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_edit.FillColor2 = System.Drawing.Color.Black;
+            this.btn_edit.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.btn_edit.ForeColor = System.Drawing.Color.White;
+            this.btn_edit.Location = new System.Drawing.Point(701, 638);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(294, 45);
+            this.btn_edit.TabIndex = 39;
+            this.btn_edit.Text = "EDIT";
+            // 
             // AddNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1298, 704);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -522,7 +544,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2GradientButton2);
+            this.Controls.Add(this.btn_AddImg);
             this.Controls.Add(this.link_img);
             this.Controls.Add(this.img_NV);
             this.Controls.Add(this.btn_ThemNhanVien);
@@ -568,7 +590,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GradientButton btn_ThemNhanVien;
         private Guna.UI2.WinForms.Guna2PictureBox img_NV;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_AddImg;
         private Guna.UI2.WinForms.Guna2TextBox link_img;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -582,5 +604,6 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2RadioButton rd_Nu;
         private Guna.UI2.WinForms.Guna2RadioButton rd_Nam;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_edit;
     }
 }

@@ -17,33 +17,23 @@ namespace QL_NhaThieuNhi
 {
     public partial class FrmTaiKhoan : Form
     {
-        string connectionString = ConnectionData.GetConnectionString();
-        DataSet ds_HT = new DataSet();
-        SqlDataAdapter da_HT;
+        private TaiKhoanBLL taiKhoanBLL;
         public FrmTaiKhoan()
         {
             InitializeComponent();
+            taiKhoanBLL = new TaiKhoanBLL();
         }
 
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        private void LoadTaiKhoanData()
         {
-
+            List<DTO.TaiKhoan> danhSachNhanVien = taiKhoanBLL.LoadTaiKhoan();
+            data_TaiKhoan.DataSource = danhSachNhanVien;
         }
 
-        void Load_DuLieu_TK()
-        {
-            string strselect = "select * from TaiKhoan";
-            da_HT = new SqlDataAdapter(strselect, connectionString);
-            da_HT.Fill(ds_HT, "TaiKhoan");
-            data_TaiKhoan.DataSource = ds_HT.Tables["TaiKhoan"];
-            DataColumn[] key = new DataColumn[1];
-            key[0] = ds_HT.Tables["TaiKhoan"].Columns[0];
-            ds_HT.Tables["TaiKhoan"].PrimaryKey = key;
-        }
 
         private void FrmTaiKhoan_Load(object sender, EventArgs e)
         {
-            Load_DuLieu_TK();
+            LoadTaiKhoanData();
             sort_By();
             Quyen();
         }
@@ -53,6 +43,7 @@ namespace QL_NhaThieuNhi
             cb_SortBy.Items.Add("Mới nhất");
             cb_SortBy.Items.Add("Cũ nhất");
         }
+
         public void Quyen()
         {
             // Tạo một danh sách các quyền
@@ -79,7 +70,7 @@ namespace QL_NhaThieuNhi
                 if (taiKhoanBLL.DeleteTaiKhoan(maTaiKhoan))
                 {
                     MessageBox.Show("Xóa tài khoản thành công!");
-                    Load_DuLieu_TK();
+                    LoadTaiKhoanData();
                 }
                 else
                 {
@@ -118,7 +109,7 @@ namespace QL_NhaThieuNhi
                 if (taiKhoanBLL.EditTaiKhoan(updatedTaiKhoan))
                 {
                     MessageBox.Show("Sửa tài khoản thành công!");
-                    Load_DuLieu_TK(); // Nạp lại dữ liệu
+                    LoadTaiKhoanData();
                 }
                 else
                 {
@@ -159,7 +150,7 @@ namespace QL_NhaThieuNhi
             if (taiKhoanBLL.AddTaiKhoan(newTaiKhoan))
             {
                 MessageBox.Show("Thêm tài khoản thành công!");
-                Load_DuLieu_TK(); // Nạp lại dữ liệu
+                LoadTaiKhoanData(); 
             }
             else
             {
@@ -172,11 +163,8 @@ namespace QL_NhaThieuNhi
             // Kiểm tra nếu người dùng không click vào tiêu đề cột (chỉ click vào các dòng dữ liệu)
             if (e.RowIndex >= 0)
             {
-                // Lấy dữ liệu từ các cột của dòng đã chọn
-                DataGridViewRow row = data_TaiKhoan.Rows[e.RowIndex];
 
-                // Hiển thị giá trị vào các TextBox
-                txt_ID.Text = row.Cells["MaTaiKhoan"].Value.ToString(); // Đảm bảo tên cột đúng với tên cột trong DataGridView
+                DataGridViewRow row = data_TaiKhoan.Rows[e.RowIndex];
                 txt_NameAcc.Text = row.Cells["TenDangNhap"].Value.ToString();
                 txt_Password.Text = row.Cells["MatKhau"].Value.ToString();
                 cbQuyen.SelectedValue = row.Cells["MaQuyen"].Value;
