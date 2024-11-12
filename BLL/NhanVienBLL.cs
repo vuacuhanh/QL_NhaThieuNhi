@@ -2,10 +2,13 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
+using ClosedXML.Excel;
 namespace BLL
 {
     public class NhanVienBLL
@@ -57,5 +60,19 @@ namespace BLL
                 return false;
             }
         }
+        public static void ImportNhanVienFromExcel(string filePath)
+        {
+            try
+            {
+                // Gọi phương thức DAL để xử lý việc import dữ liệu từ Excel
+                NhanVienAccess.ImportFromExcel(filePath);
+                Console.WriteLine("Dữ liệu nhân viên đã được import thành công.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi import dữ liệu: " + ex.Message);
+            }
+        }
+
     }
 }
