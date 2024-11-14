@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 using System.IO;
+using Microsoft.Reporting.WinForms;
 
 namespace QL_NhaThieuNhi
 {
@@ -31,7 +32,7 @@ namespace QL_NhaThieuNhi
         }
         private void LoadNhanVienData()
         {
-            List<Nhanvien> danhSachNhanVien = nhanVienBLL.LoadNhanVien();
+            List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.LoadNhanVien();
             data_NhanVien.DataSource = danhSachNhanVien;
         }
 
@@ -100,6 +101,52 @@ namespace QL_NhaThieuNhi
         }
 
         private void btn_print_Click(object sender, EventArgs e)
+        {
+            // Lấy danh sách nhân viên từ BLL
+            List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.GetAllNhanVien(); // Gọi từ đối tượng nhanVienBLL
+
+            // Thiết lập ReportViewer
+            ReportViewer reportViewer = new ReportViewer();
+            reportViewer.ProcessingMode = ProcessingMode.Local;
+
+            // Đường dẫn file .rdlc báo cáo
+            reportViewer.LocalReport.ReportPath = "ReportNV.rdlc"; // Thay thế bằng đường dẫn file .rdlc của bạn
+
+            // Đặt nguồn dữ liệu cho ReportViewer
+            reportViewer.LocalReport.DataSources.Clear();
+            ReportDataSource rds = new ReportDataSource("NhanVienDataSet", danhSachNhanVien);
+            reportViewer.LocalReport.DataSources.Add(rds);
+
+            // Refresh để hiển thị báo cáo
+            reportViewer.RefreshReport();
+
+            // Hiển thị ReportViewer trên Form (hoặc có thể dùng một Form mới để hiển thị)
+            Form reportForm = new Form();
+            reportForm.Controls.Add(reportViewer);
+            reportViewer.Dock = DockStyle.Fill;
+            reportForm.ShowDialog();
+        }
+
+        private void txtTimKiemNV_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiemNV.Text.Trim();
+            List<DTO.NhanVien> danhSachNhanVien;
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                // Nếu không có từ khóa, tải toàn bộ dữ liệu
+                danhSachNhanVien = nhanVienBLL.LoadNhanVien();
+            }
+            else
+            {
+                // Tìm kiếm nhân viên theo từ khóa
+                danhSachNhanVien = nhanVienBLL.SearchNhanVien(keyword);
+            }
+
+            data_NhanVien.DataSource = danhSachNhanVien;
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
 
         }

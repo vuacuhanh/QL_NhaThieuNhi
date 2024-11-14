@@ -37,6 +37,7 @@
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_importTK = new Guna.UI2.WinForms.Guna2Button();
             this.lb_SoLuongTK = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_print = new Guna.UI2.WinForms.Guna2Button();
@@ -51,7 +52,6 @@
             this.txt_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_NameAcc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_importTK = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_TaiKhoan)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -164,6 +164,25 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1536, 89);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // btn_importTK
+            // 
+            this.btn_importTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_importTK.BorderRadius = 10;
+            this.btn_importTK.BorderThickness = 1;
+            this.btn_importTK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_importTK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_importTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_importTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_importTK.FillColor = System.Drawing.Color.Transparent;
+            this.btn_importTK.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_importTK.ForeColor = System.Drawing.Color.Black;
+            this.btn_importTK.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
+            this.btn_importTK.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_importTK.Location = new System.Drawing.Point(1432, 21);
+            this.btn_importTK.Name = "btn_importTK";
+            this.btn_importTK.Size = new System.Drawing.Size(62, 45);
+            this.btn_importTK.TabIndex = 8;
             // 
             // lb_SoLuongTK
             // 
@@ -407,25 +426,6 @@
             this.txt_NameAcc.Size = new System.Drawing.Size(374, 48);
             this.txt_NameAcc.TabIndex = 2;
             // 
-            // btn_importTK
-            // 
-            this.btn_importTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_importTK.BorderRadius = 10;
-            this.btn_importTK.BorderThickness = 1;
-            this.btn_importTK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_importTK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_importTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_importTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_importTK.FillColor = System.Drawing.Color.Transparent;
-            this.btn_importTK.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btn_importTK.ForeColor = System.Drawing.Color.Black;
-            this.btn_importTK.Image = global::QL_NhaThieuNhi.Properties.Resources.printing;
-            this.btn_importTK.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_importTK.Location = new System.Drawing.Point(1432, 21);
-            this.btn_importTK.Name = "btn_importTK";
-            this.btn_importTK.Size = new System.Drawing.Size(62, 45);
-            this.btn_importTK.TabIndex = 8;
-            // 
             // FrmTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,7 +452,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_SortBy;
         private Guna.UI2.WinForms.Guna2Button btn_print;
         private Guna.UI2.WinForms.Guna2Button btn_edit;
-        private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
         private System.Windows.Forms.Label lb_SoLuongTK;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btn_delete;

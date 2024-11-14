@@ -1,28 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace DTO
 {
-    public class TaiKhoan
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("TaiKhoan")]
+    public partial class TaiKhoan
     {
-        public int MaTaiKhoan { get; set; }
-        public string TenDangNhap { get; set; }
-        public string MatKhau { get; set; }
-        public int MaQuyen { get; set; }
-
-        // Constructor không tham số
-        public TaiKhoan() { }
-
-        // Constructor đầy đủ tham số
-        public TaiKhoan(int maTaiKhoan, string tenDangNhap, string matKhau, int maQuyen)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TaiKhoan()
         {
-            MaTaiKhoan = maTaiKhoan;
-            TenDangNhap = tenDangNhap;
-            MatKhau = matKhau;
-            MaQuyen = maQuyen;
+            NhanViens = new HashSet<NhanVien>();
         }
+
+        [Key]
+        public int MaTaiKhoan { get; set; }
+
+        [StringLength(100)]
+        public string TenDangNhap { get; set; }
+
+        [StringLength(100)]
+        public string MatKhau { get; set; }
+
+        public int? MaQuyen { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
+
+        public virtual Quyen Quyen { get; set; }
     }
 }

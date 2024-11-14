@@ -54,6 +54,24 @@
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -234,6 +252,12 @@
     <Compile Include="LichHoc\FrmLichHoc.Designer.cs">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienGUI\FrmReportNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienGUI\FrmReportNV.Designer.cs">
+      <DependentUpon>FrmReportNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan\AddTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,16 +270,16 @@
     <Compile Include="TrangChu\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien\AddNhanVien.cs">
+    <Compile Include="NhanVienGUI\AddNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien\AddNhanVien.Designer.cs">
+    <Compile Include="NhanVienGUI\AddNhanVien.Designer.cs">
       <DependentUpon>AddNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien\FrmNhanVien.cs">
+    <Compile Include="NhanVienGUI\FrmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien\FrmNhanVien.Designer.cs">
+    <Compile Include="NhanVienGUI\FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan\FrmTaiKhoan.cs">
@@ -290,16 +314,20 @@
     <EmbeddedResource Include="LichHoc\FrmLichHoc.resx">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienGUI\FrmReportNV.resx">
+      <DependentUpon>FrmReportNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNV.rdlc" />
     <EmbeddedResource Include="TaiKhoan\AddTaiKhoan.resx">
       <DependentUpon>AddTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien\AddNhanVien.resx">
+    <EmbeddedResource Include="NhanVienGUI\AddNhanVien.resx">
       <DependentUpon>AddNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien\FrmNhanVien.resx">
+    <EmbeddedResource Include="NhanVienGUI\FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan\FrmTaiKhoan.resx">
@@ -325,6 +353,7 @@
       <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.Nhanvien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
