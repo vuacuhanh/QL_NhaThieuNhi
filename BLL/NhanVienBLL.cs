@@ -7,19 +7,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using ClosedXML.Excel;
 namespace BLL
 {
     public class NhanVienBLL
     {
-        public List<Nhanvien> LoadNhanVien()
+        public List<NhanVien> LoadNhanVien()
         {
             return NhanVienAccess.LoadNhanVien();
         }
 
 
-        public bool AddNhanVien(Nhanvien nv)
+        public bool AddNhanVien(NhanVien nv)
         {
             try
             {
@@ -47,7 +46,7 @@ namespace BLL
             }
         }
 
-        public bool EditNhanVien(Nhanvien nv)
+        public bool EditNhanVien(NhanVien nv)
         {
             try
             {
@@ -73,6 +72,14 @@ namespace BLL
                 Console.WriteLine("Lỗi khi import dữ liệu: " + ex.Message);
             }
         }
+        public List<NhanVien> SearchNhanVien(string keyword)
+        {
+            return LoadNhanVien().Where(nv => nv.TenNhanVien.Contains(keyword) || nv.MaNhanVien.ToString().Contains(keyword)).ToList();
+        }
 
+        public List<NhanVien> GetAllNhanVien()
+        {
+            return NhanVienAccess.GetAllNhanVien(); 
+        }
     }
 }

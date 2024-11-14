@@ -10,13 +10,14 @@ using ClosedXML.Excel;
 using System.Drawing;
 using System.Web.UI.WebControls;
 using System.IO;
+
 namespace DAL
 {
     public class NhanVienAccess
     {
-        public static List<Nhanvien> LoadNhanVien()
+        public static List<NhanVien> LoadNhanVien()
         {
-            List<Nhanvien> danhSachNhanVien = new List<Nhanvien>();
+            List<NhanVien> danhSachNhanVien = new List<NhanVien>();
             using (SqlConnection conn = ConnectionData.Connect())
             {
                 conn.Open();
@@ -29,7 +30,7 @@ namespace DAL
                         {
                             string hinhAnhPath = !reader.IsDBNull(2) ? reader.GetString(2) : null;
 
-                            Nhanvien nv = new Nhanvien
+                            NhanVien nv = new NhanVien
                             {
                                 MaNhanVien = reader.GetInt32(0),
                                 TenNhanVien = reader.GetString(1),
@@ -63,7 +64,7 @@ namespace DAL
         }
    
 
-        public static void AddNhanVien(Nhanvien nv)
+        public static void AddNhanVien(NhanVien nv)
         {
             using (SqlConnection conn = ConnectionData.Connect())
             {
@@ -101,7 +102,7 @@ namespace DAL
                 }
             }
         }
-        public static void EditNhanVien(Nhanvien nv)
+        public static void EditNhanVien(NhanVien nv)
         {
             using (SqlConnection conn = ConnectionData.Connect())
             {
@@ -139,7 +140,7 @@ namespace DAL
                     foreach (var row in rows)
                     {
                         // Tạo đối tượng nhân viên từ dữ liệu trong Excel
-                        Nhanvien nv = new Nhanvien
+                        NhanVien nv = new NhanVien
                         {
                             MaNhanVien = int.Parse(row.Cell(1).GetValue<string>()),
                             TenNhanVien = row.Cell(2).GetValue<string>(),
@@ -164,6 +165,14 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi import dữ liệu từ Excel: " + ex.Message);
+            }
+        }
+
+        public static List<NhanVien> GetAllNhanVien()
+        {
+            using (var context = new NTNContext())
+            {
+                return context.NhanViens.ToList();
             }
         }
     }
