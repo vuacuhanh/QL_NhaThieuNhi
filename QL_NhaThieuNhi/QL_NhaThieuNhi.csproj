@@ -246,6 +246,12 @@
     <Compile Include="CoSoVatChat\FrmCoSoVatChat.Designer.cs">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FLopHoc\FrmLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLopHoc\FrmLopHoc.Designer.cs">
+      <DependentUpon>FrmLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="LichHoc\FrmLichHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,9 @@
     <EmbeddedResource Include="CoSoVatChat\FrmCoSoVatChat.resx">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FLopHoc\FrmLopHoc.resx">
+      <DependentUpon>FrmLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LichHoc\FrmLichHoc.resx">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +361,9 @@
     <EmbeddedResource Include="PhuHuynh\QuanLyPhuHuynh.resx">
       <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTO.Nhanvien.datasource" />
     <None Include="Properties\Settings.settings">
