@@ -39,7 +39,7 @@ namespace QL_NhaThieuNhi
 
         private void btn_QLLopHoc_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new FLopHoc.FrmLopHoc());
         }
 
         private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
