@@ -29,7 +29,6 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.LichHoc.FrmL
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVien.FrmReportNV.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.TaiKhoan.AddTaiKhoan.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Form1.resources
-D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVien.AddNhanVien.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmNhanVien.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmTaiKhoan.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.QuanLyHocvVien.resources
@@ -38,10 +37,6 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Properties.R
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.QuanLyPhuHuynh.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.GenerateResource.cache
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.CoreCompileInputs.cache
-D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\QL_NhaThieuNhi.exe.config
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\QL_NhaThieuNhi.exe
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\QL_NhaThieuNhi.pdb
@@ -137,6 +132,23 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\zh-CHT\Microsoft.ReportView
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaTh.29C25C05.Up2Date
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.exe
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
+<<<<<<< HEAD
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\x86\SqlServerSpatial160.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\x64\SqlServerSpatial160.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVienGUI.AddNhanVien.resources
+=======
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -258,3 +270,4 @@ C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.exe
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FLopHoc.FrmLopHoc.resources
+>>>>>>> 1e52dd388c9b8c9be831645e1724f25098fb0f51

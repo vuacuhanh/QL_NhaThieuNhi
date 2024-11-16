@@ -23,10 +23,6 @@ E:\QL_NhaThieuNhi-ThaiHoangQuan\BLL\obj\Debug\BLL.dll
 E:\QL_NhaThieuNhi-ThaiHoangQuan\BLL\obj\Debug\BLL.pdb
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\BLL.dll.config
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\BLL.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\BLL.pdb
@@ -119,6 +115,22 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\obj\Debug\BLL.pdb
+<<<<<<< HEAD
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\x86\SqlServerSpatial160.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\x64\SqlServerSpatial160.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+=======
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -212,3 +224,4 @@ C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\ru\Microso
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\NITRO 5\Desktop\QL_NVH_ThieuNhi\QL_NhaThieuNhi\BLL\bin\Debug\EntityFramework.dll
+>>>>>>> 1e52dd388c9b8c9be831645e1724f25098fb0f51

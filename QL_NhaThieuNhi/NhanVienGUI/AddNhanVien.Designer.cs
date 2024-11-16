@@ -1,4 +1,4 @@
-﻿namespace QL_NhaThieuNhi.NhanVien
+﻿namespace QL_NhaThieuNhi.NhanVienGUI
 {
     partial class AddNhanVien
     {
@@ -324,6 +324,7 @@
             this.btn_ThemNhanVien.Size = new System.Drawing.Size(294, 45);
             this.btn_ThemNhanVien.TabIndex = 26;
             this.btn_ThemNhanVien.Text = "Thêm Nhân Viên";
+            this.btn_ThemNhanVien.Click += new System.EventHandler(this.btn_ThemNhanVien_Click);
             // 
             // img_NV
             // 
@@ -563,6 +564,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNhanVien";
             this.Text = "AddNhanVien";
+            this.Load += new System.EventHandler(this.AddNhanVien_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
