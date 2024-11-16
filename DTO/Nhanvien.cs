@@ -1,4 +1,4 @@
-namespace DTO
+﻿namespace DTO
 {
     using System;
     using System.Collections.Generic;
@@ -48,7 +48,10 @@ namespace DTO
         [StringLength(50)]
         public string TrangThai { get; set; }
 
+        [Required]
         [StringLength(255)]
+        [EmailAddress]
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(vn|com|edu)$", ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
 
         public decimal? Luong { get; set; }

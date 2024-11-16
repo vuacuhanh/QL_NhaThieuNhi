@@ -1,6 +1,6 @@
 ﻿using BLL;
 using DTO;
-using QL_NhaThieuNhi.NhanVien;
+using QL_NhaThieuNhi.NhanVienGUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -102,29 +102,50 @@ namespace QL_NhaThieuNhi
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            // Lấy danh sách nhân viên từ BLL
-            List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.GetAllNhanVien(); // Gọi từ đối tượng nhanVienBLL
+            try
+            {
+                // Lấy danh sách nhân viên từ BLL
+                List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.GetAllNhanVien(); // Gọi từ đối tượng nhanVienBLL
 
-            // Thiết lập ReportViewer
-            ReportViewer reportViewer = new ReportViewer();
-            reportViewer.ProcessingMode = ProcessingMode.Local;
+                // Kiểm tra danh sách nhân viên có dữ liệu hay không
+                if (danhSachNhanVien == null || !danhSachNhanVien.Any())
+                {
+                    MessageBox.Show("Không có dữ liệu nhân viên để hiển thị báo cáo.");
+                    return;
+                }
 
-            // Đường dẫn file .rdlc báo cáo
-            reportViewer.LocalReport.ReportPath = "ReportNV.rdlc"; // Thay thế bằng đường dẫn file .rdlc của bạn
+                // Thiết lập ReportViewer
+                ReportViewer reportViewer = new ReportViewer
+                {
+                    ProcessingMode = ProcessingMode.Local,
+                    Dock = DockStyle.Fill,
+                    Size = new Size(800, 600) // Thiết lập kích thước nếu cần
+                };
 
-            // Đặt nguồn dữ liệu cho ReportViewer
-            reportViewer.LocalReport.DataSources.Clear();
-            ReportDataSource rds = new ReportDataSource("NhanVienDataSet", danhSachNhanVien);
-            reportViewer.LocalReport.DataSources.Add(rds);
+                // Đường dẫn file .rdlc báo cáo
+                reportViewer.LocalReport.ReportPath = "D:\\DoAnQLNTN\\QL_NhaThieuNhi\\QL_NhaThieuNhi\\ReportNV.rdlc";
 
-            // Refresh để hiển thị báo cáo
-            reportViewer.RefreshReport();
+                // Đặt nguồn dữ liệu cho ReportViewer
+                reportViewer.LocalReport.DataSources.Clear();
+                ReportDataSource rds = new ReportDataSource("DATANHANVIEN", danhSachNhanVien);
+                reportViewer.LocalReport.DataSources.Add(rds);
 
-            // Hiển thị ReportViewer trên Form (hoặc có thể dùng một Form mới để hiển thị)
-            Form reportForm = new Form();
-            reportForm.Controls.Add(reportViewer);
-            reportViewer.Dock = DockStyle.Fill;
-            reportForm.ShowDialog();
+                // Refresh để hiển thị báo cáo
+                reportViewer.RefreshReport();
+
+                // Hiển thị ReportViewer trên Form mới
+                Form reportForm = new Form
+                {
+                    Text = "Báo cáo Nhân viên",
+                    Size = new Size(1000, 700)
+                };
+                reportForm.Controls.Add(reportViewer);
+                reportForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị báo cáo: " + ex.Message);
+            }
         }
 
         private void txtTimKiemNV_TextChanged(object sender, EventArgs e)

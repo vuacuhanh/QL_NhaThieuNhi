@@ -12,10 +12,6 @@ E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.csproj.Up2Date
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.dll
 E:\QL_NhaThieuNhi-ThaiHoangQuan\DTO\obj\Debug\DTO.pdb
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.dll.config
 D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\DTO.pdb
@@ -106,3 +102,15 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.csproj.Up2Date
 D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\obj\Debug\DTO.pdb
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\x86\SqlServerSpatial160.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\x64\SqlServerSpatial160.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\DTO\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
