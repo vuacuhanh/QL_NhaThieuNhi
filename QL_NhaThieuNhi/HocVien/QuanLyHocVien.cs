@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QL_NhaThieuNhi
+namespace QL_NhaThieuNhi.HocVien
 {
-    public partial class QuanLyHocvVien : Form
+    public partial class QuanLyHocVien : Form
     {
-        public QuanLyHocvVien()
+        public QuanLyHocVien()
         {
             InitializeComponent();
         }

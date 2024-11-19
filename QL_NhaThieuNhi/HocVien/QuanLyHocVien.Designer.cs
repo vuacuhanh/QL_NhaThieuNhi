@@ -1,6 +1,6 @@
-﻿namespace QL_NhaThieuNhi
+﻿namespace QL_NhaThieuNhi.HocVien
 {
-    partial class QuanLyPhuHuynh
+    partial class QuanLyHocVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // QuanLyPhuHuynh
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 793);
-            this.Name = "QuanLyPhuHuynh";
-            this.Text = "QuanLyPhuHuynh";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "QuanLyHocVien";
         }
 
         #endregion
