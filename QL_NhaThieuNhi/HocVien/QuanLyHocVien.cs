@@ -16,5 +16,10 @@ namespace QL_NhaThieuNhi.HocVien
         {
             InitializeComponent();
         }
+
+        private void QuanLyHocVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
