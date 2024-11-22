@@ -12,24 +12,23 @@ namespace BLL
     {
         TaiKhoanAccess tkAccess = new TaiKhoanAccess();
 
-        public string CheckLogicLogin(TaiKhoan taikhoan)
+        public (bool isSuccess, string message, string tenQuyen) CheckLogin(TaiKhoan taikhoan)
         {
-            // Kiểm tra nghiệp vụ
             if (string.IsNullOrEmpty(taikhoan.TenDangNhap))
-            {
-                return "Tên đăng nhập không được để trống";
-            }
+                return (false, "Tên đăng nhập không được để trống", null);
 
             if (string.IsNullOrEmpty(taikhoan.MatKhau))
-            {
-                return "Mật khẩu không được để trống";
-            }
+                return (false, "Mật khẩu không được để trống", null);
 
             // Gọi tầng DAL để kiểm tra thông tin đăng nhập
-            string info = tkAccess.CheckLogin(taikhoan); // Sửa phương thức gọi từ tkAccess
+            string result = tkAccess.CheckLogin(taikhoan);
 
-            // Trả về kết quả từ DAL
-            return info; // Kết quả có thể là tên người dùng hoặc thông báo lỗi
+            if (result == "Tài khoản hoặc mật khẩu không chính xác")
+            {
+                return (false, result, null);
+            }
+
+            return (true, "Đăng nhập thành công", result); 
         }
 
         public List<TaiKhoan> LoadTaiKhoan()

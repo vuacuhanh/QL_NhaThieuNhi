@@ -8,7 +8,7 @@ namespace DAL
 {
     public class ConnectionData
     {
-        private static readonly string connectionString = @"Data Source=LAPTOP-0GJ5N2UI\SQLEXPRESS;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
+        private static readonly string connectionString = @"Data Source=DESKTOP-FGIC7BA\SQLEXPRESSQUAN;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
 
         public static string GetConnectionString()
         {
@@ -27,7 +27,7 @@ namespace DAL
     {
         public static string CheckLogin(TaiKhoan taikhoan)
         {
-            string user = null;
+            string tenQuyen = null;
 
             using (SqlConnection conn = ConnectionData.Connect())
             {
@@ -46,7 +46,7 @@ namespace DAL
                             {
                                 while (reader.Read())
                                 {
-                                    user = reader.GetString(0); 
+                                    tenQuyen = reader.GetString(reader.GetOrdinal("Quyen")); 
                                 }
                             }
                             else
@@ -66,7 +66,7 @@ namespace DAL
                 }
             }
 
-            return user; 
+            return tenQuyen; // Trả về tên quyền
         }
 
         public static List<TaiKhoan> LoadTaiKhoan()

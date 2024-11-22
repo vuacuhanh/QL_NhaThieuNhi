@@ -108,7 +108,6 @@
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(377, 53);
             this.txtUserName.TabIndex = 3;
-            this.txtUserName.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // btnLogin
             // 
@@ -126,7 +125,7 @@
             this.btnLogin.Size = new System.Drawing.Size(305, 54);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "LOGIN";
-            this.btnLogin.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // guna2Panel1
             // 
@@ -205,6 +204,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

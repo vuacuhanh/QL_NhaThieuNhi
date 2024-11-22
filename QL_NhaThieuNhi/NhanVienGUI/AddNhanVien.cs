@@ -91,5 +91,15 @@ namespace QL_NhaThieuNhi.NhanVienGUI
             // Bạn có thể thêm các giá trị khác nếu cần
             cb_TrangThai.SelectedIndex = 0;  // Đặt mặc định cho ComboBox nếu cần
         }
+
+        private void btn_AddImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                img_NV.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
     }
 }

@@ -14,7 +14,6 @@ namespace DAL
     {
         public string CheckLogin(TaiKhoan taikhoan)
         {
-            // Gọi đến phương thức CheckLogin trong lớp DataBaseAccess
             return DataBaseAccess.CheckLogin(taikhoan);
         }
 

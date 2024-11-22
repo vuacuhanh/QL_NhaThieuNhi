@@ -378,6 +378,7 @@
             this.btn_AddImg.Size = new System.Drawing.Size(99, 55);
             this.btn_AddImg.TabIndex = 29;
             this.btn_AddImg.Text = "Img";
+            this.btn_AddImg.Click += new System.EventHandler(this.btn_AddImg_Click);
             // 
             // label1
             // 

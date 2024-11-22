@@ -37,11 +37,41 @@ namespace QL_NhaThieuNhi
             sort_By();
             Quyen();
         }
+
         public void sort_By()
         {
-            cb_SortBy.Items.Add("Xếp theo tên quyền");
-            cb_SortBy.Items.Add("Mới nhất");
-            cb_SortBy.Items.Add("Cũ nhất");
+            cb_SortBy.Items.Clear();
+            cb_SortBy.Items.Add(new KeyValuePair<string, string>("TenQuyen", "Xếp theo tên quyền"));
+            cb_SortBy.Items.Add(new KeyValuePair<string, string>("MaTaiKhoan_DESC", "Mới nhất"));
+            cb_SortBy.Items.Add(new KeyValuePair<string, string>("MaTaiKhoan_ASC", "Cũ nhất"));
+
+            cb_SortBy.DisplayMember = "Value";
+            cb_SortBy.ValueMember = "Key";
+
+            cb_SortBy.SelectedIndex = 0; // Đặt mặc định là lựa chọn đầu tiên
+        }
+        private List<DTO.TaiKhoan> SortTaiKhoan(string sortKey)
+        {
+            // Lấy danh sách tài khoản từ tầng BLL
+            List<DTO.TaiKhoan> danhSachTaiKhoan = taiKhoanBLL.LoadTaiKhoan();
+
+            // Sắp xếp dựa theo sortKey
+            switch (sortKey)
+            {
+                case "TenQuyen":
+                    danhSachTaiKhoan = danhSachTaiKhoan.OrderBy(tk => tk.Quyen).ToList();
+                    break;
+                case "MaTaiKhoan_DESC":
+                    danhSachTaiKhoan = danhSachTaiKhoan.OrderByDescending(tk => tk.MaTaiKhoan).ToList();
+                    break;
+                case "MaTaiKhoan_ASC":
+                    danhSachTaiKhoan = danhSachTaiKhoan.OrderBy(tk => tk.MaTaiKhoan).ToList();
+                    break;
+                default:
+                    break;
+            }
+
+            return danhSachTaiKhoan;
         }
 
         public void Quyen()
@@ -54,9 +84,23 @@ namespace QL_NhaThieuNhi
             cbQuyen.DisplayMember = "TenQuyen";
             cbQuyen.ValueMember = "MaQuyen";
         }
+
+
+
         private void cb_SortBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cb_SortBy.SelectedItem != null)
+            {
+                // Lấy khóa sắp xếp từ giá trị đã chọn trong ComboBox
+                var selectedKey = ((KeyValuePair<string, string>)cb_SortBy.SelectedItem).Key;
+
+                // Gọi hàm SortTaiKhoan để sắp xếp danh sách
+                List<DTO.TaiKhoan> sortedList = SortTaiKhoan(selectedKey);
+
+                // Cập nhật lại DataGridView
+                data_TaiKhoan.DataSource = null;
+                data_TaiKhoan.DataSource = sortedList;
+            }
         }
 
 
