@@ -178,6 +178,7 @@
             this.tgRemember.UncheckedState.FillColor = System.Drawing.Color.GhostWhite;
             this.tgRemember.UncheckedState.InnerBorderColor = System.Drawing.Color.DarkOrchid;
             this.tgRemember.UncheckedState.InnerColor = System.Drawing.Color.DarkOrchid;
+            this.tgRemember.CheckedChanged += new System.EventHandler(this.tgRemember_CheckedChanged);
             // 
             // guna2PictureBox1
             // 

@@ -25,7 +25,12 @@ namespace QL_NhaThieuNhi
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // Tự động điền thông tin nếu đã lưu
+            txtUserName.Text = Properties.Settings.Default.UserName;
+            txtPass.Text = Properties.Settings.Default.Password;
 
+            // Nếu thông tin tồn tại, bật trạng thái ToggleSwitch
+            tgRemember.Checked = !string.IsNullOrEmpty(Properties.Settings.Default.UserName);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -70,6 +75,11 @@ namespace QL_NhaThieuNhi
             {
                 MessageBox.Show("Quyền không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+        }
+
+        private void tgRemember_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
