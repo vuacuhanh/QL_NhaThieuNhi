@@ -66,5 +66,10 @@ namespace QL_NhaThieuNhi
         {
 
         }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FHoaDon.FrmHoaDon());
+        }
     }
 }
