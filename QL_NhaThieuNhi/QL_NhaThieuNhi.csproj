@@ -86,6 +86,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RBush, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RBush.3.2.0\lib\netstandard1.2\RBush.dll</HintPath>
     </Reference>
@@ -404,6 +407,9 @@
     <EmbeddedResource Include="PhuHuynh\QuanLyPhuHuynh.resx">
       <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrangChu\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -461,8 +467,11 @@
     <None Include="icon\import.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icon\close-eye.png" />
     <Content Include="icon\refresh.png" />
+    <None Include="icon\visible.png" />
     <Content Include="img\hinh1.jpg" />
+    <None Include="RememberMK.json" />
     <Content Include="img\hv\hinhA.jpg" />
     <Content Include="img\hv\hinhB.jpg" />
     <Content Include="img\hv\hinhC.jpg" />
