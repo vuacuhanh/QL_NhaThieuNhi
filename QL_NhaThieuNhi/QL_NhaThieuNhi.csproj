@@ -454,6 +454,11 @@
   <ItemGroup>
     <Content Include="icon\refresh.png" />
     <Content Include="img\hinh1.jpg" />
+    <Content Include="img\hv\hinhA.jpg" />
+    <Content Include="img\hv\hinhB.jpg" />
+    <Content Include="img\hv\hinhC.jpg" />
+    <Content Include="img\hv\hinhD.jpg" />
+    <Content Include="img\hv\hinhE.jpg" />
     <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
