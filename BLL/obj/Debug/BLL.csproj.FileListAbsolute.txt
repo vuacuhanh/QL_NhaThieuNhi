@@ -20,6 +20,7 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Microsoft.ReportViewer.Design.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Newtonsoft.Json.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\RBush.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\SixLabors.Fonts.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\System.Buffers.dll
@@ -43,6 +44,7 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\EntityFramework.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\EntityFramework.SqlServer.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\ExcelNumberFormat.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\Newtonsoft.Json.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\RBush.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\SixLabors.Fonts.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\BLL\bin\Debug\System.Buffers.xml

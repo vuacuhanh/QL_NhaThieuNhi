@@ -249,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBaseAccess.cs" />
+    <Compile Include="HoaDonAccess.cs" />
     <Compile Include="LopHocAccess.cs" />
     <Compile Include="NhanVienAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

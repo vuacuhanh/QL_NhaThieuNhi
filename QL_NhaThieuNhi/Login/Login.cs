@@ -25,11 +25,8 @@ namespace QL_NhaThieuNhi
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // Tự động điền thông tin nếu đã lưu
             txtUserName.Text = Properties.Settings.Default.UserName;
             txtPass.Text = Properties.Settings.Default.Password;
-
-            // Nếu thông tin tồn tại, bật trạng thái ToggleSwitch
             tgRemember.Checked = !string.IsNullOrEmpty(Properties.Settings.Default.UserName);
         }
 
@@ -55,6 +52,17 @@ namespace QL_NhaThieuNhi
                 return;
             }
 
+            // Lưu hoặc xóa thông tin dựa trên trạng thái 
+            if (tgRemember.Checked)
+            {
+                SaveLoginInfo(tenDangNhap, matKhau);
+            }
+            else
+            {
+                ClearLoginInfo();
+            }
+
+            // Điều hướng theo quyền người dùng
             string quyen = loginResult.tenQuyen;
 
             if (quyen == "Admin")
@@ -62,14 +70,12 @@ namespace QL_NhaThieuNhi
                 this.Hide();
                 Form1 adminForm = new Form1();
                 adminForm.ShowDialog();
-                this.Show();
             }
             else if (quyen == "User")
             {
                 this.Hide();
                 UsersForm userForm = new UsersForm();
-                userForm.ShowDialog();
-                this.Show();
+                userForm.FormClosed += (s, args) => this.Show();
             }
             else
             {
@@ -81,6 +87,40 @@ namespace QL_NhaThieuNhi
         private void tgRemember_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+        private void SaveLoginInfo(string userName, string password)
+        {
+            // Lưu thông tin vào Settings
+            Properties.Settings.Default.UserName = userName;
+            Properties.Settings.Default.Password = password;
+            Properties.Settings.Default.Save();
+        }
+
+        private void ClearLoginInfo()
+        {
+            // Xóa thông tin khỏi Settings
+            Properties.Settings.Default.UserName = string.Empty;
+            Properties.Settings.Default.Password = string.Empty;
+            Properties.Settings.Default.Save();
+        }
+
+        private bool isPasswordVisible = false;
+        private void btn_eye_Click(object sender, EventArgs e)
+        {
+
+            if (isPasswordVisible)
+            {
+                txtPass.PasswordChar = '$';
+                btn_eye.Image = Properties.Resources.close_eye;
+                isPasswordVisible = false;
+                
+            }
+            else
+            {
+                txtPass.PasswordChar = '\0';
+                btn_eye.Image = Properties.Resources.visible;
+                isPasswordVisible = true;
+            }
         }
     }
 }

@@ -259,6 +259,18 @@
     <Compile Include="CoSoVatChat\FrmCoSoVatChat.Designer.cs">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FHoaDon\FrmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoaDon\FrmHoaDon.Designer.cs">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FHoaDon\FrmLocHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoaDon\FrmLocHoaDon.Designer.cs">
+      <DependentUpon>FrmLocHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLopHoc\FrmLopHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +347,12 @@
     </Compile>
     <EmbeddedResource Include="CoSoVatChat\FrmCoSoVatChat.resx">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHoaDon\FrmHoaDon.resx">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHoaDon\FrmLocHoaDon.resx">
+      <DependentUpon>FrmLocHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLopHoc\FrmLopHoc.resx">
       <DependentUpon>FrmLopHoc.cs</DependentUpon>
@@ -440,7 +458,12 @@
     <None Include="icon\import.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icon\close-eye.png" />
+    <Content Include="icon\refresh.png" />
+    <None Include="icon\visible.png" />
     <Content Include="img\hinh1.jpg" />
+    <None Include="RememberMK.json" />
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

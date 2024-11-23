@@ -39,6 +39,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tgRemember = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btn_eye = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,8 @@
             this.txtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPass.Location = new System.Drawing.Point(48, 253);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -97,8 +99,8 @@
             this.txtUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtUserName.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.Black;
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUserName.Location = new System.Drawing.Point(48, 167);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -131,6 +133,7 @@
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.Brown;
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.btn_eye);
             this.guna2Panel1.Controls.Add(this.lbforgot);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Controls.Add(this.tgRemember);
@@ -191,6 +194,34 @@
             this.guna2PictureBox1.TabIndex = 6;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // btn_eye
+            // 
+            this.btn_eye.BackColor = System.Drawing.Color.White;
+            this.btn_eye.BorderRadius = 10;
+            this.btn_eye.Checked = true;
+            this.btn_eye.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btn_eye.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btn_eye.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btn_eye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eye.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_eye.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_eye.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_eye.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_eye.FillColor = System.Drawing.Color.White;
+            this.btn_eye.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_eye.ForeColor = System.Drawing.Color.White;
+            this.btn_eye.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btn_eye.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_eye.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_eye.Image = global::QL_NhaThieuNhi.Properties.Resources.visible1;
+            this.btn_eye.ImageSize = new System.Drawing.Size(28, 28);
+            this.btn_eye.Location = new System.Drawing.Point(361, 255);
+            this.btn_eye.Name = "btn_eye";
+            this.btn_eye.PressedColor = System.Drawing.Color.White;
+            this.btn_eye.Size = new System.Drawing.Size(58, 48);
+            this.btn_eye.TabIndex = 11;
+            this.btn_eye.Click += new System.EventHandler(this.btn_eye_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,5 +256,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbforgot;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btn_eye;
     }
 }

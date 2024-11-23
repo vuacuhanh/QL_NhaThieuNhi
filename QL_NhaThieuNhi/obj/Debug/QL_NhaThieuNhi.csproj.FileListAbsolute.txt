@@ -21,6 +21,7 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Microsoft.ReportViewer.Desi
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Newtonsoft.Json.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\RBush.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SixLabors.Fonts.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\System.Buffers.dll
@@ -46,6 +47,7 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\EntityFramework.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\EntityFramework.SqlServer.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\ExcelNumberFormat.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\Newtonsoft.Json.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\RBush.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\SixLabors.Fonts.xml
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\System.Buffers.xml
@@ -106,6 +108,8 @@ D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\zh-Hans\Microsoft.SqlServer
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.AssemblyReference.cache
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.CoSoVatChat.FrmCoSoVatChat.resources
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FHoaDon.FrmHoaDon.resources
+D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FHoaDon.FrmLocHoaDon.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FLopHoc.FrmLopHoc.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.LichHoc.FrmLichHoc.resources
 D:\DoAnQLNTN\QL_NhaThieuNhi\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVien.FrmReportNV.resources
