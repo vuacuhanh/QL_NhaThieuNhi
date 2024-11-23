@@ -292,6 +292,12 @@
     <Compile Include="NhanVienGUI\FrmReportNV.Designer.cs">
       <DependentUpon>FrmReportNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhuHuynh\QL_PhuHuynh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhuHuynh\QL_PhuHuynh.Designer.cs">
+      <DependentUpon>QL_PhuHuynh.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan\AddTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGUI\FrmReportNV.resx">
       <DependentUpon>FrmReportNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhuHuynh\QL_PhuHuynh.resx">
+      <DependentUpon>QL_PhuHuynh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNV.rdlc" />
     <EmbeddedResource Include="TaiKhoan\AddTaiKhoan.resx">
