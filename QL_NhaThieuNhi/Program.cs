@@ -18,7 +18,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangKyLichDay());
+            Application.Run(new QuanLyHocvVien());
         }
     }
 }

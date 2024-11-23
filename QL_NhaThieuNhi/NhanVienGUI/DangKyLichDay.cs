@@ -171,11 +171,6 @@ namespace QL_NhaThieuNhi.NhanVienGUI
         }
         private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Thay đổi màu nền của các trường không hợp lệ
-            if (string.IsNullOrEmpty(txt_MaLichDay.Text))
-                txt_MaLichDay.BackColor = Color.LightCoral;
-            else
-                txt_MaLichDay.BackColor = Color.White;
             txt_MaLichDay.Enabled = cmd_PhongHoc.Enabled = tp_ThoiGianDay.Enabled = tp_ThoiGianKetThuc.Enabled =
             cmd_CaHoc.Enabled = cmb_NhanVien.Enabled = cmb_TrangThai.Enabled = cmb_Lop.Enabled = true;
             // Kiểm tra nếu tất cả các trường cần thiết đã được nhập

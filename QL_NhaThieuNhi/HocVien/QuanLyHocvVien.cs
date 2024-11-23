@@ -22,6 +22,7 @@ namespace QL_NhaThieuNhi
             LoadDanhSachHocVien();
             ConfigureListView();
         }
+
         public List<HocVien> LoadHocVien()
         {
             List<HocVien> danhSachHocVien = new List<HocVien>();
@@ -411,9 +412,63 @@ namespace QL_NhaThieuNhi
             }
 
         }
+        private void TimKiemHocVien(string tenHocVien)
+        {
+            // Xóa dữ liệu cũ trong ListView
+            listView_Bang.Items.Clear();
+
+            using (SqlConnection conn = new SqlConnection(ConnectionData.GetConnectionString()))
+            {
+                conn.Open();
+                string query = @"
+    SELECT MaHocVien, TenHocVien,HinhAnh, GioiTinh, NgaySinh, DiaChi, SoDienThoai, TrangThai, MaPhuHuynh, MaLop 
+    FROM HocVien 
+    WHERE TenHocVien LIKE @TenHocVien";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenHocVien", "%" + tenHocVien + "%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Thêm từng dòng dữ liệu vào ListView
+                            ListViewItem item = new ListViewItem(reader["MaHocVien"].ToString());
+                            item.SubItems.Add(reader["TenHocVien"].ToString());
+                            item.SubItems.Add(reader["HinhAnh"].ToString());
+                            item.SubItems.Add(reader["GioiTinh"].ToString());
+                            item.SubItems.Add(Convert.ToDateTime(reader["NgaySinh"]).ToShortDateString());
+                            item.SubItems.Add(reader["DiaChi"].ToString());
+                            item.SubItems.Add(reader["SoDienThoai"].ToString());
+                            item.SubItems.Add(reader["TrangThai"].ToString());
+                            item.SubItems.Add(reader["MaPhuHuynh"].ToString());  // Mã phụ huynh liên kết
+                            item.SubItems.Add(reader["MaLop"].ToString());  // Mã lớp học
+
+                            listView_Bang.Items.Add(item);
+                        }
+                    }
+                }
+            }
+        }
         private void ptb_HinhAnh_Click(object sender, EventArgs e)
         {
             ptb_HinhAnh.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            string tenHocVien = txt_TimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(tenHocVien))
+            {
+                MessageBox.Show("Vui lòng nhập tên học viên cần tìm.", "Thông báo");
+                return;
+            }
+
+            // Tìm kiếm trong cơ sở dữ liệu
+            TimKiemHocVien(tenHocVien);
+
         }
     }
 }
