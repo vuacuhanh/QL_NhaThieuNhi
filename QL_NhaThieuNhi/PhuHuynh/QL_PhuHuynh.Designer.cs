@@ -34,6 +34,12 @@
             this.btn_print = new Guna.UI2.WinForms.Guna2Button();
             this.dtp_NgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rdo_Nu = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdo_Nam = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.txt_SDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_Email = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_DiaChi = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,12 +58,6 @@
             this.dgvPhuHuynh = new System.Windows.Forms.DataGridView();
             this.txt_TimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_Email = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_SDT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.rdo_Nam = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rdo_Nu = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuHuynh)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -103,6 +103,7 @@
             this.btnExportFileExcel.Name = "btnExportFileExcel";
             this.btnExportFileExcel.Size = new System.Drawing.Size(62, 45);
             this.btnExportFileExcel.TabIndex = 8;
+            this.btnExportFileExcel.Click += new System.EventHandler(this.btnExportFileExcel_Click);
             // 
             // lb_SoLuongTK
             // 
@@ -185,6 +186,108 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(572, 750);
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông Tin Lớp Học";
+            // 
+            // rdo_Nu
+            // 
+            this.rdo_Nu.AutoSize = true;
+            this.rdo_Nu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdo_Nu.CheckedState.BorderThickness = 0;
+            this.rdo_Nu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdo_Nu.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdo_Nu.CheckedState.InnerOffset = -4;
+            this.rdo_Nu.Location = new System.Drawing.Point(383, 169);
+            this.rdo_Nu.Name = "rdo_Nu";
+            this.rdo_Nu.Size = new System.Drawing.Size(62, 32);
+            this.rdo_Nu.TabIndex = 30;
+            this.rdo_Nu.Text = "Nữ";
+            this.rdo_Nu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdo_Nu.UncheckedState.BorderThickness = 2;
+            this.rdo_Nu.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdo_Nu.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdo_Nam
+            // 
+            this.rdo_Nam.AutoSize = true;
+            this.rdo_Nam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdo_Nam.CheckedState.BorderThickness = 0;
+            this.rdo_Nam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdo_Nam.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdo_Nam.CheckedState.InnerOffset = -4;
+            this.rdo_Nam.Location = new System.Drawing.Point(175, 169);
+            this.rdo_Nam.Name = "rdo_Nam";
+            this.rdo_Nam.Size = new System.Drawing.Size(78, 32);
+            this.rdo_Nam.TabIndex = 29;
+            this.rdo_Nam.Text = "Nam";
+            this.rdo_Nam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdo_Nam.UncheckedState.BorderThickness = 2;
+            this.rdo_Nam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdo_Nam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // txt_SDT
+            // 
+            this.txt_SDT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txt_SDT.BorderRadius = 10;
+            this.txt_SDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_SDT.DefaultText = "";
+            this.txt_SDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_SDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_SDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_SDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_SDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_SDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SDT.ForeColor = System.Drawing.Color.Black;
+            this.txt_SDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_SDT.Location = new System.Drawing.Point(164, 477);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.PasswordChar = '\0';
+            this.txt_SDT.PlaceholderText = "";
+            this.txt_SDT.SelectedText = "";
+            this.txt_SDT.Size = new System.Drawing.Size(374, 39);
+            this.txt_SDT.TabIndex = 28;
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txt_Email.BorderRadius = 10;
+            this.txt_Email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Email.DefaultText = "";
+            this.txt_Email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.ForeColor = System.Drawing.Color.Black;
+            this.txt_Email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Email.Location = new System.Drawing.Point(174, 414);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.PasswordChar = '\0';
+            this.txt_Email.PlaceholderText = "";
+            this.txt_Email.SelectedText = "";
+            this.txt_Email.Size = new System.Drawing.Size(374, 39);
+            this.txt_Email.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 414);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(145, 48);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Email:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 477);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 48);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "SDT:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
@@ -327,6 +430,7 @@
             this.BtnXoa.TabIndex = 8;
             this.BtnXoa.Text = "DELETE";
             this.BtnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BtnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
             // 
             // btnThem
             // 
@@ -350,6 +454,7 @@
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Add";
             this.btnThem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label2
             // 
@@ -379,6 +484,7 @@
             this.btnSua.Size = new System.Drawing.Size(139, 45);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "EDIT";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // txt_MaPH
             // 
@@ -430,6 +536,7 @@
             this.cbLoc.Name = "cbLoc";
             this.cbLoc.Size = new System.Drawing.Size(269, 36);
             this.cbLoc.TabIndex = 2;
+            this.cbLoc.SelectedIndexChanged += new System.EventHandler(this.cbLoc_SelectedIndexChanged);
             // 
             // dgvPhuHuynh
             // 
@@ -444,6 +551,9 @@
             this.dgvPhuHuynh.RowTemplate.Height = 24;
             this.dgvPhuHuynh.Size = new System.Drawing.Size(1317, 750);
             this.dgvPhuHuynh.TabIndex = 12;
+            this.dgvPhuHuynh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuHuynh_CellClick);
+            this.dgvPhuHuynh.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPhuHuynh_CellFormatting);
+            this.dgvPhuHuynh.SelectionChanged += new System.EventHandler(this.dgvPhuHuynh_SelectionChanged);
             // 
             // txt_TimKiem
             // 
@@ -468,6 +578,7 @@
             this.txt_TimKiem.SelectedText = "";
             this.txt_TimKiem.Size = new System.Drawing.Size(408, 39);
             this.txt_TimKiem.TabIndex = 26;
+            this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
             // 
             // guna2Panel1
             // 
@@ -486,108 +597,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1924, 89);
             this.guna2Panel1.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 477);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 48);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "SDT:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 414);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 48);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Email:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txt_Email
-            // 
-            this.txt_Email.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txt_Email.BorderRadius = 10;
-            this.txt_Email.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Email.DefaultText = "";
-            this.txt_Email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_Email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_Email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Email.ForeColor = System.Drawing.Color.Black;
-            this.txt_Email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Email.Location = new System.Drawing.Point(174, 414);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.PasswordChar = '\0';
-            this.txt_Email.PlaceholderText = "";
-            this.txt_Email.SelectedText = "";
-            this.txt_Email.Size = new System.Drawing.Size(374, 39);
-            this.txt_Email.TabIndex = 27;
-            // 
-            // txt_SDT
-            // 
-            this.txt_SDT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txt_SDT.BorderRadius = 10;
-            this.txt_SDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_SDT.DefaultText = "";
-            this.txt_SDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_SDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_SDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_SDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_SDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_SDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SDT.ForeColor = System.Drawing.Color.Black;
-            this.txt_SDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_SDT.Location = new System.Drawing.Point(164, 477);
-            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.PasswordChar = '\0';
-            this.txt_SDT.PlaceholderText = "";
-            this.txt_SDT.SelectedText = "";
-            this.txt_SDT.Size = new System.Drawing.Size(374, 39);
-            this.txt_SDT.TabIndex = 28;
-            // 
-            // rdo_Nam
-            // 
-            this.rdo_Nam.AutoSize = true;
-            this.rdo_Nam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdo_Nam.CheckedState.BorderThickness = 0;
-            this.rdo_Nam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdo_Nam.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdo_Nam.CheckedState.InnerOffset = -4;
-            this.rdo_Nam.Location = new System.Drawing.Point(175, 169);
-            this.rdo_Nam.Name = "rdo_Nam";
-            this.rdo_Nam.Size = new System.Drawing.Size(78, 32);
-            this.rdo_Nam.TabIndex = 29;
-            this.rdo_Nam.Text = "Nam";
-            this.rdo_Nam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdo_Nam.UncheckedState.BorderThickness = 2;
-            this.rdo_Nam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdo_Nam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rdo_Nu
-            // 
-            this.rdo_Nu.AutoSize = true;
-            this.rdo_Nu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdo_Nu.CheckedState.BorderThickness = 0;
-            this.rdo_Nu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdo_Nu.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdo_Nu.CheckedState.InnerOffset = -4;
-            this.rdo_Nu.Location = new System.Drawing.Point(383, 169);
-            this.rdo_Nu.Name = "rdo_Nu";
-            this.rdo_Nu.Size = new System.Drawing.Size(62, 32);
-            this.rdo_Nu.TabIndex = 30;
-            this.rdo_Nu.Text = "Nữ";
-            this.rdo_Nu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdo_Nu.UncheckedState.BorderThickness = 2;
-            this.rdo_Nu.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdo_Nu.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // QL_PhuHuynh
             // 

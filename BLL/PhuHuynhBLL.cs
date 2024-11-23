@@ -14,6 +14,7 @@ namespace BLL
 
         public static List<PhuHuynh> LayTatCaPhuHuynh()
         {
+
             try
             {
                 return PhuHuynhAccess.LoadPhuHuynh();
@@ -23,20 +24,19 @@ namespace BLL
                 throw new Exception("Có lỗi khi lấy danh sách phụ huynh: " + ex.Message);
             }
         }
-
         // Thêm mới phụ huynh
-        public static bool ThemPhuHuynh(PhuHuynh phuHuynh)
+        public static bool ThemPhuHuynh(PhuHuynh PhuHuynh)
         {
             // Kiểm tra dữ liệu trước khi thêm
-            if (phuHuynh == null)
+            if (PhuHuynh == null)
                 throw new ArgumentNullException("Phụ huynh không được để trống");
 
-            if (string.IsNullOrEmpty(phuHuynh.TenPhuHuynh))
+            if (string.IsNullOrEmpty(PhuHuynh.TenPhuHuynh))
                 throw new ArgumentException("Tên phụ huynh không được để trống");
 
             try
             {
-                return PhuHuynhAccess.AddPhuHuynh(phuHuynh);
+                return PhuHuynhAccess.AddPhuHuynh(PhuHuynh);
             }
             catch (Exception ex)
             {
@@ -68,14 +68,14 @@ namespace BLL
         }
 
         // Xóa phụ huynh
-        public static bool XoaPhuHuynh(int maPhuHuynh)
+        public static bool XoaPhuHuynh(int MaPhuHuynh)
         {
-            if (maPhuHuynh <= 0)
+            if (MaPhuHuynh <= 0)
                 throw new ArgumentException("Mã phụ huynh không hợp lệ");
 
             try
             {
-                return PhuHuynhAccess.DeletePhuHuynh(maPhuHuynh);
+                return PhuHuynhAccess.DeletePhuHuynh(MaPhuHuynh);
             }
             catch (Exception ex)
             {

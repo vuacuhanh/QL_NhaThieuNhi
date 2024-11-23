@@ -32,8 +32,8 @@ namespace DAL
                                 {
                                     MaPhuHuynh = reader.GetInt32(0), // Mã phụ huynh
                                     TenPhuHuynh = reader.GetString(1), // Tên phụ huynh
-                                    GioiTinh = reader.GetString(2), // Giới tính
-                                    NgaySinh = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime(3), // Ngày sinh
+                                    GioiTinh = reader.GetString(3), // Giới tính
+                                    NgaySinh = reader.IsDBNull(2) ? (DateTime?)null : reader.GetDateTime(2), // Ngày sinh
                                     NgheNghiep = reader.GetString(4), // Nghề nghiệp
                                     DiaChi = reader.GetString(5), // Địa chỉ
                                     Email = reader.IsDBNull(6) ? null : reader.GetString(6), // Email
@@ -80,10 +80,11 @@ namespace DAL
                                     MaPhuHuynh = reader.GetInt32(0),
                                     TenPhuHuynh = reader.GetString(1),
                                     NgaySinh = reader.GetDateTime(2),
-                                    NgheNghiep = reader.GetString(3),
-                                    DiaChi = reader.GetString(4),
-                                    Email = reader.GetString(5),
-                                    SoDienThoai = reader.GetString(6)
+                                    GioiTinh = reader.GetString(3),
+                                    NgheNghiep = reader.GetString(4),
+                                    DiaChi = reader.GetString(5),
+                                    Email = reader.GetString(6),
+                                    SoDienThoai = reader.GetString(7)
                                 };
                                 danhSachPhuHuynh.Add(phuHuynh);
                             }
@@ -114,10 +115,11 @@ namespace DAL
                     using (SqlCommand command = new SqlCommand("SP_ThemPhuHuynh", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@MaPhuHuynh", phuHuynh.MaPhuHuynh);
                         command.Parameters.AddWithValue("@TenPhuHuynh", phuHuynh.TenPhuHuynh);
+                        command.Parameters.AddWithValue("@NgaySinh", (object)phuHuynh.NgaySinh ?? DBNull.Value);
                         command.Parameters.AddWithValue("@GioiTinh", phuHuynh.GioiTinh);
                         command.Parameters.AddWithValue("@NgheNghiep", phuHuynh.NgheNghiep);
-                        command.Parameters.AddWithValue("@NgaySinh", (object)phuHuynh.NgaySinh ?? DBNull.Value);
                         command.Parameters.AddWithValue("@DiaChi", phuHuynh.DiaChi);
                         command.Parameters.AddWithValue("@Email", phuHuynh.Email);
                         command.Parameters.AddWithValue("@SoDienThoai", phuHuynh.SoDienThoai);
@@ -138,7 +140,7 @@ namespace DAL
         }
 
         // Xóa phụ huynh
-        public static bool DeletePhuHuynh(int maPhuHuynh)
+        public static bool DeletePhuHuynh(int MaPhuHuynh)
         {
             using (SqlConnection conn = ConnectionData.Connect())
             {
@@ -148,7 +150,7 @@ namespace DAL
                     using (SqlCommand command = new SqlCommand("SP_XoaPhuHuynh", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@MaPhuHuynh", maPhuHuynh);
+                        command.Parameters.AddWithValue("@MaPhuHuynh", MaPhuHuynh);
 
                         int rowsAffected = command.ExecuteNonQuery();
                         return rowsAffected > 0;
@@ -178,9 +180,9 @@ namespace DAL
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@MaPhuHuynh", phuHuynh.MaPhuHuynh);
                         command.Parameters.AddWithValue("@TenPhuHuynh", phuHuynh.TenPhuHuynh);
+                        command.Parameters.AddWithValue("@NgaySinh", (object)phuHuynh.NgaySinh ?? DBNull.Value);
                         command.Parameters.AddWithValue("@GioiTinh", phuHuynh.GioiTinh);
                         command.Parameters.AddWithValue("@NgheNghiep", phuHuynh.NgheNghiep);
-                        command.Parameters.AddWithValue("@NgaySinh", (object)phuHuynh.NgaySinh ?? DBNull.Value);
                         command.Parameters.AddWithValue("@DiaChi", phuHuynh.DiaChi);
                         command.Parameters.AddWithValue("@Email", phuHuynh.Email);
                         command.Parameters.AddWithValue("@SoDienThoai", phuHuynh.SoDienThoai);
@@ -201,9 +203,9 @@ namespace DAL
         }
 
         // Tìm phụ huynh theo mã
-        public static PhuHuynh GetPhuHuynhById(int maPhuHuynh)
+        public static PhuHuynh GetPhuHuynhById(int MaPhuHuynh)
         {
-            PhuHuynh phuHuynh = null;
+            PhuHuynh PhuHuynh = null;
 
             using (SqlConnection conn = ConnectionData.Connect())
             {
@@ -213,13 +215,13 @@ namespace DAL
                     using (SqlCommand command = new SqlCommand("SP_GetPhuHuynhById", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@MaPhuHuynh", maPhuHuynh);
+                        command.Parameters.AddWithValue("@MaPhuHuynh", MaPhuHuynh);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                phuHuynh = new PhuHuynh
+                                PhuHuynh = new PhuHuynh
                                 {
                                     MaPhuHuynh = reader.GetInt32(0),
                                     TenPhuHuynh = reader.GetString(1),
@@ -244,7 +246,7 @@ namespace DAL
                 }
             }
 
-            return phuHuynh;
+            return PhuHuynh;
         }
     }
 }
