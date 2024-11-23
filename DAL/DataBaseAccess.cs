@@ -6,9 +6,10 @@ using System.Collections.Generic;
 
 namespace DAL
 {
+
     public class ConnectionData
     {
-        private static readonly string connectionString = @"Data Source=LAPTOP-0GJ5N2UI\SQLEXPRESS;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
+        private static readonly string connectionString = @"Data Source=DESKTOP-MGLI1G6\HUUPHU;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
 
         public static string GetConnectionString()
         {
