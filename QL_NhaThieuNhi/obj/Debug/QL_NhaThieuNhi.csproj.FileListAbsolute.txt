@@ -264,3 +264,4 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.exe
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\x86\SqlServerSpatial160.dll
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\x64\SqlServerSpatial160.dll
+D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVienGUI.DangKyLichDay.resources

@@ -280,6 +280,12 @@
     <Compile Include="LichHoc\FrmLichHoc.Designer.cs">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienGUI\DangKyLichDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienGUI\DangKyLichDay.Designer.cs">
+      <DependentUpon>DangKyLichDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienGUI\FrmReportNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LichHoc\FrmLichHoc.resx">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienGUI\DangKyLichDay.resx">
+      <DependentUpon>DangKyLichDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGUI\FrmReportNV.resx">
       <DependentUpon>FrmReportNV.cs</DependentUpon>
