@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -178,13 +177,6 @@ namespace QL_NhaThieuNhi.HocVien
                     return;
                 }
 
-                // Kiểm tra định dạng Số điện thoại (chỉ cho phép số)
-                if (!System.Text.RegularExpressions.Regex.IsMatch(SoDienThoai, @"^\d+$"))
-                {
-                    MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
-                    return;
-                }
-
                 // Kiểm tra Hình ảnh nếu có
                 if (!string.IsNullOrEmpty(HinhAnh) && !File.Exists(HinhAnh))
                 {
@@ -207,24 +199,16 @@ namespace QL_NhaThieuNhi.HocVien
                     MaLop = MaLop
                 };
 
-                // Kiểm tra việc thêm học viên thông qua BLL
-                bool isAdded = HocVienBLL.ThemHocVien(hocVienMoi);
-                if (isAdded)
+                // Thêm học viên thông qua BLL
+                if (HocVienBLL.ThemHocVien(hocVienMoi))
                 {
                     MessageBox.Show("Thêm học viên thành công!");
                     LoadHocVien(); // Tải lại danh sách học viên
                 }
-                else
+                else 
                 {
                     MessageBox.Show("Có lỗi khi thêm học viên.");
                 }
-            }
-            catch (SqlException sqlEx)
-            {
-                // Lỗi liên quan đến SQL Server
-                MessageBox.Show("Lỗi cơ sở dữ liệu: " + sqlEx.Message);
-                // Ghi lại câu lệnh SQL và lỗi vào file log để kiểm tra chi tiết hơn.
-                LogError(sqlEx);
             }
             catch (FormatException fe)
             {
@@ -232,21 +216,7 @@ namespace QL_NhaThieuNhi.HocVien
             }
             catch (Exception ex)
             {
-                // Lỗi chung
                 MessageBox.Show("Có lỗi khi thêm học viên: " + ex.Message);
-                LogError(ex); // Ghi lại thông báo lỗi
-            }
-        }
-
-        // Phương thức ghi lỗi ra file log
-        private void LogError(Exception ex)
-        {
-            string logFilePath = @"C:\Logs\error_log.txt";
-            using (StreamWriter writer = new StreamWriter(logFilePath, true))
-            {
-                writer.WriteLine($"{DateTime.Now}: {ex.Message}");
-                writer.WriteLine(ex.StackTrace);
-                writer.WriteLine();
             }
         }
 
