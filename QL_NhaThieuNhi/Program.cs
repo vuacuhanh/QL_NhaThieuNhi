@@ -1,4 +1,5 @@
-﻿using QL_NhaThieuNhi.NhanVien;
+﻿using QL_NhaThieuNhi.HocVien;
+using QL_NhaThieuNhi.NhanVien;
 using QL_NhaThieuNhi.NhanVienGUI;
 using QL_NhaThieuNhi.PhuHuynh;
 using System;
@@ -19,7 +20,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QL_PhuHuynh());
+            Application.Run(new QL_HocVien());
         }
     }
 }

@@ -253,10 +253,8 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.For
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVienGUI.AddNhanVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmNhanVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmTaiKhoan.resources
-D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.QuanLyHocvVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Login.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Properties.Resources.resources
-D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.QuanLyPhuHuynh.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.GenerateResource.cache
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.CoreCompileInputs.cache
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaTh.29C25C05.Up2Date
@@ -266,3 +264,4 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\x86\SqlServerSpati
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\x64\SqlServerSpatial160.dll
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVienGUI.DangKyLichDay.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.PhuHuynh.QL_PhuHuynh.resources
+D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.HocVien.QL_HocVien.resources
