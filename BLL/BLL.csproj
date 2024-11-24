@@ -247,6 +247,7 @@
   <ItemGroup>
     <Compile Include="HoaDonBLL.cs" />
     <Compile Include="HocVienBLL.cs" />
+    <Compile Include="LichDayBLL.cs" />
     <Compile Include="LopHocBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="PhuHuynhBLL.cs" />

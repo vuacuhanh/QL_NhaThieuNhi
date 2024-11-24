@@ -12,6 +12,8 @@ namespace BLL
 {
     public class NhanVienBLL
     {
+
+
         public List<NhanVien> LoadNhanVien()
         {
             return NhanVienAccess.LoadNhanVien();
