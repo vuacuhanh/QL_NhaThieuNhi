@@ -11,16 +11,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using ClosedXML.Excel;
-
+using DAL;
 namespace QL_NhaThieuNhi.NhanVienGUI
 {
     public partial class DK_LichDay : Form
     {
+        private Dictionary<string, string> dictNhanVien = new Dictionary<string, string>();
+        private Dictionary<string, string> dictLop = new Dictionary<string, string>();
+        private Dictionary<string, string> dictCaHoc = new Dictionary<string, string>();
         public DK_LichDay()
         {
             InitializeComponent();
             LoadMaLop();
             LoadLichDay();
+            LoadComboBoxData();
+
             // Đăng ký sự kiện CellClick cho DataGridView LichDay
             this.dgvLichDay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichDay_CellClick);
 
@@ -31,8 +36,163 @@ namespace QL_NhaThieuNhi.NhanVienGUI
             this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
 
         }
-       
+        private void LoadComboBoxData()
+        {
+            LoadNhanVien();
+            LoadLop();
+            LoadCaHoc();
+            LoadTrangThai();
+            LoadPhongHoc();
+        }
+        // Tải danh sách nhân viên vào cmb_NhanVien
+        private void LoadNhanVien()
+        {
+            try
+            {
+                using (SqlConnection conn = ConnectionData.Connect())
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SP_LayDanhSachNhanVien", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
 
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Gán dữ liệu cho ComboBox
+                    cb_MaNhanVien.DisplayMember = "TenNhanVien";
+                    cb_MaNhanVien.ValueMember = "MaNhanVien";
+                    cb_MaNhanVien.DataSource = dt;
+
+                    // Lưu vào Dictionary
+                    dictNhanVien = dt.AsEnumerable().ToDictionary(
+                        row => row["MaNhanVien"].ToString(),
+                        row => row["TenNhanVien"].ToString()
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách nhân viên: " + ex.Message);
+            }
+        }
+
+        //load phòng học
+        private void LoadPhongHoc()
+        {
+            try
+            {
+                // Sử dụng phương thức Connect() từ lớp ConnectionData
+                using (SqlConnection conn = ConnectionData.Connect())
+                {
+                    conn.Open();
+
+                    // Tạo SqlCommand để gọi Stored Procedure
+                    SqlCommand cmd = new SqlCommand("SP_LayDanhSachPhongHoc", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Tạo SqlDataAdapter để thực thi Stored Procedure
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    // Đổ dữ liệu vào DataTable
+                    adapter.Fill(dt);
+
+                    // Gán dữ liệu cho ComboBox
+                    cb_PhongHoc.DisplayMember = "PhongHoc";
+                    cb_PhongHoc.ValueMember = "MaLichHoc";
+                    cb_PhongHoc.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách phòng học: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Tải danh sách lớp vào cb_MaLop
+        private void LoadLop()
+        {
+            try
+            {
+                // Sử dụng phương thức Connect() từ lớp ConnectionData
+                using (SqlConnection conn = ConnectionData.Connect())
+                {
+                    conn.Open();
+
+                    // Tạo SqlCommand để gọi Stored Procedure
+                    SqlCommand cmd = new SqlCommand("SP_LayDanhSachLop", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Tạo SqlDataAdapter để thực thi Stored Procedure
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    // Đổ dữ liệu vào DataTable
+                    adapter.Fill(dt);
+
+                    // Gán dữ liệu cho ComboBox
+                    cb_MaLop.DisplayMember = "TenLop";
+                    cb_MaLop.ValueMember = "MaLop";
+                    cb_MaLop.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách lớp: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // Tải danh sách ca học vào cb_CaHoc
+        private void LoadCaHoc()
+        {
+            try
+            {
+                // Sử dụng phương thức Connect() từ lớp ConnectionData
+                using (SqlConnection conn = ConnectionData.Connect())
+                {
+                    conn.Open();
+
+                    // Tạo SqlCommand để gọi Stored Procedure
+                    SqlCommand cmd = new SqlCommand("SP_LayDanhSachCaHoc", conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Tạo SqlDataAdapter để thực thi Stored Procedure
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    // Đổ dữ liệu vào DataTable
+                    adapter.Fill(dt);
+
+                    // Gán dữ liệu cho ComboBox
+                    cb_CaHoc.DisplayMember = "TietHoc";
+                    cb_CaHoc.ValueMember = "MaCaHoc";
+                    cb_CaHoc.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách ca học: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // Tải trạng thái vào cmb_TrangThai
+        private void LoadTrangThai()
+        {
+            cb_TrangThai.Items.Add("Đang dạy");
+            cb_TrangThai.Items.Add("Hoàn thành");
+            cb_TrangThai.Items.Add("Chuẩn Bị");
+        }
         public class ComboBoxItem
         {
             public string Value { get; set; }
@@ -460,5 +620,32 @@ namespace QL_NhaThieuNhi.NhanVienGUI
             }
         }
 
+        private void dgvLichDay_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvLichDay.CurrentRow != null)
+            {
+                DataGridViewRow row = dgvLichDay.CurrentRow;
+
+                // Lấy giá trị từ dòng được chọn
+                string maNhanVien = row.Cells["MaNhanVien"].Value?.ToString();
+                string maLop = row.Cells["MaLop"].Value?.ToString();
+                string maCaHoc = row.Cells["MaCaHoc"].Value?.ToString();
+
+                // Ánh xạ mã sang tên
+                string tenNhanVien = dictNhanVien.ContainsKey(maNhanVien) ? dictNhanVien[maNhanVien] : "";
+                string tenLop = dictLop.ContainsKey(maLop) ? dictLop[maLop] : "";
+                string tietHoc = dictCaHoc.ContainsKey(maCaHoc) ? dictCaHoc[maCaHoc] : "";
+
+                // Hiển thị trong TextBox
+                cb_MaNhanVien.Text = tenNhanVien;
+                cb_MaLop.Text = tenLop;
+                cb_CaHoc.Text = tietHoc;
+
+                // Nếu muốn hiển thị thêm
+                cb_PhongHoc.Text = row.Cells["PhongHoc"].Value?.ToString();
+                cb_TrangThai.Text = row.Cells["TrangThai"].Value?.ToString();
+            }
+
+        }
     }
 }
