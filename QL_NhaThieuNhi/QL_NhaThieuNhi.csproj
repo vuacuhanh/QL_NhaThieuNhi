@@ -283,12 +283,6 @@
     <Compile Include="LichHoc\FrmLichHoc.Designer.cs">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVienGUI\DangKyLichDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVienGUI\DangKyLichDay.Designer.cs">
-      <DependentUpon>DangKyLichDay.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhanVienGUI\FrmReportNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,12 +319,6 @@
     <Compile Include="TaiKhoan\FrmTaiKhoan.Designer.cs">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="HocVien\QuanLyHocvVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HocVien\QuanLyHocvVien.Designer.cs">
-      <DependentUpon>QuanLyHocvVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,12 +327,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PhuHuynh\QuanLyPhuHuynh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PhuHuynh\QuanLyPhuHuynh.Designer.cs">
-      <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
-    </Compile>
     <Compile Include="TrangChu\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,9 +348,6 @@
     <EmbeddedResource Include="LichHoc\FrmLichHoc.resx">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienGUI\DangKyLichDay.resx">
-      <DependentUpon>DangKyLichDay.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGUI\FrmReportNV.resx">
       <DependentUpon>FrmReportNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,9 +367,6 @@
     <EmbeddedResource Include="TaiKhoan\FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HocVien\QuanLyHocvVien.resx">
-      <DependentUpon>QuanLyHocvVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,9 +380,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="PhuHuynh\QuanLyPhuHuynh.resx">
-      <DependentUpon>QuanLyPhuHuynh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TrangChu\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,13 +444,16 @@
     <Content Include="icon\refresh.png" />
     <None Include="icon\visible.png" />
     <Content Include="img\hinh1.jpg" />
-    <None Include="RememberMK.json" />
     <Content Include="img\hv\hinhA.jpg" />
     <Content Include="img\hv\hinhB.jpg" />
     <Content Include="img\hv\hinhC.jpg" />
     <Content Include="img\hv\hinhD.jpg" />
     <Content Include="img\hv\hinhE.jpg" />
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HocVien\" />
+    <Folder Include="PhuHuynh\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
