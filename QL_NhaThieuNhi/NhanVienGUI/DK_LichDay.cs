@@ -38,11 +38,11 @@ namespace QL_NhaThieuNhi.NhanVienGUI
         }
         private void LoadComboBoxData()
         {
-            LoadNhanVien();
-            LoadLop();
-            LoadCaHoc();
-            LoadTrangThai();
-            LoadPhongHoc();
+           // LoadNhanVien();
+           // LoadLop();
+           // LoadCaHoc();
+           // LoadTrangThai();
+           // LoadPhongHoc();
         }
         // Tải danh sách nhân viên vào cmb_NhanVien
         private void LoadNhanVien()
