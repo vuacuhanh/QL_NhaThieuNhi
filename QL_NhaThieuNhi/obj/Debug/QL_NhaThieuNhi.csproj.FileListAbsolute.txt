@@ -18,7 +18,6 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Qua
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.TrangChu.UsersForm.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.GenerateResource.cache
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.CoreCompileInputs.cache
-D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.HocVien.QuanLyHocvVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\x86\SqlServerSpatial160.dll
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\x64\SqlServerSpatial160.dll
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\bin\Debug\QL_NhaThieuNhi.exe.config

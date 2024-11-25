@@ -331,10 +331,6 @@
     <Compile Include="TaiKhoan\FrmTaiKhoan.Designer.cs">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="HocVien\QuanLyHocvVien.cs" />
-    <Compile Include="HocVien\QuanLyHocvVien.Designer.cs">
-      <DependentUpon>QuanLyHocvVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,9 +390,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan\FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HocVien\QuanLyHocvVien.resx">
-      <DependentUpon>QuanLyHocvVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
