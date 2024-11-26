@@ -100,5 +100,25 @@ namespace DAL
                 }
             }
         }
+        // Phương thức đếm số lượng tài khoản
+        public int CountTaiKhoan()
+        {
+            using (SqlConnection conn = ConnectionData.Connect())
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM TaiKhoan", conn))
+                    {
+                        return (int)cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi đếm tài khoản: " + ex.Message);
+                    return 0;
+                }
+            }
+        }
     }
 }

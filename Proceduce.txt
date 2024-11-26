@@ -1,0 +1,164 @@
+--Phương thức cho tài khoản
+DROP PROCEDURE SP_CheckDangNhap;
+
+CREATE PROCEDURE SP_CheckDangNhap
+    @TenDangNhap NVARCHAR(100), -- Tham số đầu vào: tên đăng nhập
+    @MatKhau NVARCHAR(100)      -- Tham số đầu vào: mật khẩu
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Biến lưu trữ kết quả
+        DECLARE @TenQuyen NVARCHAR(100);
+
+        -- Kiểm tra thông tin tài khoản và lấy thông tin quyền
+        SELECT 
+            @TenQuyen = q.TenQuyen
+        FROM 
+            TaiKhoan tk
+        INNER JOIN 
+            Quyen q ON tk.MaQuyen = q.MaQuyen
+        WHERE 
+            tk.TenDangNhap = @TenDangNhap 
+            AND tk.MatKhau = @MatKhau;
+
+        -- Nếu không tìm thấy tài khoản hợp lệ
+        IF @TenQuyen IS NULL
+        BEGIN
+            -- Trả về mã lỗi -1 nếu đăng nhập thất bại
+            SELECT 'Đăng nhập thất bại: Tên đăng nhập hoặc mật khẩu không đúng' AS ThongBao, -1 AS MaQuyen;
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+
+        -- Trả về kết quả nếu đăng nhập thành công
+        SELECT 'Đăng nhập thành công' AS ThongBao, @TenQuyen AS Quyen;
+
+        -- Kết thúc giao dịch thành công
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        -- Xử lý lỗi nếu có vấn đề trong quá trình thực hiện
+        ROLLBACK TRANSACTION;
+        SELECT ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END;
+
+EXEC SP_CheckDangNhap @TenDangNhap = 'admin', @MatKhau = 'admin123';
+---Load tài khoản
+CREATE PROCEDURE SP_LoadTaiKhoan
+AS
+BEGIN
+    SELECT * FROM TaiKhoan
+END
+-- Thêm Tài khoản
+CREATE PROCEDURE SP_AddTaiKhoan
+    @TenDangNhap NVARCHAR(50),
+    @MatKhau NVARCHAR(50),
+    @MaQuyen INT
+AS
+BEGIN
+    INSERT INTO TaiKhoan (TenDangNhap, MatKhau, MaQuyen)
+    VALUES (@TenDangNhap, @MatKhau, @MaQuyen);
+END;
+GO
+--Xóa tài khoản
+CREATE PROCEDURE SP_DeleteTaiKhoan
+    @MaTaiKhoan INT
+AS
+BEGIN
+    DELETE FROM TaiKhoan
+    WHERE MaTaiKhoan = @MaTaiKhoan;
+END;
+GO
+-- Sửa tài khoản
+CREATE PROCEDURE SP_EditTaiKhoan
+    @MaTaiKhoan INT,
+    @TenDangNhap NVARCHAR(50),
+    @MatKhau NVARCHAR(50),
+    @MaQuyen INT
+AS
+BEGIN
+    UPDATE TaiKhoan
+    SET TenDangNhap = @TenDangNhap,
+        MatKhau = @MatKhau,
+        MaQuyen = @MaQuyen
+    WHERE MaTaiKhoan = @MaTaiKhoan;
+END;
+GO
+--Phương thức cho nhân viên
+--
+-- load nhân viên
+CREATE PROCEDURE SP_LoadNhanVien
+AS
+BEGIN
+    SELECT MaNhanVien, TenNhanVien, HinhAnh, NgaySinh, GioiTinh, SoDienThoai, 
+           ChucVu, ChuyenMon, TrangThai, Email, Luong, MaTaiKhoan, MaPhongBan
+    FROM NhanVien;
+END
+GO
+-- Add nhân viên
+CREATE PROCEDURE SP_ThemNhanVien
+    @TenNhanVien NVARCHAR(100),
+    @HinhAnh NVARCHAR(255),
+    @NgaySinh DATE,
+    @GioiTinh NVARCHAR(10),
+    @SoDienThoai NVARCHAR(20),
+    @ChucVu NVARCHAR(100),
+    @ChuyenMon NVARCHAR(100),
+    @TrangThai NVARCHAR(50),
+    @Email NVARCHAR(255),
+    @Luong DECIMAL(18, 2),
+    @MaTaiKhoan INT = NULL,
+    @MaPhongBan INT
+AS
+BEGIN
+    INSERT INTO NhanVien (TenNhanVien, HinhAnh, NgaySinh, GioiTinh, SoDienThoai, ChucVu, ChuyenMon, TrangThai, Email, Luong, MaTaiKhoan, MaPhongBan)
+    VALUES (@TenNhanVien, @HinhAnh, @NgaySinh, @GioiTinh, @SoDienThoai, @ChucVu, @ChuyenMon, @TrangThai, @Email, @Luong, @MaTaiKhoan, @MaPhongBan)
+END
+GO
+
+--------delete nhân viên
+CREATE PROCEDURE SP_DeleteNhanVien
+    @MaNhanVien INT
+AS
+BEGIN
+    DELETE FROM NhanVien
+    WHERE MaNhanVien = @MaNhanVien;
+END
+GO
+---Edit nhân viên
+-- Procedure for editing an existing employee
+CREATE PROCEDURE SP_EditNhanVien
+    @MaNhanVien INT,
+    @TenNhanVien NVARCHAR(50),
+    @HinhAnh NVARCHAR(255),
+    @NgaySinh DATE,
+    @GioiTinh NVARCHAR(10),
+    @SoDienThoai NVARCHAR(15),
+    @ChucVu NVARCHAR(50),
+    @ChuyenMon NVARCHAR(50),
+    @TrangThai NVARCHAR(20),
+    @Email NVARCHAR(100),
+    @Luong DECIMAL(18, 2),
+    @MaTaiKhoan INT,
+    @MaPhongBan INT
+AS
+BEGIN
+    UPDATE NhanVien
+    SET TenNhanVien = @TenNhanVien,
+        HinhAnh = @HinhAnh,
+        NgaySinh = @NgaySinh,
+        GioiTinh = @GioiTinh,
+        SoDienThoai = @SoDienThoai,
+        ChucVu = @ChucVu,
+        ChuyenMon = @ChuyenMon,
+        TrangThai = @TrangThai,
+        Email = @Email,
+        Luong = @Luong,
+        MaTaiKhoan = @MaTaiKhoan,
+        MaPhongBan = @MaPhongBan
+    WHERE MaNhanVien = @MaNhanVien;
+END
+GO

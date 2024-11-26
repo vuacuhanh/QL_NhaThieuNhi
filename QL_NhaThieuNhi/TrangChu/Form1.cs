@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QL_NhaThieuNhi.FLopHoc;
+using QL_NhaThieuNhi.TrangChu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,35 +44,6 @@ namespace QL_NhaThieuNhi
             openChildForm(new FLopHoc.FrmLopHoc());
         }
 
-        private void btn_QLTaiKhoan_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FrmTaiKhoan());
-        }
-
-        private void btn_QLNhanVien_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FrmNhanVien());
-        }
-
-        private void btn_QLHocVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_ThongKe_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Khac_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FHoaDon.FrmHoaDon());
-        }
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
@@ -80,6 +53,31 @@ namespace QL_NhaThieuNhi
                Application.Exit();
             }
             
+        }
+
+        private void btn_QLTaiLichHoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_QLLopHoc_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new FrmLopHoc());
+        }
+
+        private void btn_CTNK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHocBong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Khac_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Menu2());
         }
     }
 }

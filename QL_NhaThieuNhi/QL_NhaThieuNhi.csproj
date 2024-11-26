@@ -277,6 +277,12 @@
     <Compile Include="FLopHoc\FrmLopHoc.Designer.cs">
       <DependentUpon>FrmLopHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="HocVien\QL_HocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocVien\QL_HocVien.Designer.cs">
+      <DependentUpon>QL_HocVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="LichHoc\FrmLichHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,12 @@
     </Compile>
     <Compile Include="TaiKhoan\AddTaiKhoan.Designer.cs">
       <DependentUpon>AddTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeGUI\FrmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKeGUI\FrmThongKe.Designer.cs">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="TrangChu\Form1.cs">
       <SubType>Form</SubType>
@@ -327,6 +339,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrangChu\Menu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu\Menu2.Designer.cs">
+      <DependentUpon>Menu2.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +363,9 @@
     <EmbeddedResource Include="FLopHoc\FrmLopHoc.resx">
       <DependentUpon>FrmLopHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HocVien\QL_HocVien.resx">
+      <DependentUpon>QL_HocVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LichHoc\FrmLichHoc.resx">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +375,9 @@
     <EmbeddedResource Include="ReportNV.rdlc" />
     <EmbeddedResource Include="TaiKhoan\AddTaiKhoan.resx">
       <DependentUpon>AddTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeGUI\FrmThongKe.resx">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -380,6 +404,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TrangChu\Menu2.resx">
+      <DependentUpon>Menu2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrangChu\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +468,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icon\close-eye.png" />
+    <None Include="icon\back.png" />
     <Content Include="icon\refresh.png" />
     <None Include="icon\visible.png" />
     <Content Include="img\hinh1.jpg" />
@@ -452,7 +480,7 @@
     <None Include="Resources\refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="HocVien\" />
+    <Folder Include="CaHocGUI\" />
     <Folder Include="PhuHuynh\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

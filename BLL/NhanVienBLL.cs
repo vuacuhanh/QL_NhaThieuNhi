@@ -81,5 +81,18 @@ namespace BLL
         {
             return NhanVienAccess.GetAllNhanVien(); 
         }
+        public int CountNhanVien()
+        {
+            NhanVienAccess nvAccess = new NhanVienAccess();
+            try
+            {
+                return nvAccess.CountNhanVien();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi đếm tài khoản: " + ex.Message);
+                return 0;
+            }
+        }
     }
 }
