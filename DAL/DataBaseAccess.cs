@@ -9,7 +9,7 @@ namespace DAL
 
     public class ConnectionData
     {
-        private static readonly string connectionString = @"Data Source=DESKTOP-MGLI1G6\HUUPHU;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
+        private static readonly string connectionString = @"Data Source=DESKTOP-FGIC7BA\SQLEXPRESSQUAN;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True";
 
         public static string GetConnectionString()
         {

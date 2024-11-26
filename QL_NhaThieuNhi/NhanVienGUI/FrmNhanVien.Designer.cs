@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_SoLuongNV = new System.Windows.Forms.Label();
             this.txtTimKiemNV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btn_print = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_addNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.data_NhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,10 +48,14 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_SortBy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_import = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btn_print = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_addNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_NhanVien)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -84,60 +84,17 @@
             this.label2.Text = "QUẢN LÝ NHÂN VIÊN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_delete
+            // lb_SoLuongNV
             // 
-            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_delete.BorderRadius = 20;
-            this.btn_delete.BorderThickness = 1;
-            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_delete.FillColor = System.Drawing.Color.Transparent;
-            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_delete.ForeColor = System.Drawing.Color.Indigo;
-            this.btn_delete.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
-            this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_delete.ImageSize = new System.Drawing.Size(23, 23);
-            this.btn_delete.Location = new System.Drawing.Point(1145, 763);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(147, 45);
-            this.btn_delete.TabIndex = 11;
-            this.btn_delete.Text = "DELETE";
-            this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton1.BorderThickness = 1;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = global::QL_NhaThieuNhi.Properties.Resources.search;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(718, 18);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(45, 45);
-            this.guna2CircleButton1.TabIndex = 7;
-            this.guna2CircleButton1.TextFormatNoPrefix = true;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(43, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 74);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "40";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_SoLuongNV.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoLuongNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lb_SoLuongNV.Location = new System.Drawing.Point(43, 3);
+            this.lb_SoLuongNV.Name = "lb_SoLuongNV";
+            this.lb_SoLuongNV.Size = new System.Drawing.Size(111, 74);
+            this.lb_SoLuongNV.TabIndex = 10;
+            this.lb_SoLuongNV.Text = "40";
+            this.lb_SoLuongNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_SoLuongNV.Click += new System.EventHandler(this.lb_SoLuongNV_Click);
             // 
             // txtTimKiemNV
             // 
@@ -167,66 +124,22 @@
             this.txtTimKiemNV.TabIndex = 8;
             this.txtTimKiemNV.TextChanged += new System.EventHandler(this.txtTimKiemNV_TextChanged);
             // 
-            // btn_print
-            // 
-            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_print.BorderRadius = 10;
-            this.btn_print.BorderThickness = 1;
-            this.btn_print.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_print.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_print.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_print.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_print.FillColor = System.Drawing.Color.Transparent;
-            this.btn_print.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btn_print.ForeColor = System.Drawing.Color.Black;
-            this.btn_print.Image = global::QL_NhaThieuNhi.Properties.Resources.printing;
-            this.btn_print.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_print.Location = new System.Drawing.Point(1418, 18);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(62, 45);
-            this.btn_print.TabIndex = 6;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
-            // btn_addNhanVien
-            // 
-            this.btn_addNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_addNhanVien.BorderRadius = 20;
-            this.btn_addNhanVien.BorderThickness = 1;
-            this.btn_addNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_addNhanVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addNhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_addNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_addNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_addNhanVien.FillColor = System.Drawing.Color.Transparent;
-            this.btn_addNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_addNhanVien.ForeColor = System.Drawing.Color.Indigo;
-            this.btn_addNhanVien.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
-            this.btn_addNhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_addNhanVien.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_addNhanVien.Location = new System.Drawing.Point(998, 763);
-            this.btn_addNhanVien.Name = "btn_addNhanVien";
-            this.btn_addNhanVien.Size = new System.Drawing.Size(112, 45);
-            this.btn_addNhanVien.TabIndex = 2;
-            this.btn_addNhanVien.Text = "Add";
-            this.btn_addNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_addNhanVien.Click += new System.EventHandler(this.btn_addNhanVien_Click);
-            // 
             // data_NhanVien
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.data_NhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.data_NhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.data_NhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data_NhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_NhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_NhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data_NhanVien.ColumnHeadersHeight = 4;
             this.data_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data_NhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -241,14 +154,14 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_NhanVien.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_NhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_NhanVien.GridColor = System.Drawing.Color.White;
             this.data_NhanVien.Location = new System.Drawing.Point(12, 181);
             this.data_NhanVien.Name = "data_NhanVien";
@@ -377,26 +290,6 @@
             this.guna2Button1.Text = "EDIT";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // btn_import
-            // 
-            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_import.BorderRadius = 10;
-            this.btn_import.BorderThickness = 1;
-            this.btn_import.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_import.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_import.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_import.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_import.FillColor = System.Drawing.Color.Transparent;
-            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btn_import.ForeColor = System.Drawing.Color.Black;
-            this.btn_import.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
-            this.btn_import.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_import.Location = new System.Drawing.Point(1333, 18);
-            this.btn_import.Name = "btn_import";
-            this.btn_import.Size = new System.Drawing.Size(62, 45);
-            this.btn_import.TabIndex = 11;
-            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.label3);
@@ -404,7 +297,7 @@
             this.guna2Panel2.Controls.Add(this.btn_import);
             this.guna2Panel2.Controls.Add(this.txtTimKiemNV);
             this.guna2Panel2.Controls.Add(this.guna2CircleButton1);
-            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.lb_SoLuongNV);
             this.guna2Panel2.Controls.Add(this.btn_print);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 85);
@@ -440,6 +333,114 @@
             this.cb_SortBy.Size = new System.Drawing.Size(329, 36);
             this.cb_SortBy.TabIndex = 12;
             // 
+            // btn_import
+            // 
+            this.btn_import.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_import.BorderRadius = 10;
+            this.btn_import.BorderThickness = 1;
+            this.btn_import.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_import.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_import.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_import.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_import.FillColor = System.Drawing.Color.Transparent;
+            this.btn_import.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_import.ForeColor = System.Drawing.Color.Black;
+            this.btn_import.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
+            this.btn_import.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_import.Location = new System.Drawing.Point(1333, 18);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.Size = new System.Drawing.Size(62, 45);
+            this.btn_import.TabIndex = 11;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CircleButton1.BorderThickness = 1;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Image = global::QL_NhaThieuNhi.Properties.Resources.search;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(718, 18);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(45, 45);
+            this.guna2CircleButton1.TabIndex = 7;
+            this.guna2CircleButton1.TextFormatNoPrefix = true;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            // 
+            // btn_print
+            // 
+            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_print.BorderRadius = 10;
+            this.btn_print.BorderThickness = 1;
+            this.btn_print.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_print.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_print.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_print.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_print.FillColor = System.Drawing.Color.Transparent;
+            this.btn_print.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_print.ForeColor = System.Drawing.Color.Black;
+            this.btn_print.Image = global::QL_NhaThieuNhi.Properties.Resources.printing;
+            this.btn_print.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_print.Location = new System.Drawing.Point(1418, 18);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(62, 45);
+            this.btn_print.TabIndex = 6;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_delete.BorderRadius = 20;
+            this.btn_delete.BorderThickness = 1;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_delete.FillColor = System.Drawing.Color.Transparent;
+            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_delete.ForeColor = System.Drawing.Color.Indigo;
+            this.btn_delete.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
+            this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_delete.ImageSize = new System.Drawing.Size(23, 23);
+            this.btn_delete.Location = new System.Drawing.Point(1145, 763);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(147, 45);
+            this.btn_delete.TabIndex = 11;
+            this.btn_delete.Text = "DELETE";
+            this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_addNhanVien
+            // 
+            this.btn_addNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_addNhanVien.BorderRadius = 20;
+            this.btn_addNhanVien.BorderThickness = 1;
+            this.btn_addNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_addNhanVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_addNhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_addNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_addNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_addNhanVien.FillColor = System.Drawing.Color.Transparent;
+            this.btn_addNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_addNhanVien.ForeColor = System.Drawing.Color.Indigo;
+            this.btn_addNhanVien.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
+            this.btn_addNhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_addNhanVien.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_addNhanVien.Location = new System.Drawing.Point(998, 763);
+            this.btn_addNhanVien.Name = "btn_addNhanVien";
+            this.btn_addNhanVien.Size = new System.Drawing.Size(112, 45);
+            this.btn_addNhanVien.TabIndex = 2;
+            this.btn_addNhanVien.Text = "Add";
+            this.btn_addNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_addNhanVien.Click += new System.EventHandler(this.btn_addNhanVien_Click);
+            // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -454,6 +455,7 @@
             this.Controls.Add(this.btn_addNhanVien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNhanVien";
             this.Load += new System.EventHandler(this.FrmNhanVien_Load);
             this.guna2Panel1.ResumeLayout(false);
@@ -482,7 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_SoLuongNV;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;

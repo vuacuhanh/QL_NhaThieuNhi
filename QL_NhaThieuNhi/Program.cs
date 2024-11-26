@@ -19,7 +19,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QL_HocVien());
+            Application.Run(new Login());
         }
     }
 }

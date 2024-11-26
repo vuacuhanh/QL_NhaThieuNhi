@@ -29,6 +29,7 @@ namespace QL_NhaThieuNhi
         private void FrmNhanVien_Load(object sender, EventArgs e)
         {
             LoadNhanVienData();
+            UpdateNVCount();
         }
         private void LoadNhanVienData()
         {
@@ -104,7 +105,6 @@ namespace QL_NhaThieuNhi
         {
             try
             {
-                // Lấy danh sách nhân viên từ BLL
                 List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.GetAllNhanVien(); // Gọi từ đối tượng nhanVienBLL
 
                 // Kiểm tra danh sách nhân viên có dữ liệu hay không
@@ -170,6 +170,16 @@ namespace QL_NhaThieuNhi
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lb_SoLuongNV_Click(object sender, EventArgs e)
+        {
+            UpdateNVCount();
+        }
+        private void UpdateNVCount()
+        {
+            int soLuongNV = nhanVienBLL.CountNhanVien();
+            lb_SoLuongNV.Text = $"{soLuongNV}";
         }
     }
 }

@@ -75,5 +75,18 @@ namespace BLL
                 return false;
             }
         }
+        public int CountTaiKhoan()
+        {
+            try
+            {
+                return tkAccess.CountTaiKhoan(); 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi đếm tài khoản: " + ex.Message);
+                return 0;
+            }
+        }
+
     }
 }

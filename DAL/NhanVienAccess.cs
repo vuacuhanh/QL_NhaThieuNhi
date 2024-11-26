@@ -175,5 +175,25 @@ namespace DAL
                 return context.NhanViens.ToList();
             }
         }
+
+        public int CountNhanVien()
+        {
+            using (SqlConnection conn = ConnectionData.Connect())
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM NhanVien", conn))
+                    {
+                        return (int)cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi đếm nhân viên: " + ex.Message);
+                    return 0;
+                }
+            }
+        }
     }
 }

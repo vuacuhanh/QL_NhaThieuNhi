@@ -36,6 +36,7 @@ namespace QL_NhaThieuNhi
             LoadTaiKhoanData();
             sort_By();
             Quyen();
+            UpdateTaiKhoanCount();
         }
 
         public void sort_By()
@@ -213,6 +214,21 @@ namespace QL_NhaThieuNhi
                 txt_Password.Text = row.Cells["MatKhau"].Value.ToString();
                 cbQuyen.SelectedValue = row.Cells["MaQuyen"].Value;
             }
+        }
+
+        private void btn_importTK_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void UpdateTaiKhoanCount()
+        { 
+            int soLuongTaiKhoan = taiKhoanBLL.CountTaiKhoan(); 
+            lb_SoLuongTK.Text = $"{soLuongTaiKhoan}"; 
+        }
+
+        private void lb_SoLuongTK_Click(object sender, EventArgs e)
+        {
+            UpdateTaiKhoanCount();
         }
     }
 }
