@@ -58,7 +58,9 @@ namespace QL_NhaThieuNhi.TrangChu
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
             FrmHoaDon frmHoaDon = new FrmHoaDon();
-            frmHoaDon.Show();
+            frmHoaDon.FormClosed += (s, args) => this.Show(); 
+            this.Hide(); // Ẩn Menu2
+            frmHoaDon.Show(); // Mở FrmHoaDon
         }
 
         private void btn_THONGKE_Click(object sender, EventArgs e)

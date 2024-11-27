@@ -110,7 +110,7 @@ namespace QL_NhaThieuNhi
 
             if (isPasswordVisible)
             {
-                txtPass.PasswordChar = '$';
+                txtPass.PasswordChar = '*';
                 btn_eye.Image = Properties.Resources.close_eye;
                 isPasswordVisible = false;
                 
