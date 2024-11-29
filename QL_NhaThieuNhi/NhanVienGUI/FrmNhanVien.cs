@@ -18,6 +18,7 @@ namespace QL_NhaThieuNhi
 {
     public partial class FrmNhanVien : Form
     {
+        private DTO.NhanVien selectedNhanVien;
         private NhanVienBLL nhanVienBLL;
 
         public FrmNhanVien()
@@ -30,12 +31,76 @@ namespace QL_NhaThieuNhi
         {
             LoadNhanVienData();
             UpdateNVCount();
+            data_NhanVien.CellFormatting += data_NhanVien_CellFormatting;
         }
         private void LoadNhanVienData()
         {
             List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.LoadNhanVien();
+
+            // Thay đổi kích thước hình ảnh ngay khi tải dữ liệu
+            foreach (var nhanVien in danhSachNhanVien)
+            {
+                if (nhanVien.HinhAnh != null)
+                {
+                    Image originalImage = ByteArrayToImage(nhanVien.HinhAnh);
+                    Image resizedImage = ResizeImage(originalImage, 100, 130); // Thay đổi kích thước theo yêu cầu của bạn
+                    nhanVien.HinhAnh = ImageToByteArray(resizedImage); // Lưu hình ảnh đã thay đổi kích thước
+                }
+            }
+
+            data_NhanVien.DataSource = null; // Xóa dữ liệu cũ trong DataGridView
             data_NhanVien.DataSource = danhSachNhanVien;
         }
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png); 
+                return ms.ToArray(); 
+            }
+        }
+
+        private Image ResizeImage(Image image, int width, int height)
+        {
+            // Tính toán tỷ lệ khung hình của hình ảnh gốc
+            float aspectRatio = (float)image.Width / image.Height;
+
+            // Tính toán kích thước mới
+            int newWidth, newHeight;
+
+            if (image.Width > image.Height)
+            {
+                newWidth = width;
+                newHeight = (int)(width / aspectRatio);
+            }
+            else
+            {
+                newHeight = height;
+                newWidth = (int)(height * aspectRatio);
+            }
+
+            // Tạo một đối tượng Bitmap mới với kích thước đã tính toán
+            Bitmap resizedBitmap = new Bitmap(newWidth, newHeight);
+
+            // Vẽ hình ảnh đã thay đổi kích thước vào Bitmap mới
+            using (Graphics g = Graphics.FromImage(resizedBitmap))
+            {
+                g.Clear(Color.White);  // Có thể thay đổi màu nền nếu cần
+                g.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+
+            return resizedBitmap;
+        }
+
 
         private void btn_addNhanVien_Click(object sender, EventArgs e)
         {
@@ -73,10 +138,6 @@ namespace QL_NhaThieuNhi
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void btn_import_Click(object sender, EventArgs e)
         {
@@ -181,5 +242,69 @@ namespace QL_NhaThieuNhi
             int soLuongNV = nhanVienBLL.CountNhanVien();
             lb_SoLuongNV.Text = $"{soLuongNV}";
         }
+
+        private void data_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void data_NhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (data_NhanVien.Columns[e.ColumnIndex].Name == "HinhAnh" && e.Value is byte[])
+            {
+                byte[] imageData = (byte[])e.Value;
+
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image img = Image.FromStream(ms);
+                    e.Value = img;
+                }
+            }
+        }
+
+
+
+
+
+
+        private void btn_seen_Click(object sender, EventArgs e)
+        {
+            if (selectedNhanVien != null)
+            {
+                AddNhanVien addNhanVien = new AddNhanVien(selectedNhanVien);
+                addNhanVien.ShowDialog();
+                LoadNhanVienData();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên từ bảng.");
+            }
+        }
+
+        private void data_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = data_NhanVien.Rows[e.RowIndex];
+                selectedNhanVien = row.DataBoundItem as DTO.NhanVien;
+            }
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            if (selectedNhanVien != null)
+            {
+                AddNhanVien addNhanVien = new AddNhanVien(selectedNhanVien); // Truyền thông tin nhân viên được chọn vào form chỉnh sửa
+                if (addNhanVien.ShowDialog() == DialogResult.OK)
+                {
+                    LoadNhanVienData();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên từ bảng để chỉnh sửa.");
+            }
+        }
+
     }
 }

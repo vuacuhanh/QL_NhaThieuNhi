@@ -28,13 +28,13 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            string hinhAnhPath = !reader.IsDBNull(2) ? reader.GetString(2) : null;
+                            byte[] hinhAnhBytes = !reader.IsDBNull(2) ? (byte[])reader["HinhAnh"] : null;
 
                             NhanVien nv = new NhanVien
                             {
                                 MaNhanVien = reader.GetInt32(0),
                                 TenNhanVien = reader.GetString(1),
-                                HinhAnh = hinhAnhPath, 
+                                HinhAnh = hinhAnhBytes,
                                 NgaySinh = reader.GetDateTime(3),
                                 GioiTinh = reader.GetString(4),
                                 SoDienThoai = reader.GetString(5),
@@ -42,18 +42,10 @@ namespace DAL
                                 ChuyenMon = reader.GetString(7),
                                 TrangThai = reader.GetString(8),
                                 Email = reader.GetString(9),
-                                Luong = reader.GetDecimal(10)
+                                Luong = reader.GetDecimal(10),
+                                MaTaiKhoan = reader.GetInt32(11),
+                                MaPhongBan = reader.GetInt32(12)
                             };
-
-                            // Kiểm tra nếu đường dẫn ảnh hợp lệ, thêm ảnh vào nếu cần
-                            if (!string.IsNullOrEmpty(hinhAnhPath) && File.Exists(hinhAnhPath))
-                            {
-                                nv.HinhAnh = hinhAnhPath;
-                            }
-                            else
-                            {
-                                nv.HinhAnh = null; 
-                            }
 
                             danhSachNhanVien.Add(nv);
                         }
@@ -62,33 +54,43 @@ namespace DAL
             }
             return danhSachNhanVien;
         }
-   
+
 
         public static void AddNhanVien(NhanVien nv)
         {
             using (SqlConnection conn = ConnectionData.Connect())
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("SP_AddNhanVien", conn))
+                using (SqlCommand cmd = new SqlCommand("SP_ThemNhanVien", conn))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@MaNhanVien", nv.MaNhanVien);
-                    cmd.Parameters.AddWithValue("@TenNhanVien", nv.TenNhanVien);
-                    cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh);
-                    cmd.Parameters.AddWithValue("@NgaySinh", nv.NgaySinh);
-                    cmd.Parameters.AddWithValue("@GioiTinh", nv.GioiTinh);
-                    cmd.Parameters.AddWithValue("@SoDienThoai", nv.SoDienThoai);
-                    cmd.Parameters.AddWithValue("@ChucVu", nv.ChucVu);
-                    cmd.Parameters.AddWithValue("@ChuyenMon", nv.ChuyenMon);
-                    cmd.Parameters.AddWithValue("@TrangThai", nv.TrangThai);
-                    cmd.Parameters.AddWithValue("@Email", nv.Email);
-                    cmd.Parameters.AddWithValue("@Luong", nv.Luong);
-                    cmd.Parameters.AddWithValue("@MaTaiKhoan", nv.MaTaiKhoan);
-                    cmd.Parameters.AddWithValue("@MaPhongBan", nv.MaPhongBan);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@MaNhanVien", nv.MaNhanVien);
+                        cmd.Parameters.AddWithValue("@TenNhanVien", nv.TenNhanVien);
+                        cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@NgaySinh", nv.NgaySinh);
+                        cmd.Parameters.AddWithValue("@GioiTinh", nv.GioiTinh);
+                        cmd.Parameters.AddWithValue("@SoDienThoai", nv.SoDienThoai);
+                        cmd.Parameters.AddWithValue("@ChucVu", nv.ChucVu);
+                        cmd.Parameters.AddWithValue("@ChuyenMon", nv.ChuyenMon);
+                        cmd.Parameters.AddWithValue("@TrangThai", nv.TrangThai);
+                        cmd.Parameters.AddWithValue("@Email", nv.Email);
+                        cmd.Parameters.AddWithValue("@Luong", nv.Luong);
+                        cmd.Parameters.AddWithValue("@MaTaiKhoan", nv.MaTaiKhoan);
+                        cmd.Parameters.AddWithValue("@MaPhongBan", nv.MaPhongBan);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Lỗi khi thêm nhân viên: " + ex.Message);
+                    }
                 }
             }
         }
+
+
         public static void DeleteNhanVien(int maNhanVien)
         {
             using (SqlConnection conn = ConnectionData.Connect())
@@ -102,6 +104,7 @@ namespace DAL
                 }
             }
         }
+
         public static void EditNhanVien(NhanVien nv)
         {
             using (SqlConnection conn = ConnectionData.Connect())
@@ -112,7 +115,7 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MaNhanVien", nv.MaNhanVien);
                     cmd.Parameters.AddWithValue("@TenNhanVien", nv.TenNhanVien);
-                    cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh);
+                    cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@NgaySinh", nv.NgaySinh);
                     cmd.Parameters.AddWithValue("@GioiTinh", nv.GioiTinh);
                     cmd.Parameters.AddWithValue("@SoDienThoai", nv.SoDienThoai);
@@ -144,7 +147,7 @@ namespace DAL
                         {
                             MaNhanVien = int.Parse(row.Cell(1).GetValue<string>()),
                             TenNhanVien = row.Cell(2).GetValue<string>(),
-                            HinhAnh = row.Cell(3).GetValue<string>(),
+                            HinhAnh = File.Exists(row.Cell(3).GetValue<string>()) ? File.ReadAllBytes(row.Cell(3).GetValue<string>()) : null,
                             NgaySinh = row.Cell(4).GetValue<DateTime>(),
                             GioiTinh = row.Cell(5).GetValue<string>(),
                             SoDienThoai = row.Cell(6).GetValue<string>(),
@@ -194,6 +197,45 @@ namespace DAL
                     return 0;
                 }
             }
+        }
+
+        public static List<NhanVien> FilterNhanVien(string gioiTinh, string chucVu, int? maPhongBan)
+        {
+            List<NhanVien> danhSachNhanVien = new List<NhanVien>();
+            using (SqlConnection conn = ConnectionData.Connect())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("SP_FilterNhanVien", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ChucVu", chucVu ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@MaPhongBan", maPhongBan ?? (object)DBNull.Value);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            NhanVien nv = new NhanVien
+                            {
+                                MaNhanVien = reader.GetInt32(0),
+                                TenNhanVien = reader.GetString(1),
+                                HinhAnh = reader.IsDBNull(2) ? null : (byte[])reader["HinhAnh"],
+                                NgaySinh = reader.GetDateTime(3),
+                                GioiTinh = reader.GetString(4),
+                                SoDienThoai = reader.GetString(5),
+                                ChucVu = reader.GetString(6),
+                                ChuyenMon = reader.GetString(7),
+                                TrangThai = reader.GetString(8),
+                                Email = reader.GetString(9),
+                                Luong = reader.GetDecimal(10)
+                            };
+                            danhSachNhanVien.Add(nv);
+                        }
+                    }
+                }
+            }
+            return danhSachNhanVien;
         }
     }
 }

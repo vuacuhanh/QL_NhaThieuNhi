@@ -8,7 +8,7 @@ namespace DTO
     public partial class NTNContext : DbContext
     {
         public NTNContext()
-            : base("name=NTNContext1")
+            : base("name=NTNContext")
         {
         }
 
@@ -52,30 +52,7 @@ namespace DTO
                 .WithRequired(e => e.LopHoc)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.ChuongTrinhNangKhieux)
-                .WithOptional(e => e.NhanVien)
-                .HasForeignKey(e => e.MaGiaoVien);
-
-            modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.HoatDongNgoaiKhoas)
-                .WithOptional(e => e.NhanVien)
-                .HasForeignKey(e => e.MaGiaoVien);
-
-            modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.LichBaoTris)
-                .WithOptional(e => e.NhanVien)
-                .HasForeignKey(e => e.MaNhanVienLapLich);
-
-            modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.LichBaoTris1)
-                .WithOptional(e => e.NhanVien1)
-                .HasForeignKey(e => e.MaNhanVienBaoTri);
-
-            modelBuilder.Entity<NhanVien>()
-                .HasMany(e => e.LichDays)
-                .WithRequired(e => e.NhanVien)
-                .WillCascadeOnDelete(false);
+          
         }
     }
 }
