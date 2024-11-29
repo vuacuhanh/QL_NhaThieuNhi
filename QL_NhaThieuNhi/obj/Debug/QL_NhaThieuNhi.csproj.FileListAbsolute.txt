@@ -112,17 +112,14 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FHo
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FHoaDon.FrmLocHoaDon.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FLopHoc.FrmLopHoc.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.LichHoc.FrmLichHoc.resources
-D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVienGUI.DangKyLichDay.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVien.FrmReportNV.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.TaiKhoan.AddTaiKhoan.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Form1.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.NhanVienGUI.AddNhanVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmNhanVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.FrmTaiKhoan.resources
-D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.QuanLyHocvVien.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Login.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.Properties.Resources.resources
-D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.QuanLyPhuHuynh.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.TrangChu.UsersForm.resources
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.GenerateResource.cache
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csproj.CoreCompileInputs.cache
