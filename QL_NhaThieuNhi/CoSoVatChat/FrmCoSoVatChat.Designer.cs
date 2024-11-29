@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbLoc = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -39,7 +38,7 @@
             this.btn_print = new Guna.UI2.WinForms.Guna2Button();
             this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.btn_addNhanVien = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_SuaCSVC = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txt_MaCSVC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,28 +53,20 @@
             this.txt_TenCoSo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCoSoVatChat = new System.Windows.Forms.DataGridView();
-            this.guna2Panel1.SuspendLayout();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_HinhAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoSoVatChat)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1601, 83);
-            this.guna2Panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(12, 0);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1577, 80);
             this.label1.TabIndex = 1;
@@ -132,6 +123,7 @@
             this.btnExportFileExcel.Name = "btnExportFileExcel";
             this.btnExportFileExcel.Size = new System.Drawing.Size(62, 45);
             this.btnExportFileExcel.TabIndex = 18;
+            this.btnExportFileExcel.Click += new System.EventHandler(this.btnExportFileExcel_Click);
             // 
             // guna2CircleButton1
             // 
@@ -257,28 +249,29 @@
             this.btn_addNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btn_addNhanVien.Click += new System.EventHandler(this.btn_addNhanVien_Click);
             // 
-            // guna2Button1
+            // btn_SuaCSVC
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button1.BackColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Indigo;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(23, 23);
-            this.guna2Button1.Location = new System.Drawing.Point(412, 600);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(147, 45);
-            this.guna2Button1.TabIndex = 13;
-            this.guna2Button1.Text = "EDIT";
+            this.btn_SuaCSVC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_SuaCSVC.BackColor = System.Drawing.Color.White;
+            this.btn_SuaCSVC.BorderRadius = 20;
+            this.btn_SuaCSVC.BorderThickness = 1;
+            this.btn_SuaCSVC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SuaCSVC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_SuaCSVC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_SuaCSVC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_SuaCSVC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_SuaCSVC.FillColor = System.Drawing.Color.Transparent;
+            this.btn_SuaCSVC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_SuaCSVC.ForeColor = System.Drawing.Color.Indigo;
+            this.btn_SuaCSVC.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_SuaCSVC.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_SuaCSVC.ImageSize = new System.Drawing.Size(23, 23);
+            this.btn_SuaCSVC.Location = new System.Drawing.Point(412, 600);
+            this.btn_SuaCSVC.Name = "btn_SuaCSVC";
+            this.btn_SuaCSVC.Size = new System.Drawing.Size(147, 45);
+            this.btn_SuaCSVC.TabIndex = 13;
+            this.btn_SuaCSVC.Text = "EDIT";
+            this.btn_SuaCSVC.Click += new System.EventHandler(this.btn_SuaCSVC_Click);
             // 
             // guna2GroupBox1
             // 
@@ -297,7 +290,7 @@
             this.guna2GroupBox1.Controls.Add(this.txt_TenCoSo);
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.btn_delete);
-            this.guna2GroupBox1.Controls.Add(this.guna2Button1);
+            this.guna2GroupBox1.Controls.Add(this.btn_SuaCSVC);
             this.guna2GroupBox1.Controls.Add(this.btn_addNhanVien);
             this.guna2GroupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Purple;
@@ -524,6 +517,15 @@
             this.dgvCoSoVatChat.TabIndex = 22;
             this.dgvCoSoVatChat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCoSoVatChat_CellClick);
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1601, 83);
+            this.guna2Panel1.TabIndex = 0;
+            // 
             // FrmCoSoVatChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -536,19 +538,17 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCoSoVatChat";
             this.Text = "FrmCoSoVatChat";
-            this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_HinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoSoVatChat)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
@@ -557,7 +557,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txt_TimKiem;
         private Guna.UI2.WinForms.Guna2Button btn_print;
         private Guna.UI2.WinForms.Guna2Button btn_addNhanVien;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_SuaCSVC;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cb_LoaiCoSo;
@@ -574,5 +574,6 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cbLoc;
         private System.Windows.Forms.DataGridView dgvCoSoVatChat;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

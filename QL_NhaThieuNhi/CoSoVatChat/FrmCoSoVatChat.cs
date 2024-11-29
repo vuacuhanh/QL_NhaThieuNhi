@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace QL_NhaThieuNhi.CoSoVatChat
@@ -320,6 +321,127 @@ namespace QL_NhaThieuNhi.CoSoVatChat
             else
             {
                 MessageBox.Show("Vui lòng chọn cơ sở vật chất để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_SuaCSVC_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (dgvCoSoVatChat.SelectedRows.Count > 0) // Kiểm tra có dòng cơ sở vật chất nào được chọn không
+                {
+                    // Lấy mã cơ sở vật chất từ dòng được chọn
+                    var MaCSVC = Convert.ToInt32(txt_MaCSVC.Text); // Mã cơ sở vật chất
+                    var TenCoSo = txt_TenCoSo.Text; // Tên cơ sở vật chất từ TextBox
+                    var HinhAnh = txt_HinhAnh.Text; // Đường dẫn hình ảnh
+                    var LoaiCoSo = cb_LoaiCoSo.SelectedItem.ToString(); // Loại cơ sở vật chất từ ComboBox
+                    var SoLuong = Convert.ToInt32(txt_SoLuong.Text); // Số lượng cơ sở vật chất
+
+                    if (string.IsNullOrEmpty(TenCoSo) || string.IsNullOrEmpty(LoaiCoSo))
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin cơ sở vật chất.");
+                        return;
+                    }
+
+                    // Tạo đối tượng cơ sở vật chất mới để cập nhật
+                    var coSoVatChatMoi = new DTO.CoSoVatChat
+                    {
+                        MaCSVC = MaCSVC,
+                        TenCoSo = TenCoSo,
+                        HinhAnh = HinhAnh,
+                        LoaiCoSo = LoaiCoSo,
+                        SoLuong = SoLuong
+                    };
+
+                    // Gọi BLL để cập nhật thông tin cơ sở vật chất
+                    if (CoSoVatChatBLL.SuaCoSoVatChat(coSoVatChatMoi))
+                    {
+                        MessageBox.Show("Cập nhật thông tin cơ sở vật chất thành công!");
+                        LoadCoSoVatChat(); // Tải lại danh sách cơ sở vật chất
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi cập nhật thông tin cơ sở vật chất.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn cơ sở vật chất cần sửa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi sửa thông tin cơ sở vật chất: " + ex.Message);
+            }
+        }
+
+        private void btnExportFileExcel_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                // Kiểm tra nếu DataGridView có dữ liệu
+                if (dgvCoSoVatChat.Rows.Count > 0)
+                {
+                    // Tạo workbook mới
+                    using (var workbook = new XLWorkbook())
+                    {
+                        // Tạo một worksheet
+                        var worksheet = workbook.Worksheets.Add("DanhSachCoSoVatChat");
+
+                        int visibleColumnIndex = 1; // Dùng để theo dõi các cột hiển thị
+
+                        // Thêm tiêu đề cột vào worksheet (chỉ cột hiển thị)
+                        for (int i = 0; i < dgvCoSoVatChat.Columns.Count; i++)
+                        {
+                            if (dgvCoSoVatChat.Columns[i].Visible) // Chỉ thêm các cột hiển thị
+                            {
+                                worksheet.Cell(1, visibleColumnIndex).Value = dgvCoSoVatChat.Columns[i].HeaderText;
+                                visibleColumnIndex++;
+                            }
+                        }
+
+                        // Thêm dữ liệu từ DataGridView vào worksheet (chỉ cột hiển thị)
+                        for (int i = 0; i < dgvCoSoVatChat.Rows.Count; i++)
+                        {
+                            visibleColumnIndex = 1; // Reset index cho mỗi hàng
+                            for (int j = 0; j < dgvCoSoVatChat.Columns.Count; j++)
+                            {
+                                if (dgvCoSoVatChat.Columns[j].Visible) // Chỉ thêm dữ liệu cho cột hiển thị
+                                {
+                                    worksheet.Cell(i + 2, visibleColumnIndex).Value = dgvCoSoVatChat.Rows[i].Cells[j].Value?.ToString() ?? "";
+                                    visibleColumnIndex++;
+                                }
+                            }
+                        }
+
+                        // Mở hộp thoại lưu file để chọn nơi lưu file
+                        SaveFileDialog saveFileDialog = new SaveFileDialog();
+                        saveFileDialog.Filter = "Excel Files|*.xlsx";
+                        saveFileDialog.Title = "Save an Excel File";
+                        saveFileDialog.FileName = "DanhSachCoSoVatChat.xlsx";
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            // Lưu workbook vào file
+                            using (var stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write))
+                            {
+                                workbook.SaveAs(stream);
+                            }
+
+                            MessageBox.Show("Xuất dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
