@@ -30,11 +30,18 @@ namespace QL_NhaThieuNhi.FHoatDongNgoaiKhoa
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExportFileExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLocTimKiemChuongTrinh = new Guna.UI2.WinForms.Guna2Button();
             this.txtTongSoHoatDong = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.lb_SoLuongTK = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnSuaHoatDong = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnXoaHoatDong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemHoatDong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.txtDiaDiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpKetThuc = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpBatDau = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -50,13 +57,6 @@ namespace QL_NhaThieuNhi.FHoatDongNgoaiKhoa
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaHoatDong = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvHoatDongNgoaiKhoa = new System.Windows.Forms.DataGridView();
-            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThemHoatDong = new Guna.UI2.WinForms.Guna2Button();
-            this.BtnXoaHoatDong = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSuaHoatDong = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLocTimKiemChuongTrinh = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExportFileExcel = new Guna.UI2.WinForms.Guna2Button();
-            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.MaHDNK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHoatDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +87,74 @@ namespace QL_NhaThieuNhi.FHoatDongNgoaiKhoa
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1138, 72);
             this.guna2Panel1.TabIndex = 17;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtTimKiem.BorderRadius = 10;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiem.DefaultText = "";
+            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
+            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.Location = new System.Drawing.Point(443, 24);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtTimKiem.PlaceholderText = "";
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.Size = new System.Drawing.Size(306, 32);
+            this.txtTimKiem.TabIndex = 34;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // btnExportFileExcel
+            // 
+            this.btnExportFileExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportFileExcel.BorderRadius = 10;
+            this.btnExportFileExcel.BorderThickness = 1;
+            this.btnExportFileExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportFileExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportFileExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportFileExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportFileExcel.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportFileExcel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnExportFileExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExportFileExcel.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
+            this.btnExportFileExcel.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnExportFileExcel.Location = new System.Drawing.Point(1121, 20);
+            this.btnExportFileExcel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportFileExcel.Name = "btnExportFileExcel";
+            this.btnExportFileExcel.Size = new System.Drawing.Size(46, 37);
+            this.btnExportFileExcel.TabIndex = 33;
+            this.btnExportFileExcel.Click += new System.EventHandler(this.btnExportFileExcel_Click);
+            // 
+            // btnLocTimKiemChuongTrinh
+            // 
+            this.btnLocTimKiemChuongTrinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLocTimKiemChuongTrinh.BorderRadius = 20;
+            this.btnLocTimKiemChuongTrinh.BorderThickness = 1;
+            this.btnLocTimKiemChuongTrinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLocTimKiemChuongTrinh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLocTimKiemChuongTrinh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLocTimKiemChuongTrinh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLocTimKiemChuongTrinh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLocTimKiemChuongTrinh.FillColor = System.Drawing.Color.Transparent;
+            this.btnLocTimKiemChuongTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLocTimKiemChuongTrinh.ForeColor = System.Drawing.Color.Indigo;
+            this.btnLocTimKiemChuongTrinh.Image = global::QL_NhaThieuNhi.Properties.Resources.filter;
+            this.btnLocTimKiemChuongTrinh.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnLocTimKiemChuongTrinh.Location = new System.Drawing.Point(1070, 21);
+            this.btnLocTimKiemChuongTrinh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocTimKiemChuongTrinh.Name = "btnLocTimKiemChuongTrinh";
+            this.btnLocTimKiemChuongTrinh.Size = new System.Drawing.Size(45, 37);
+            this.btnLocTimKiemChuongTrinh.TabIndex = 32;
+            this.btnLocTimKiemChuongTrinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTongSoHoatDong
             // 
@@ -191,6 +259,98 @@ namespace QL_NhaThieuNhi.FHoatDongNgoaiKhoa
             this.guna2GroupBox1.Size = new System.Drawing.Size(429, 501);
             this.guna2GroupBox1.TabIndex = 18;
             this.guna2GroupBox1.Text = "Thông Tin Hoạt Động Ngoại Khóa";
+            // 
+            // btnSuaHoatDong
+            // 
+            this.btnSuaHoatDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSuaHoatDong.BorderRadius = 20;
+            this.btnSuaHoatDong.BorderThickness = 1;
+            this.btnSuaHoatDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSuaHoatDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSuaHoatDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSuaHoatDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSuaHoatDong.FillColor = System.Drawing.Color.Transparent;
+            this.btnSuaHoatDong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaHoatDong.ForeColor = System.Drawing.Color.Indigo;
+            this.btnSuaHoatDong.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnSuaHoatDong.Location = new System.Drawing.Point(238, 443);
+            this.btnSuaHoatDong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuaHoatDong.Name = "btnSuaHoatDong";
+            this.btnSuaHoatDong.Size = new System.Drawing.Size(104, 37);
+            this.btnSuaHoatDong.TabIndex = 46;
+            this.btnSuaHoatDong.Text = "EDIT";
+            this.btnSuaHoatDong.Click += new System.EventHandler(this.btnSuaHoatDong_Click);
+            // 
+            // BtnXoaHoatDong
+            // 
+            this.BtnXoaHoatDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnXoaHoatDong.BorderRadius = 20;
+            this.BtnXoaHoatDong.BorderThickness = 1;
+            this.BtnXoaHoatDong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnXoaHoatDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnXoaHoatDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnXoaHoatDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnXoaHoatDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnXoaHoatDong.FillColor = System.Drawing.Color.Transparent;
+            this.BtnXoaHoatDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnXoaHoatDong.ForeColor = System.Drawing.Color.Indigo;
+            this.BtnXoaHoatDong.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
+            this.BtnXoaHoatDong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BtnXoaHoatDong.ImageSize = new System.Drawing.Size(23, 23);
+            this.BtnXoaHoatDong.Location = new System.Drawing.Point(120, 443);
+            this.BtnXoaHoatDong.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnXoaHoatDong.Name = "BtnXoaHoatDong";
+            this.BtnXoaHoatDong.Size = new System.Drawing.Size(104, 37);
+            this.BtnXoaHoatDong.TabIndex = 45;
+            this.BtnXoaHoatDong.Text = "DELETE";
+            this.BtnXoaHoatDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BtnXoaHoatDong.Click += new System.EventHandler(this.BtnXoaHoatDong_Click);
+            // 
+            // btnThemHoatDong
+            // 
+            this.btnThemHoatDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnThemHoatDong.BorderRadius = 20;
+            this.btnThemHoatDong.BorderThickness = 1;
+            this.btnThemHoatDong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemHoatDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemHoatDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemHoatDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThemHoatDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThemHoatDong.FillColor = System.Drawing.Color.Transparent;
+            this.btnThemHoatDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThemHoatDong.ForeColor = System.Drawing.Color.Indigo;
+            this.btnThemHoatDong.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
+            this.btnThemHoatDong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThemHoatDong.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThemHoatDong.Location = new System.Drawing.Point(14, 443);
+            this.btnThemHoatDong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemHoatDong.Name = "btnThemHoatDong";
+            this.btnThemHoatDong.Size = new System.Drawing.Size(87, 37);
+            this.btnThemHoatDong.TabIndex = 44;
+            this.btnThemHoatDong.Text = "Add";
+            this.btnThemHoatDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnThemHoatDong.Click += new System.EventHandler(this.btnThemHoatDong_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReset.BorderRadius = 20;
+            this.btnReset.BorderThickness = 1;
+            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReset.FillColor = System.Drawing.Color.Transparent;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Indigo;
+            this.btnReset.Image = global::QL_NhaThieuNhi.Properties.Resources.refresh;
+            this.btnReset.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnReset.Location = new System.Drawing.Point(354, 443);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(58, 37);
+            this.btnReset.TabIndex = 43;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txtDiaDiem
             // 
@@ -440,166 +600,6 @@ namespace QL_NhaThieuNhi.FHoatDongNgoaiKhoa
             this.dgvHoatDongNgoaiKhoa.RowTemplate.Height = 24;
             this.dgvHoatDongNgoaiKhoa.Size = new System.Drawing.Size(698, 501);
             this.dgvHoatDongNgoaiKhoa.TabIndex = 19;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReset.BorderRadius = 20;
-            this.btnReset.BorderThickness = 1;
-            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReset.FillColor = System.Drawing.Color.Transparent;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.Indigo;
-            this.btnReset.Image = global::QL_NhaThieuNhi.Properties.Resources.refresh;
-            this.btnReset.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnReset.Location = new System.Drawing.Point(354, 443);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(58, 37);
-            this.btnReset.TabIndex = 43;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnThemHoatDong
-            // 
-            this.btnThemHoatDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThemHoatDong.BorderRadius = 20;
-            this.btnThemHoatDong.BorderThickness = 1;
-            this.btnThemHoatDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemHoatDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemHoatDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemHoatDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThemHoatDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemHoatDong.FillColor = System.Drawing.Color.Transparent;
-            this.btnThemHoatDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThemHoatDong.ForeColor = System.Drawing.Color.Indigo;
-            this.btnThemHoatDong.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
-            this.btnThemHoatDong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThemHoatDong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThemHoatDong.Location = new System.Drawing.Point(14, 443);
-            this.btnThemHoatDong.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThemHoatDong.Name = "btnThemHoatDong";
-            this.btnThemHoatDong.Size = new System.Drawing.Size(87, 37);
-            this.btnThemHoatDong.TabIndex = 44;
-            this.btnThemHoatDong.Text = "Add";
-            this.btnThemHoatDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnThemHoatDong.Click += new System.EventHandler(this.btnThemHoatDong_Click);
-            // 
-            // BtnXoaHoatDong
-            // 
-            this.BtnXoaHoatDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnXoaHoatDong.BorderRadius = 20;
-            this.BtnXoaHoatDong.BorderThickness = 1;
-            this.BtnXoaHoatDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnXoaHoatDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnXoaHoatDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnXoaHoatDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnXoaHoatDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnXoaHoatDong.FillColor = System.Drawing.Color.Transparent;
-            this.BtnXoaHoatDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.BtnXoaHoatDong.ForeColor = System.Drawing.Color.Indigo;
-            this.BtnXoaHoatDong.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
-            this.BtnXoaHoatDong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BtnXoaHoatDong.ImageSize = new System.Drawing.Size(23, 23);
-            this.BtnXoaHoatDong.Location = new System.Drawing.Point(120, 443);
-            this.BtnXoaHoatDong.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnXoaHoatDong.Name = "BtnXoaHoatDong";
-            this.BtnXoaHoatDong.Size = new System.Drawing.Size(104, 37);
-            this.BtnXoaHoatDong.TabIndex = 45;
-            this.BtnXoaHoatDong.Text = "DELETE";
-            this.BtnXoaHoatDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BtnXoaHoatDong.Click += new System.EventHandler(this.BtnXoaHoatDong_Click);
-            // 
-            // btnSuaHoatDong
-            // 
-            this.btnSuaHoatDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSuaHoatDong.BorderRadius = 20;
-            this.btnSuaHoatDong.BorderThickness = 1;
-            this.btnSuaHoatDong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSuaHoatDong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSuaHoatDong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSuaHoatDong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSuaHoatDong.FillColor = System.Drawing.Color.Transparent;
-            this.btnSuaHoatDong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaHoatDong.ForeColor = System.Drawing.Color.Indigo;
-            this.btnSuaHoatDong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSuaHoatDong.Location = new System.Drawing.Point(238, 443);
-            this.btnSuaHoatDong.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSuaHoatDong.Name = "btnSuaHoatDong";
-            this.btnSuaHoatDong.Size = new System.Drawing.Size(104, 37);
-            this.btnSuaHoatDong.TabIndex = 46;
-            this.btnSuaHoatDong.Text = "EDIT";
-            this.btnSuaHoatDong.Click += new System.EventHandler(this.btnSuaHoatDong_Click);
-            // 
-            // btnLocTimKiemChuongTrinh
-            // 
-            this.btnLocTimKiemChuongTrinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLocTimKiemChuongTrinh.BorderRadius = 20;
-            this.btnLocTimKiemChuongTrinh.BorderThickness = 1;
-            this.btnLocTimKiemChuongTrinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLocTimKiemChuongTrinh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLocTimKiemChuongTrinh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLocTimKiemChuongTrinh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLocTimKiemChuongTrinh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLocTimKiemChuongTrinh.FillColor = System.Drawing.Color.Transparent;
-            this.btnLocTimKiemChuongTrinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLocTimKiemChuongTrinh.ForeColor = System.Drawing.Color.Indigo;
-            this.btnLocTimKiemChuongTrinh.Image = global::QL_NhaThieuNhi.Properties.Resources.filter;
-            this.btnLocTimKiemChuongTrinh.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLocTimKiemChuongTrinh.Location = new System.Drawing.Point(1070, 21);
-            this.btnLocTimKiemChuongTrinh.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLocTimKiemChuongTrinh.Name = "btnLocTimKiemChuongTrinh";
-            this.btnLocTimKiemChuongTrinh.Size = new System.Drawing.Size(45, 37);
-            this.btnLocTimKiemChuongTrinh.TabIndex = 32;
-            this.btnLocTimKiemChuongTrinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnExportFileExcel
-            // 
-            this.btnExportFileExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportFileExcel.BorderRadius = 10;
-            this.btnExportFileExcel.BorderThickness = 1;
-            this.btnExportFileExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportFileExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportFileExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExportFileExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExportFileExcel.FillColor = System.Drawing.Color.Transparent;
-            this.btnExportFileExcel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnExportFileExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExportFileExcel.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
-            this.btnExportFileExcel.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnExportFileExcel.Location = new System.Drawing.Point(1119, 19);
-            this.btnExportFileExcel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExportFileExcel.Name = "btnExportFileExcel";
-            this.btnExportFileExcel.Size = new System.Drawing.Size(46, 37);
-            this.btnExportFileExcel.TabIndex = 33;
-            this.btnExportFileExcel.Click += new System.EventHandler(this.btnExportFileExcel_Click);
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtTimKiem.BorderRadius = 10;
-            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimKiem.DefaultText = "";
-            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(443, 24);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PasswordChar = '\0';
-            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtTimKiem.PlaceholderText = "";
-            this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(306, 32);
-            this.txtTimKiem.TabIndex = 34;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // MaHDNK
             // 

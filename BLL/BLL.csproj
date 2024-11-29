@@ -248,6 +248,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChuongTrinhNangKhieuBLL.cs" />
     <Compile Include="HoaDonBLL.cs" />
     <Compile Include="HoatDongNgoaiKhoaBLL.cs" />
     <Compile Include="HocVienBLL.cs" />

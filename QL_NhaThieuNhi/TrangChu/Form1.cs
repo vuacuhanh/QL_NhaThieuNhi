@@ -63,7 +63,7 @@ namespace QL_NhaThieuNhi
 
         private void btn_CTNK_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new FChuongTrinhNangKhieu.FrmChuongTrinhNangKhieu());
         }
 
         private void btnHocBong_Click(object sender, EventArgs e)
