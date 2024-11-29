@@ -286,5 +286,41 @@ namespace QL_NhaThieuNhi.CoSoVatChat
                 }
             }
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (dgvCoSoVatChat.SelectedRows.Count > 0)
+            {
+                // Lấy mã cơ sở vật chất từ cột trong DataGridView
+                int maCSVC = Convert.ToInt32(dgvCoSoVatChat.SelectedRows[0].Cells["MaCSVC"].Value);
+
+                try
+                {
+                    if (MessageBox.Show($"Bạn có chắc chắn muốn xóa cơ sở vật chất có mã {maCSVC}?",
+                                        "Xác nhận",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (CoSoVatChatBLL.XoaCoSoVatChat(maCSVC)) // Gọi BLL xóa
+                        {
+                            MessageBox.Show("Xóa cơ sở vật chất thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadCoSoVatChat(); // Cập nhật lại danh sách sau khi xóa
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy cơ sở vật chất để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi xóa cơ sở vật chất: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn cơ sở vật chất để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

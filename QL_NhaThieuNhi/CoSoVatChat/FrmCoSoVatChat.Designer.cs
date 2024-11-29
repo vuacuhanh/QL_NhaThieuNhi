@@ -229,6 +229,7 @@
             this.btn_delete.TabIndex = 18;
             this.btn_delete.Text = "DELETE";
             this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_addNhanVien
             // 
