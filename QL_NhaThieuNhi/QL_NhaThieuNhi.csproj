@@ -277,6 +277,12 @@
     <Compile Include="FHoaDon\FrmLocHoaDon.Designer.cs">
       <DependentUpon>FrmLocHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FHoatDongNgoaiKhoa\FrmHoatDongNgoaiKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoatDongNgoaiKhoa\FrmHoatDongNgoaiKhoa.Designer.cs">
+      <DependentUpon>FrmHoatDongNgoaiKhoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLopHoc\FrmLopHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FHoaDon\FrmLocHoaDon.resx">
       <DependentUpon>FrmLocHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHoatDongNgoaiKhoa\FrmHoatDongNgoaiKhoa.resx">
+      <DependentUpon>FrmHoatDongNgoaiKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLopHoc\FrmLopHoc.resx">
       <DependentUpon>FrmLopHoc.cs</DependentUpon>
