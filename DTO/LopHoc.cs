@@ -10,7 +10,7 @@ namespace DTO
     public partial class LopHoc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public  LopHoc()
+        public LopHoc()
         {
             HoaDons = new HashSet<HoaDon>();
             HocViens = new HashSet<HocVien>();

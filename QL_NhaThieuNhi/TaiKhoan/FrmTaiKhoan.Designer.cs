@@ -46,7 +46,9 @@
             this.btn_edit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.cbQuyen = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_importTK = new Guna.UI2.WinForms.Guna2Button();
             this.btn_print = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_delete = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_TaiKhoan)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -71,9 +71,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data_TaiKhoan.BackgroundColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -109,10 +109,10 @@
             this.data_TaiKhoan.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.data_TaiKhoan.ThemeStyle.BackColor = System.Drawing.Color.Snow;
             this.data_TaiKhoan.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.data_TaiKhoan.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
+            this.data_TaiKhoan.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.data_TaiKhoan.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.data_TaiKhoan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.data_TaiKhoan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.data_TaiKhoan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_TaiKhoan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.DimGray;
             this.data_TaiKhoan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.data_TaiKhoan.ThemeStyle.HeaderStyle.Height = 20;
             this.data_TaiKhoan.ThemeStyle.ReadOnly = false;
@@ -308,6 +308,30 @@
             this.cbQuyen.Size = new System.Drawing.Size(374, 36);
             this.cbQuyen.TabIndex = 9;
             // 
+            // btn_delete
+            // 
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_delete.BorderRadius = 20;
+            this.btn_delete.BorderThickness = 1;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_delete.FillColor = System.Drawing.Color.Transparent;
+            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_delete.ForeColor = System.Drawing.Color.Indigo;
+            this.btn_delete.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
+            this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_delete.ImageSize = new System.Drawing.Size(23, 23);
+            this.btn_delete.Location = new System.Drawing.Point(212, 557);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(139, 45);
+            this.btn_delete.TabIndex = 8;
+            this.btn_delete.Text = "DELETE";
+            this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // label5
             // 
             this.label5.Location = new System.Drawing.Point(23, 265);
@@ -316,6 +340,30 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Quyền:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_add.BorderRadius = 20;
+            this.btn_add.BorderThickness = 1;
+            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_add.FillColor = System.Drawing.Color.Transparent;
+            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_add.ForeColor = System.Drawing.Color.Indigo;
+            this.btn_add.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
+            this.btn_add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_add.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_add.Location = new System.Drawing.Point(29, 557);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(140, 45);
+            this.btn_add.TabIndex = 6;
+            this.btn_add.Text = "Add";
+            this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // label4
             // 
@@ -434,54 +482,6 @@
             this.btn_print.Size = new System.Drawing.Size(62, 45);
             this.btn_print.TabIndex = 5;
             this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_delete.BorderRadius = 20;
-            this.btn_delete.BorderThickness = 1;
-            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_delete.FillColor = System.Drawing.Color.Transparent;
-            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_delete.ForeColor = System.Drawing.Color.Indigo;
-            this.btn_delete.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
-            this.btn_delete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_delete.ImageSize = new System.Drawing.Size(23, 23);
-            this.btn_delete.Location = new System.Drawing.Point(212, 557);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(139, 45);
-            this.btn_delete.TabIndex = 8;
-            this.btn_delete.Text = "DELETE";
-            this.btn_delete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // btn_add
-            // 
-            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_add.BorderRadius = 20;
-            this.btn_add.BorderThickness = 1;
-            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_add.FillColor = System.Drawing.Color.Transparent;
-            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_add.ForeColor = System.Drawing.Color.Indigo;
-            this.btn_add.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
-            this.btn_add.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_add.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_add.Location = new System.Drawing.Point(29, 557);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(140, 45);
-            this.btn_add.TabIndex = 6;
-            this.btn_add.Text = "Add";
-            this.btn_add.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // FrmTaiKhoan
             // 

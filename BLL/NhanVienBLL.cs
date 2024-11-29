@@ -94,5 +94,10 @@ namespace BLL
                 return 0;
             }
         }
+        public List<NhanVien> FilterNhanVien(string gioiTinh, string chucVu, int? maPhongBan)
+        {
+            return NhanVienAccess.FilterNhanVien(gioiTinh, chucVu, maPhongBan);
+        }
     }
+
 }

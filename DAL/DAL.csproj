@@ -253,6 +253,7 @@
     <Compile Include="HocVienAccess.cs" />
     <Compile Include="LopHocAccess.cs" />
     <Compile Include="NhanVienAccess.cs" />
+    <Compile Include="PhongBanAccess.cs" />
     <Compile Include="PhuHuynhAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanAcess.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,18 @@ namespace QL_NhaThieuNhi.PhongBanGUI
 {
     public partial class FrmPhongBan : Form
     {
+        private PhongBanBLL phongBanBLL;
         public FrmPhongBan()
         {
+            phongBanBLL = new PhongBanBLL();
             InitializeComponent();
+            LoadDataPhongBan();
         }
 
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        public void LoadDataPhongBan()
         {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            List<DTO.PhongBan> dsPhongBan = phongBanBLL.LoadPhongBan();
+            data_PhongBan.DataSource = dsPhongBan;
         }
     }
 }
