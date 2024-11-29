@@ -248,6 +248,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoSoVatChatBLL.cs" />
     <Compile Include="HoaDonBLL.cs" />
     <Compile Include="HocVienBLL.cs" />
     <Compile Include="LopHocBLL.cs" />
