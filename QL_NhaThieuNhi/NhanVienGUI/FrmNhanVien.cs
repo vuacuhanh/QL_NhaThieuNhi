@@ -111,10 +111,6 @@ namespace QL_NhaThieuNhi
             }
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
@@ -141,7 +137,6 @@ namespace QL_NhaThieuNhi
 
         private void btn_import_Click(object sender, EventArgs e)
         {
-            // Mở hộp thoại chọn file
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
             openFileDialog.Title = "Chọn file Excel để import";
@@ -154,6 +149,7 @@ namespace QL_NhaThieuNhi
                     // Gọi phương thức BLL để import nhân viên từ file Excel
                     NhanVienBLL.ImportNhanVienFromExcel(filePath);
                     MessageBox.Show("Dữ liệu nhân viên đã được import thành công.");
+                    LoadNhanVienData(); 
                 }
                 catch (Exception ex)
                 {
@@ -162,50 +158,65 @@ namespace QL_NhaThieuNhi
             }
         }
 
+
         private void btn_print_Click(object sender, EventArgs e)
         {
-            try
-            {
-                List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.GetAllNhanVien(); // Gọi từ đối tượng nhanVienBLL
+            List<DTO.NhanVien> danhSachNhanVien = nhanVienBLL.LoadNhanVien();
 
-                // Kiểm tra danh sách nhân viên có dữ liệu hay không
-                if (danhSachNhanVien == null || !danhSachNhanVien.Any())
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("DanhSachNhanVien");
+
+                // Thêm tiêu đề cho các cột
+                worksheet.Cell(1, 1).Value = "Mã Nhân Viên";
+                worksheet.Cell(1, 2).Value = "Tên Nhân Viên";
+                worksheet.Cell(1, 3).Value = "Chức Vụ";
+                worksheet.Cell(1, 4).Value = "Chuyên Môn";
+                worksheet.Cell(1, 5).Value = "Trạng Thái";
+                worksheet.Cell(1, 6).Value = "Ngày Sinh";
+                worksheet.Cell(1, 7).Value = "Số Điện Thoại";
+                worksheet.Cell(1, 8).Value = "Email";
+                worksheet.Cell(1, 9).Value = "Giới Tính";
+                worksheet.Cell(1, 10).Value = "Lương";
+                worksheet.Cell(1, 11).Value = "Mã Tài Khoản";
+                worksheet.Cell(1, 12).Value = "Mã Phòng Ban";
+
+                // Thêm dữ liệu
+                for (int i = 0; i < danhSachNhanVien.Count; i++)
                 {
-                    MessageBox.Show("Không có dữ liệu nhân viên để hiển thị báo cáo.");
-                    return;
+                    var nhanVien = danhSachNhanVien[i];
+                    worksheet.Cell(i + 2, 1).Value = nhanVien.MaNhanVien;
+                    worksheet.Cell(i + 2, 2).Value = nhanVien.TenNhanVien;
+                    worksheet.Cell(i + 2, 3).Value = nhanVien.ChucVu;
+                    worksheet.Cell(i + 2, 4).Value = nhanVien.ChuyenMon;
+                    worksheet.Cell(i + 2, 5).Value = nhanVien.TrangThai;
+                    worksheet.Cell(i + 2, 6).Value = nhanVien.NgaySinh.HasValue ? nhanVien.NgaySinh.Value.ToShortDateString() : "";
+                    worksheet.Cell(i + 2, 7).Value = nhanVien.SoDienThoai;
+                    worksheet.Cell(i + 2, 8).Value = nhanVien.Email;
+                    worksheet.Cell(i + 2, 9).Value = nhanVien.GioiTinh;
+                    worksheet.Cell(i + 2, 10).Value = nhanVien.Luong.HasValue ? nhanVien.Luong.Value.ToString() : "";
+                    worksheet.Cell(i + 2, 11).Value = nhanVien.MaTaiKhoan;
+                    worksheet.Cell(i + 2, 12).Value = nhanVien.MaPhongBan;
                 }
 
-                // Thiết lập ReportViewer
-                ReportViewer reportViewer = new ReportViewer
+                // Định dạng worksheet cho đẹp hơn
+                worksheet.Columns().AdjustToContents();
+
+                // Mở hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog
                 {
-                    ProcessingMode = ProcessingMode.Local,
-                    Dock = DockStyle.Fill,
-                    Size = new Size(800, 600) // Thiết lập kích thước nếu cần
+                    Filter = "Excel Files|*.xlsx",
+                    Title = "Save an Excel File",
+                    FileName = "DanhSachNhanVien.xlsx"
                 };
 
-                // Đường dẫn file .rdlc báo cáo
-                reportViewer.LocalReport.ReportPath = "D:\\DoAnQLNTN\\QL_NhaThieuNhi\\QL_NhaThieuNhi\\ReportNV.rdlc";
-
-                // Đặt nguồn dữ liệu cho ReportViewer
-                reportViewer.LocalReport.DataSources.Clear();
-                ReportDataSource rds = new ReportDataSource("DATANHANVIEN", danhSachNhanVien);
-                reportViewer.LocalReport.DataSources.Add(rds);
-
-                // Refresh để hiển thị báo cáo
-                reportViewer.RefreshReport();
-
-                // Hiển thị ReportViewer trên Form mới
-                Form reportForm = new Form
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Text = "Báo cáo Nhân viên",
-                    Size = new Size(1000, 700)
-                };
-                reportForm.Controls.Add(reportViewer);
-                reportForm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi hiển thị báo cáo: " + ex.Message);
+                    string filePath = saveFileDialog.FileName;
+                    workbook.SaveAs(filePath);
+                    MessageBox.Show("Dữ liệu đã được xuất ra file Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
         }
 
@@ -228,11 +239,6 @@ namespace QL_NhaThieuNhi
             data_NhanVien.DataSource = danhSachNhanVien;
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lb_SoLuongNV_Click(object sender, EventArgs e)
         {
             UpdateNVCount();
@@ -241,11 +247,6 @@ namespace QL_NhaThieuNhi
         {
             int soLuongNV = nhanVienBLL.CountNhanVien();
             lb_SoLuongNV.Text = $"{soLuongNV}";
-        }
-
-        private void data_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void data_NhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -261,11 +262,6 @@ namespace QL_NhaThieuNhi
                 }
             }
         }
-
-
-
-
-
 
         private void btn_seen_Click(object sender, EventArgs e)
         {
