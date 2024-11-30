@@ -79,7 +79,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1495, 44);
             this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2ControlBox3
             // 
@@ -268,7 +267,6 @@
             this.guna2CircleButton1.Size = new System.Drawing.Size(45, 45);
             this.guna2CircleButton1.TabIndex = 7;
             this.guna2CircleButton1.TextFormatNoPrefix = true;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // btn_print
             // 
@@ -422,7 +420,6 @@
             this.data_NhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_NhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.data_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_NhanVien_CellClick);
-            this.data_NhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_NhanVien_CellContentClick);
             this.data_NhanVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.data_NhanVien_CellFormatting);
             // 
             // Column1

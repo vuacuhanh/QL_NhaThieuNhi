@@ -77,7 +77,7 @@ namespace DAL
                 }    
             }
         }
-        public static void DeletePhongBan(int phongBanId)
+        public static void DeletePhongBan(int maPhongBan)
         {
             using (SqlConnection conn = ConnectionData.Connect())
             {
@@ -87,7 +87,7 @@ namespace DAL
                     try
                     {
                         cmd.CommandType= CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@MaPhongBan", phongBanId);
+                        cmd.Parameters.AddWithValue("@MaPhongBan", maPhongBan);
                         cmd.ExecuteNonQuery();
                     }
                     catch (Exception ex)

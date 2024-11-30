@@ -481,7 +481,6 @@
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(62, 45);
             this.btn_print.TabIndex = 5;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // FrmTaiKhoan
             // 

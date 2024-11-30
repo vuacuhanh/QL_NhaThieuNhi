@@ -167,11 +167,6 @@ namespace QL_NhaThieuNhi
             }
         }
 
-        private void btn_print_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_add_Click(object sender, EventArgs e)
         {
             TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();

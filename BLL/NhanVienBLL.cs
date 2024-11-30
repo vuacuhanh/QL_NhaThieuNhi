@@ -20,57 +20,25 @@ namespace BLL
 
         public bool AddNhanVien(NhanVien nv)
         {
-            try
-            {
-                NhanVienAccess.AddNhanVien(nv);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi thêm nhân viên: " + ex.Message);
-                return false;
-            }
+              NhanVienAccess.AddNhanVien(nv);
+              return true;
         }
 
         public bool DeleteNhanVien(int maNhanVien)
         {
-            try
-            {
-                NhanVienAccess.DeleteNhanVien(maNhanVien);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi xóa nhân viên: " + ex.Message);
-                return false;
-            }
+             NhanVienAccess.DeleteNhanVien(maNhanVien);
+             return true;
         }
 
         public bool EditNhanVien(NhanVien nv)
         {
-            try
-            {
-                NhanVienAccess.EditNhanVien(nv);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi chỉnh sửa nhân viên: " + ex.Message);
-                return false;
-            }
+             NhanVienAccess.EditNhanVien(nv);
+             return true;
         }
         public static void ImportNhanVienFromExcel(string filePath)
         {
-            try
-            {
-                // Gọi phương thức DAL để xử lý việc import dữ liệu từ Excel
-                NhanVienAccess.ImportFromExcel(filePath);
-                Console.WriteLine("Dữ liệu nhân viên đã được import thành công.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi import dữ liệu: " + ex.Message);
-            }
+            NhanVienAccess.ImportFromExcel(filePath);
+            Console.WriteLine("Dữ liệu nhân viên đã được import thành công.");
         }
         public List<NhanVien> SearchNhanVien(string keyword)
         {
@@ -84,15 +52,7 @@ namespace BLL
         public int CountNhanVien()
         {
             NhanVienAccess nvAccess = new NhanVienAccess();
-            try
-            {
-                return nvAccess.CountNhanVien();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi đếm tài khoản: " + ex.Message);
-                return 0;
-            }
+            return nvAccess.CountNhanVien();
         }
         public List<NhanVien> FilterNhanVien(string gioiTinh, string chucVu, int? maPhongBan)
         {

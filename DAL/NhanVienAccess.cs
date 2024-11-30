@@ -142,7 +142,6 @@ namespace DAL
 
                     foreach (var row in rows)
                     {
-                        // Tạo đối tượng nhân viên từ dữ liệu trong Excel
                         NhanVien nv = new NhanVien
                         {
                             MaNhanVien = int.Parse(row.Cell(1).GetValue<string>()),
@@ -156,12 +155,10 @@ namespace DAL
                             TrangThai = row.Cell(9).GetValue<string>(),
                             Email = row.Cell(10).GetValue<string>(),
                             Luong = row.Cell(11).GetValue<decimal>(),
-                            MaTaiKhoan = int.Parse(row.Cell(12).GetValue<string>()),  // Giả sử MaTaiKhoan nằm ở cột 12
+                            MaTaiKhoan = int.Parse(row.Cell(12).GetValue<string>()), 
                             MaPhongBan = int.Parse(row.Cell(13).GetValue<string>())  // Giả sử MaPhongBan nằm ở cột 13
                         };
-
-                        // Thêm nhân viên vào cơ sở dữ liệu
-                        NhanVienAccess.AddNhanVien(nv);
+                        AddNhanVien(nv);
                     }
                 }
             }
@@ -170,6 +167,7 @@ namespace DAL
                 throw new Exception("Lỗi khi import dữ liệu từ Excel: " + ex.Message);
             }
         }
+
 
         public static List<NhanVien> GetAllNhanVien()
         {

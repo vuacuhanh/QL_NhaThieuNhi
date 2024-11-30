@@ -1,4 +1,5 @@
 ﻿using QL_NhaThieuNhi.FLopHoc;
+using QL_NhaThieuNhi.LichHoc;
 using QL_NhaThieuNhi.TrangChu;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,7 @@ namespace QL_NhaThieuNhi
 
         private void btn_QLTaiLichHoc_Click(object sender, EventArgs e)
         {
+            openChildForm(new FrmLichHoc());   
 
         }
 

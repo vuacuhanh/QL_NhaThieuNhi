@@ -191,12 +191,43 @@ BEGIN
 END
 GO
 ------------------------------------------------------------------------
---Phòng ban
+--- Phòng Ban-------------------------------------------------------------
 -- Load data Phòng ban
 CREATE PROCEDURE SP_DanhSachPhongBan 
 AS BEGIN SELECT MaPhongBan, TenPhongBan, MoTaNhiemVu 
 FROM PhongBan; 
 END 
 GO
--- Add phòng ban
-
+----Add
+CREATE PROCEDURE SP_ThemPhongBan
+    @MaPhongBan INT,
+    @TenPhongBan NVARCHAR(100),
+    @MoTaNhiemVu NVARCHAR(255)
+AS
+BEGIN
+    INSERT INTO PhongBan (MaPhongBan, TenPhongBan, MoTaNhiemVu)
+    VALUES (@MaPhongBan, @TenPhongBan, @MoTaNhiemVu);
+END;
+GO
+---Delete 
+CREATE PROCEDURE SP_XoaPhongBan
+    @MaPhongBan INT
+AS
+BEGIN
+    DELETE FROM PhongBan
+    WHERE MaPhongBan = @MaPhongBan;
+END;
+GO
+----Update
+CREATE PROCEDURE SP_UpdatePhongBan
+    @MaPhongBan INT,
+    @TenPhongBan NVARCHAR(100),
+    @MoTaNhiemVu NVARCHAR(255)
+AS
+BEGIN
+    UPDATE PhongBan
+    SET TenPhongBan = @TenPhongBan,
+        MoTaNhiemVu = @MoTaNhiemVu
+    WHERE MaPhongBan = @MaPhongBan;
+END;
+GO
