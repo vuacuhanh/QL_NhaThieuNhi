@@ -1,5 +1,6 @@
-﻿using QL_NhaThieuNhi.FLopHoc;
-using QL_NhaThieuNhi.LichHoc;
+using QL_NhaThieuNhi.FLopHoc;
+using QL_NhaThieuNhi.LichHoc;﻿
+using QL_NhaThieuNhi.FLopHoc;
 using QL_NhaThieuNhi.TrangChu;
 using System;
 using System.Collections.Generic;
@@ -62,14 +63,9 @@ namespace QL_NhaThieuNhi
 
         }
 
-        private void btn_QLLopHoc_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new FrmLopHoc());
-        }
-
         private void btn_CTNK_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new FChuongTrinhNangKhieu.FrmChuongTrinhNangKhieu());
         }
 
         private void btnHocBong_Click(object sender, EventArgs e)
@@ -80,6 +76,11 @@ namespace QL_NhaThieuNhi
         private void btn_Khac_Click(object sender, EventArgs e)
         {
             openChildForm(new Menu2());
+        }
+
+        private void btnHDNK_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FHoatDongNgoaiKhoa.FrmHoatDongNgoaiKhoa());
         }
     }
 }

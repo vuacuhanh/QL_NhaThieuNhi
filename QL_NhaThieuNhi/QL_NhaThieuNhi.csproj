@@ -265,6 +265,18 @@
     <Compile Include="CoSoVatChat\FrmCoSoVatChat.Designer.cs">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FChuongTrinhNangKhieu\FrmChuongTrinhNangKhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChuongTrinhNangKhieu\FrmChuongTrinhNangKhieu.Designer.cs">
+      <DependentUpon>FrmChuongTrinhNangKhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FChuongTrinhNangKhieu\FrmLocChuongTrinhNangKhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FChuongTrinhNangKhieu\FrmLocChuongTrinhNangKhieu.Designer.cs">
+      <DependentUpon>FrmLocChuongTrinhNangKhieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FHoaDon\FrmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +288,12 @@
     </Compile>
     <Compile Include="FHoaDon\FrmLocHoaDon.Designer.cs">
       <DependentUpon>FrmLocHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FHoatDongNgoaiKhoa\FrmHoatDongNgoaiKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoatDongNgoaiKhoa\FrmHoatDongNgoaiKhoa.Designer.cs">
+      <DependentUpon>FrmHoatDongNgoaiKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="FLopHoc\FrmLopHoc.cs">
       <SubType>Form</SubType>
@@ -375,11 +393,20 @@
     <EmbeddedResource Include="CoSoVatChat\FrmCoSoVatChat.resx">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FChuongTrinhNangKhieu\FrmChuongTrinhNangKhieu.resx">
+      <DependentUpon>FrmChuongTrinhNangKhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FChuongTrinhNangKhieu\FrmLocChuongTrinhNangKhieu.resx">
+      <DependentUpon>FrmLocChuongTrinhNangKhieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FHoaDon\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FHoaDon\FrmLocHoaDon.resx">
       <DependentUpon>FrmLocHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHoatDongNgoaiKhoa\FrmHoatDongNgoaiKhoa.resx">
+      <DependentUpon>FrmHoatDongNgoaiKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLopHoc\FrmLopHoc.resx">
       <DependentUpon>FrmLopHoc.cs</DependentUpon>
