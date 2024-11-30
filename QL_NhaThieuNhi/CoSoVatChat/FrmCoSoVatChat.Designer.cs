@@ -405,6 +405,7 @@
             this.cb_LoaiCoSo.Name = "cb_LoaiCoSo";
             this.cb_LoaiCoSo.Size = new System.Drawing.Size(447, 36);
             this.cb_LoaiCoSo.TabIndex = 28;
+
             // 
             // label5
             // 

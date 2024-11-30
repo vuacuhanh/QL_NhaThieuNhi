@@ -252,6 +252,7 @@
     <Compile Include="DataBaseAccess.cs" />
     <Compile Include="HoaDonAccess.cs" />
     <Compile Include="HocVienAccess.cs" />
+    <Compile Include="LichBaoTriAccess.cs" />
     <Compile Include="LopHocAccess.cs" />
     <Compile Include="NhanVienAccess.cs" />
     <Compile Include="PhuHuynhAccess.cs" />

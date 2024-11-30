@@ -127,3 +127,4 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaTh.29C25C05.
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.exe
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.HocVien.QL_HocVien.resources
+D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.CoSoVatChat.LichBaoTri.resources

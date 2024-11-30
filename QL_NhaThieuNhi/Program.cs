@@ -20,7 +20,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCoSoVatChat());
+            Application.Run(new LichBaoTri());
         }
     }
 }

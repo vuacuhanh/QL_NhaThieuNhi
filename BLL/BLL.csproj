@@ -251,6 +251,7 @@
     <Compile Include="CoSoVatChatBLL.cs" />
     <Compile Include="HoaDonBLL.cs" />
     <Compile Include="HocVienBLL.cs" />
+    <Compile Include="LichBaoTriBLL.cs" />
     <Compile Include="LopHocBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
