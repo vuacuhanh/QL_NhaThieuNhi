@@ -8,19 +8,21 @@ namespace DAL
 {
     public class LichHocDAL
     {
-        public static List<LichHoc> GetLichHocDataForWeek()
+        public static List<LichHoc> GetLichHocDataForWeek(DateTime startOfWeek)
         {
             List<LichHoc> lichHocs = new List<LichHoc>();
             using (SqlConnection conn = ConnectionData.Connect())
             {
                 conn.Open();
-                // Lọc dữ liệu từ thứ 2 đến chủ nhật của tuần hiện tại
-                string query = @"
-                    SELECT * 
-                    FROM LichHoc 
-                    WHERE ThoiGianHoc >= DATEADD(DAY, -(DATEPART(WEEKDAY, GETDATE())-2), CAST(GETDATE() AS DATE))
-                    AND ThoiGianHoc < DATEADD(DAY, 7-(DATEPART(WEEKDAY, GETDATE())-2), CAST(GETDATE() AS DATE))";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                // Sử dụng Stored Procedure SP_LoadLichHoc
+                SqlCommand cmd = new SqlCommand("SP_LoadLichHoc", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                // Thêm tham số cho stored procedure
+                cmd.Parameters.AddWithValue("@StartDate", startOfWeek);
+                cmd.Parameters.AddWithValue("@EndDate", startOfWeek.AddDays(7));
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
