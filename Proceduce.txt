@@ -190,7 +190,7 @@ BEGIN
         AND (@MaPhongBan IS NULL OR MaPhongBan = @MaPhongBan)
 END
 GO
-------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 --- Phòng Ban-------------------------------------------------------------
 -- Load data Phòng ban
 CREATE PROCEDURE SP_DanhSachPhongBan 
@@ -231,3 +231,33 @@ BEGIN
     WHERE MaPhongBan = @MaPhongBan;
 END;
 GO
+------------------------------------------------------------------------------------------------------------
+----------- LỊCH HỌC
+CREATE PROCEDURE SP_LoadLichHoc
+    @StartDate DATETIME,
+    @EndDate DATETIME
+AS
+BEGIN
+    SELECT * 
+    FROM LichHoc
+    WHERE ThoiGianHoc >= @StartDate AND ThoiGianHoc < @EndDate;
+END
+
+-------Mẫu
+INSERT INTO LichHoc (ThoiGianHoc, MaCaHoc, PhongHoc, TrangThai, MaLop)
+VALUES 
+('2024-12-04 08:00:00', 1, 'Phòng A1', 'Hoạt động', 1),
+('2024-12-04 13:00:00', 3, 'Phòng B2', 'Hoạt động', 2),
+('2024-12-05 18:00:00', 5, 'Phòng C3', 'Hoạt động', 3),
+('2024-12-03 08:00:00', 1, 'Phòng D4', 'Hoạt động', 4),
+('2024-12-01 13:00:00', 3, 'Phòng E5', 'Hoạt động', 5),
+('2024-12-06 13:00:00', 5, 'Phòng E5', 'Hoạt động', 2);
+
+INSERT INTO LichHoc (ThoiGianHoc, MaCaHoc, PhongHoc, TrangThai, MaLop)
+VALUES 
+('2024-12-11 08:00:00', 1, 'Phòng A1', 'Hoạt động', 1),
+('2024-12-14 13:00:00', 3, 'Phòng B2', 'Hoạt động', 2),
+('2024-12-15 18:00:00', 5, 'Phòng C3', 'Hoạt động', 3),
+('2024-12-23 08:00:00', 1, 'Phòng D4', 'Hoạt động', 4),
+('2024-12-10 13:00:00', 3, 'Phòng E5', 'Hoạt động', 5),
+('2024-12-11 13:00:00', 5, 'Phòng E5', 'Hoạt động', 2);

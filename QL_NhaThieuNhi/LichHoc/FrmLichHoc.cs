@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using BLL;
 using DAL;
 using DTO;
 
@@ -10,80 +11,147 @@ namespace QL_NhaThieuNhi.LichHoc
 {
     public partial class FrmLichHoc : Form
     {
+        private TableLayoutPanel table_LichHoc;
         private DateTime currentWeekStartDate;
-        private DateTime initialWeekStartDate;
-
+        private LichHocBLL LichHocBLL;
         public FrmLichHoc()
         {
             InitializeComponent();
-            currentWeekStartDate = GetStartOfWeek(DateTime.Now); // Lấy thứ Hai của tuần hiện tại
-            initialWeekStartDate = currentWeekStartDate;  // Set the initial week start date
-            InitializeTableLayoutPanel();
+            InitializeTableLayoutPanel();     
             LoadScheduleData();
-        }
-
-        //Hàm lấy thứ 2 ngày đầu tuần
-        private DateTime GetStartOfWeek(DateTime date)
-        {
-            int diff = (7 + (date.DayOfWeek - DayOfWeek.Monday)) % 7;
-            return date.AddDays(-1 * diff).Date;
         }
 
         private void InitializeTableLayoutPanel()
         {
-            AddHeadersWithDates();
-            TableLayout_LichHoc.Controls.Add(CreateTimeSlotLabel("Sáng"), 0, 1);
-            TableLayout_LichHoc.Controls.Add(CreateTimeSlotLabel("Chiều"), 0, 2);
-            TableLayout_LichHoc.Controls.Add(CreateTimeSlotLabel("Tối"), 0, 3);
+            table_LichHoc = new TableLayoutPanel
+            {
+                Name = "table_LichHoc",
+                Location = new Point(0, 0),
+                Size = new Size(1150, 550),
+                ColumnCount = 8,
+                RowCount = 4
+            };
+
+            table_LichHoc.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            for (int i = 1; i < table_LichHoc.ColumnCount; i++)
+            {
+                table_LichHoc.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            }
+            table_LichHoc.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F)); // Header Row
+            for (int i = 1; i < table_LichHoc.RowCount; i++)
+            {
+                table_LichHoc.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33F));
+            }
+
+            table_LichHoc.Controls.Add(CreateLabel("Time Slot", Color.AliceBlue, ContentAlignment.MiddleCenter), 0, 0);
+            AddDayAndDateHeaders(table_LichHoc, 0);
+
+            table_LichHoc.Controls.Add(CreateLabel("Sáng", Color.DarkViolet, ContentAlignment.MiddleCenter), 0, 1);
+            table_LichHoc.Controls.Add(CreateLabel("Chiều", Color.DarkViolet, ContentAlignment.MiddleCenter), 0, 2);
+            table_LichHoc.Controls.Add(CreateLabel("Tối", Color.DarkViolet, ContentAlignment.MiddleCenter), 0, 3);
+            panel_Lich.Controls.Add(table_LichHoc);
         }
-        private Label CreateTimeSlotLabel(string text)
+
+        private Label CreateLabel(string text, Color backColor, ContentAlignment textAlign)
         {
             return new Label
             {
                 Text = text,
-                TextAlign = ContentAlignment.MiddleCenter,
+                TextAlign = textAlign,
                 Font = new Font("Arial", 12F, FontStyle.Bold),
-                BackColor = Color.LightGray,
+                BackColor = backColor,
                 BorderStyle = BorderStyle.FixedSingle,
                 AutoSize = false,
                 Dock = DockStyle.Fill
             };
         }
-        private void AddHeadersWithDates()
+        private DateTime GetStartOfWeek(DateTime date, DayOfWeek startOfWeek)
         {
-            DateTime startDate = currentWeekStartDate; 
-            string[] daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            int diff = (7 + (date.DayOfWeek - startOfWeek)) % 7;
+            return date.AddDays(-diff).Date;
+        }
 
-            // Thêm tiêu đề cột đầu tiên là "Time Slot"
-            TableLayout_LichHoc.Controls.Add(CreateHeaderLabel("Khung giờ"), 0, 0);
+        private void AddDayAndDateHeaders(TableLayoutPanel table, int row)
+        {
+            currentWeekStartDate = GetStartOfWeek(DateTime.Now, DayOfWeek.Monday);
+            CultureInfo vietnameseCulture = new CultureInfo("vi-VN");
 
-            for (int i = 0; i < daysOfWeek.Length; i++)
+            for (int i = 0; i < 7; i++)
             {
-                // Tính ngày hiện tại
-                DateTime currentDate = startDate.AddDays(i);
+                DateTime currentDate = currentWeekStartDate.AddDays(i);
 
-                // Tạo tiêu đề với tên ngày và ngày/tháng/năm
-                string dayHeader = $"{currentDate.ToString("dddd", new CultureInfo("vi-VN"))}\n{currentDate:dd/MM/yyyy}";
+                // Lấy tên thứ và viết hoa chữ cái đầu
+                string dayName = vietnameseCulture.DateTimeFormat.DayNames[(int)currentDate.DayOfWeek];
+                dayName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(dayName);
 
-                // Thêm tiêu đề vào cột (bắt đầu từ cột thứ 2: i + 1)
-                TableLayout_LichHoc.Controls.Add(CreateHeaderLabel(dayHeader), i + 1, 0);
+                // Thay thế các ngày bằng tên chính xác
+                switch (dayName)
+                {
+                    case "Monday":
+                        dayName = "Thứ Hai";
+                        break;
+                    case "Tuesday":
+                        dayName = "Thứ Ba";
+                        break;
+                    case "Wednesday":
+                        dayName = "Thứ Tư";
+                        break;
+                    case "Thursday":
+                        dayName = "Thứ Năm";
+                        break;
+                    case "Friday":
+                        dayName = "Thứ Sáu";
+                        break;
+                    case "Saturday":
+                        dayName = "Thứ Bảy";
+                        break;
+                    case "Sunday":
+                        dayName = "Chủ Nhật";
+                        break;
+                }
+
+                string headerText = $"{dayName}\n{currentDate:dd/MM/yyyy}";
+
+                Label headerLabel = CreateLabel(headerText, Color.AliceBlue, ContentAlignment.MiddleCenter);
+                table.Controls.Add(headerLabel, i + 1, row);
+            }
+        }
+
+        private void UpdateColumnHeaders()
+        {
+            CultureInfo vietnameseCulture = new CultureInfo("vi-VN");
+
+            for (int i = 0; i < 7; i++)
+            {
+                DateTime currentDate = currentWeekStartDate.AddDays(i);
+
+                string dayName = vietnameseCulture.DateTimeFormat.DayNames[(int)currentDate.DayOfWeek];
+                dayName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(dayName);
+
+                // Thay thế các ngày bằng tên chính xác
+                switch (dayName)
+                {
+                    case "Monday": dayName = "Thứ Hai"; break;
+                    case "Tuesday": dayName = "Thứ Ba"; break;
+                    case "Wednesday": dayName = "Thứ Tư"; break;
+                    case "Thursday": dayName = "Thứ Năm"; break;
+                    case "Friday": dayName = "Thứ Sáu"; break;
+                    case "Saturday": dayName = "Thứ Bảy"; break;
+                    case "Sunday": dayName = "Chủ Nhật"; break;
+                }
+
+                string headerText = $"{dayName}\n{currentDate:dd/MM/yyyy}";
+
+                // Tìm và cập nhật header label
+                var headerLabel = table_LichHoc.GetControlFromPosition(i + 1, 0) as Label;
+                if (headerLabel != null)
+                {
+                    headerLabel.Text = headerText;
+                }
             }
         }
 
 
-        private Label CreateHeaderLabel(string text)
-        {
-            return new Label
-            {
-                Text = text,
-                TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Arial", 12F, FontStyle.Bold),
-                BackColor = Color.LightGray,
-                BorderStyle = BorderStyle.FixedSingle,
-                AutoSize = false,
-                Dock = DockStyle.Fill
-            };
-        }
 
         private Label CreateClassLabel(string text, Color backColor)
         {
@@ -101,69 +169,60 @@ namespace QL_NhaThieuNhi.LichHoc
 
         private void LoadScheduleData()
         {
-            List<DTO.LichHoc> scheduleData = LichHocDAL.GetLichHocDataForWeek();
-
-            // Kiểm tra dữ liệu lấy được
-            foreach (var item in scheduleData)
+            try
             {
-                Console.WriteLine($"MaLichHoc={item.MaLichHoc}, ThoiGianHoc={item.ThoiGianHoc}, MaCaHoc={item.MaCaHoc}, PhongHoc={item.PhongHoc}");
-            }
-            TableLayoutPanel table_LichHoc = TableLayout_LichHoc;
+                LichHocBLL = new LichHocBLL();
+                UpdateColumnHeaders();
+                List<DTO.LichHoc> scheduleData = LichHocBLL.GetLichHocForWeek(currentWeekStartDate);
 
-            foreach (var item in scheduleData)
-            {
-                string timeSlot = GetTimeSlot(item.MaCaHoc);
-                string dayOfWeek = item.ThoiGianHoc.ToString("dddd", new CultureInfo("vi-VN"));
-
-                int columnIndex = GetColumnIndex(dayOfWeek);
-                int rowIndex = GetRowIndex(timeSlot);
-
-                // Kiểm tra việc tính toán cột và hàng
-                Console.WriteLine($"Day: {dayOfWeek}, Time Slot: {timeSlot}, Column: {columnIndex}, Row: {rowIndex}");
-
-                if (columnIndex != -1 && rowIndex != -1)
+                foreach (var item in scheduleData)
                 {
-                    // Lấy thông tin tiết học
-                    string periodInfo = GetPeriodInfo(item.MaCaHoc);
+                    string timeSlot = GetTimeSlot(item.MaCaHoc);
+                    string dayOfWeek = item.ThoiGianHoc.DayOfWeek.ToString();
 
-                    // Kiểm tra nếu LopHoc là null
-                    string lopHocInfo = item.LopHoc != null ? $"Tên lớp: {item.LopHoc.TenLop}\n" : "Tên lớp: N/A\n";
-                    string phongHocInfo = !string.IsNullOrEmpty(item.PhongHoc) ? $"Phòng: {item.PhongHoc}\n" : "Phòng: N/A\n";
-                    string giaoVienInfo = item.LopHoc?.NhanVien != null ? $"Giáo viên: {item.LopHoc.NhanVien.TenNhanVien}\n" : "Giáo viên: N/A\n";
+                    int columnIndex = GetColumnIndex(dayOfWeek);
+                    int rowIndex = GetRowIndex(timeSlot);
 
-                    // Xác định màu nền dựa trên loại lớp
-                    Color backColor = DetermineClassColor(lopHocInfo);
-
-                    // Tạo nhãn cho thông tin lớp học với viền
-                    Label classLabel = CreateClassLabel(
-                        periodInfo +
-                        lopHocInfo +
-                        phongHocInfo +
-                        giaoVienInfo,
-                        backColor);
-                    Console.WriteLine($"Adding data: {classLabel.Text} to Column: {columnIndex}, Row: {rowIndex}");
-                    // Kiểm tra nếu đã có control trong ô
-                    if (table_LichHoc.GetControlFromPosition(columnIndex, rowIndex) != null)
+                    if (columnIndex != -1 && rowIndex != -1)
                     {
-                        var existingLabel = table_LichHoc.GetControlFromPosition(columnIndex, rowIndex) as Label;
-                        existingLabel.Text += "\n" + classLabel.Text;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Adding control at Column: {columnIndex}, Row: {rowIndex}");
-                        table_LichHoc.Controls.Add(classLabel, columnIndex, rowIndex);
+                        string periodInfo = GetPeriodInfo(item.MaCaHoc);
+                        string lopHocInfo = item.LopHoc != null ? $"Tên lớp: {item.LopHoc.TenLop}\n" : "Tên lớp: N/A\n";
+                        string phongHocInfo = !string.IsNullOrEmpty(item.PhongHoc) ? $"Phòng: {item.PhongHoc}\n" : "Phòng: N/A\n";
+                        string giaoVienInfo = item.LopHoc?.NhanVien != null ? $"Giáo viên: {item.LopHoc.NhanVien.TenNhanVien}\n" : "Giáo viên: N/A\n";
+
+                        Color backColor = DetermineClassColor(lopHocInfo);
+
+                        Label classLabel = CreateClassLabel(
+                            lopHocInfo +
+                            phongHocInfo +
+                            giaoVienInfo +
+                            periodInfo,
+                            backColor);
+
+                        if (table_LichHoc.GetControlFromPosition(columnIndex, rowIndex) != null)
+                        {
+                            var existingLabel = table_LichHoc.GetControlFromPosition(columnIndex, rowIndex) as Label;
+                            existingLabel.Text += "\n" + classLabel.Text;
+                        }
+                        else
+                        {
+                            table_LichHoc.Controls.Add(classLabel, columnIndex, rowIndex);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra khi tải dữ liệu lịch: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private string GetPeriodInfo(int maCaHoc)
         {
-            // Fetch period info from database
             CaHoc period = GetPeriodFromDatabase(maCaHoc);
             return $"Tiết: {period.TietHoc}\nThời gian: " +
-                   $"{(period.ThoiGianBatDau.HasValue ? $"{period.ThoiGianBatDau.Value.Hours:D2}:{period.ThoiGianBatDau.Value.Minutes:D2}" : "N/A")} - " +
-                   $"{(period.ThoiGianKetThuc.HasValue ? $"{period.ThoiGianKetThuc.Value.Hours:D2}:{period.ThoiGianKetThuc.Value.Minutes:D2}" : "N/A")}\n";
+             $"{(period.ThoiGianBatDau.HasValue ? $"{period.ThoiGianBatDau.Value.Hours:D2}:{period.ThoiGianBatDau.Value.Minutes:D2}" : "N/A")} - " +
+             $"{(period.ThoiGianKetThuc.HasValue ? $"{period.ThoiGianKetThuc.Value.Hours:D2}:{period.ThoiGianKetThuc.Value.Minutes:D2}" : "N/A")}\n";
         }
 
         private CaHoc GetPeriodFromDatabase(int maCaHoc)
@@ -178,7 +237,6 @@ namespace QL_NhaThieuNhi.LichHoc
             };
             return periods.Find(p => p.MaCaHoc == maCaHoc);
         }
-
 
         private Color DetermineClassColor(string className)
         {
@@ -217,26 +275,26 @@ namespace QL_NhaThieuNhi.LichHoc
             }
         }
 
+
         private int GetColumnIndex(string dayOfWeek)
         {
             switch (dayOfWeek)
             {
-                case "Thứ hai":
+                case "Monday":
                     return 1;
-                case "Thứ ba":
+                case "Tuesday":
                     return 2;
-                case "Thứ tư":
+                case "Wednesday":
                     return 3;
-                case "Thứ năm":
+                case "Thursday":
                     return 4;
-                case "Thứ sáu":
+                case "Friday":
                     return 5;
-                case "Thứ bảy":
+                case "Saturday":
                     return 6;
-                case "Chủ nhật":
+                case "Sunday":
                     return 7;
                 default:
-                    Console.WriteLine($"Unknown day of the week: {dayOfWeek}");
                     return -1;
             }
         }
@@ -252,87 +310,55 @@ namespace QL_NhaThieuNhi.LichHoc
                 case "Tối":
                     return 3;
                 default:
-                    Console.WriteLine($"Unknown time slot: {timeSlot}");
                     return -1;
             }
         }
-
-        // Làm mới lịch học
-        private void RefreshSchedule()
+        private void ReloadSchedule()
         {
-            TableLayout_LichHoc.Controls.Clear();  
-            InitializeTableLayoutPanel(); 
-            LoadScheduleData(); 
-        }
+            // Chỉ xóa dữ liệu cũ (bỏ qua hàng header và cột thời gian)
+            for (int row = 1; row < table_LichHoc.RowCount; row++)
+            {
+                for (int col = 1; col < table_LichHoc.ColumnCount; col++)
+                {
+                    var control = table_LichHoc.GetControlFromPosition(col, row);
+                    if (control != null)
+                    {
+                        table_LichHoc.Controls.Remove(control);
+                    }
+                }
+            }
 
-
-        private void btn_next_Click(object sender, EventArgs e)
-        {
-            currentWeekStartDate = currentWeekStartDate.AddDays(7);
-            RefreshSchedule();
+            // Tải lại dữ liệu mới
+            LoadScheduleData();
         }
 
         private void btn_present_Click(object sender, EventArgs e)
         {
-            currentWeekStartDate = GetStartOfWeek(DateTime.Now);
-            RefreshSchedule();
+            currentWeekStartDate = GetStartOfWeek(DateTime.Now, DayOfWeek.Monday);
+            ReloadSchedule();
+            UpdateColumnHeaders();
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            DateTime fourWeeksAgo = initialWeekStartDate.AddDays(-28); 
-
-            if (currentWeekStartDate > fourWeeksAgo)
+            DateTime minDate = GetStartOfWeek(DateTime.Now, DayOfWeek.Monday).AddDays(-28); // 4 tuần trước
+            if (currentWeekStartDate > minDate)
             {
-                currentWeekStartDate = currentWeekStartDate.AddDays(-7);
-                RefreshSchedule();
+                currentWeekStartDate = currentWeekStartDate.AddDays(-7); // Lùi 1 tuần
+                ReloadSchedule();
+                UpdateColumnHeaders(); // Cập nhật tiêu đề cột
             }
             else
             {
-                MessageBox.Show("You can only go back up to 4 weeks.", "Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không thể lùi quá 4 tuần từ tuần hiện tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void AddManualSchedule()
+
+        private void btn_next_Click(object sender, EventArgs e)
         {
-            // Tạo nhãn cho lớp học thủ công
-            string timeSlot = "Chiều"; // Tiết 2
-            string dayOfWeek = "Thứ ba"; // Ngày học
-
-            // Thông tin lớp học
-            string lopHocInfo = "Tên lớp: Lớp học 1\n";
-            string phongHocInfo = "Phòng: P101\n";
-            string giaoVienInfo = "Giáo viên: Nguyễn Văn A\n";
-
-            // Màu nền của lớp học
-            Color backColor = Color.LightGreen; // Ví dụ: màu xanh nhạt cho lớp Thực hành
-
-            // Tạo label cho tiết học
-            Label classLabel = CreateClassLabel(
-                timeSlot + "\n" + lopHocInfo + phongHocInfo + giaoVienInfo,
-                backColor
-            );
-
-            // Tính toán cột và hàng để thêm vào đúng vị trí trong TableLayoutPanel
-            int columnIndex = GetColumnIndex(dayOfWeek);  // Lấy chỉ số cột cho Thứ hai
-            int rowIndex = GetRowIndex(timeSlot);         // Lấy chỉ số hàng cho Tiết 2 (Chiều)
-
-            // Kiểm tra nếu có nhãn đã có trong ô, nếu không thì thêm nhãn mới vào
-            TableLayoutPanel table_LichHoc = TableLayout_LichHoc;
-            if (table_LichHoc.GetControlFromPosition(columnIndex, rowIndex) != null)
-            {
-                var existingLabel = table_LichHoc.GetControlFromPosition(columnIndex, rowIndex) as Label;
-                existingLabel.Text += "\n" + classLabel.Text;  // Thêm thông tin vào nhãn hiện có
-            }
-            else
-            {
-                // Thêm nhãn vào ô nếu chưa có nhãn
-                table_LichHoc.Controls.Add(classLabel, columnIndex, rowIndex);
-            }
-        }
-        private void FrmLichHoc_Load(object sender, EventArgs e)
-        {
-            AddManualSchedule();
-            LoadScheduleData();
+            currentWeekStartDate = currentWeekStartDate.AddDays(7); // Tiến 1 tuần
+            ReloadSchedule();
+            UpdateColumnHeaders();
         }
     }
 }

@@ -35,7 +35,7 @@
             this.btn_present = new Guna.UI2.WinForms.Guna2Button();
             this.btn_back = new Guna.UI2.WinForms.Guna2Button();
             this.btn_next = new Guna.UI2.WinForms.Guna2Button();
-            this.TableLayout_LichHoc = new System.Windows.Forms.TableLayoutPanel();
+            this.panel_Lich = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             this.time.Size = new System.Drawing.Size(317, 36);
             this.time.TabIndex = 3;
             this.time.UseTransparentBackground = true;
-            this.time.Value = new System.DateTime(2024, 11, 4, 14, 46, 55, 764);
+            this.time.Value = new System.DateTime(2024, 11, 30, 0, 0, 0, 0);
             // 
             // btn_present
             // 
@@ -148,40 +148,24 @@
             this.btn_next.Text = "Tiếp";
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
-            // TableLayout_LichHoc
+            // panel_Lich
             // 
-            this.TableLayout_LichHoc.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.TableLayout_LichHoc.ColumnCount = 8;
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.411215F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08411F));
-            this.TableLayout_LichHoc.Location = new System.Drawing.Point(12, 163);
-            this.TableLayout_LichHoc.Name = "TableLayout_LichHoc";
-            this.TableLayout_LichHoc.RowCount = 4;
-            this.TableLayout_LichHoc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.907121F));
-            this.TableLayout_LichHoc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.66254F));
-            this.TableLayout_LichHoc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.TableLayout_LichHoc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.TableLayout_LichHoc.Size = new System.Drawing.Size(1572, 647);
-            this.TableLayout_LichHoc.TabIndex = 3;
+            this.panel_Lich.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Lich.Location = new System.Drawing.Point(0, 157);
+            this.panel_Lich.Name = "panel_Lich";
+            this.panel_Lich.Size = new System.Drawing.Size(1596, 665);
+            this.panel_Lich.TabIndex = 3;
             // 
             // FrmLichHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1596, 822);
-            this.Controls.Add(this.TableLayout_LichHoc);
+            this.Controls.Add(this.panel_Lich);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLichHoc";
-            this.Text = "FrmLichHoc";
-            this.Load += new System.EventHandler(this.FrmLichHoc_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
@@ -197,6 +181,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_present;
         private Guna.UI2.WinForms.Guna2Button btn_back;
         private Guna.UI2.WinForms.Guna2Button btn_next;
-        private System.Windows.Forms.TableLayoutPanel TableLayout_LichHoc;
+        private Guna.UI2.WinForms.Guna2Panel panel_Lich;
     }
 }

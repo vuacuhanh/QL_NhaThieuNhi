@@ -252,6 +252,7 @@
     <Compile Include="HoaDonBLL.cs" />
     <Compile Include="HoatDongNgoaiKhoaBLL.cs" />
     <Compile Include="HocVienBLL.cs" />
+    <Compile Include="LichHocBLL.cs" />
     <Compile Include="LopHocBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="PhongBanBLL.cs" />
