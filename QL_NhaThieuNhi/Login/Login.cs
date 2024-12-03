@@ -68,15 +68,21 @@ namespace QL_NhaThieuNhi
             if (quyen == "Admin")
             {
                 this.Hide();
-                Form1 adminForm = new Form1();
+                FrmAdmin adminForm = new FrmAdmin();
                 adminForm.ShowDialog();
             }
             else if (quyen == "User")
             {
                 this.Hide();
-                UsersForm userForm = new UsersForm();
-                userForm.FormClosed += (s, args) => this.Show();
+                FrmUser userForm = new FrmUser();
+                userForm.ShowDialog();
             }
+            else if(quyen == "Staff")
+            {
+                this.Hide();
+                FrmEmp frmEmp = new FrmEmp();
+                frmEmp.ShowDialog();
+            }    
             else
             {
                 MessageBox.Show("Quyền không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
