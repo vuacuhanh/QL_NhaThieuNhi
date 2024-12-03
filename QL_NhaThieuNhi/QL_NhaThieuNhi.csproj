@@ -237,6 +237,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -313,6 +314,12 @@
     <Compile Include="LichHoc\FrmLichHoc.Designer.cs">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="LichHoc\FrmLichDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LichHoc\FrmLichDay.Designer.cs">
+      <DependentUpon>FrmLichDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienGUI\FrmReportNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,11 +344,11 @@
     <Compile Include="ThongKeGUI\FrmThongKe.Designer.cs">
       <DependentUpon>FrmThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrangChu\Form1.cs">
+    <Compile Include="TrangChu\FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrangChu\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TrangChu\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienGUI\AddNhanVien.cs">
       <SubType>Form</SubType>
@@ -369,17 +376,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrangChu\FrmEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu\FrmEmp.Designer.cs">
+      <DependentUpon>FrmEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu\Menu2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TrangChu\Menu2.Designer.cs">
       <DependentUpon>Menu2.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrangChu\UsersForm.cs">
+    <Compile Include="TrangChu\FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrangChu\UsersForm.Designer.cs">
-      <DependentUpon>UsersForm.cs</DependentUpon>
+    <Compile Include="TrangChu\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CaHocGUI\FrmCaHoc.resx">
       <DependentUpon>FrmCaHoc.cs</DependentUpon>
@@ -411,6 +424,9 @@
     <EmbeddedResource Include="LichHoc\FrmLichHoc.resx">
       <DependentUpon>FrmLichHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LichHoc\FrmLichDay.resx">
+      <DependentUpon>FrmLichDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGUI\FrmReportNV.resx">
       <DependentUpon>FrmReportNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,8 +440,8 @@
     <EmbeddedResource Include="ThongKeGUI\FrmThongKe.resx">
       <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrangChu\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TrangChu\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGUI\AddNhanVien.resx">
       <DependentUpon>AddNhanVien.cs</DependentUpon>
@@ -449,11 +465,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TrangChu\FrmEmp.resx">
+      <DependentUpon>FrmEmp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrangChu\Menu2.resx">
       <DependentUpon>Menu2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrangChu\UsersForm.resx">
-      <DependentUpon>UsersForm.cs</DependentUpon>
+    <EmbeddedResource Include="TrangChu\FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>

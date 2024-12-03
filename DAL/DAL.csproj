@@ -253,6 +253,7 @@
     <Compile Include="HoaDonAccess.cs" />
     <Compile Include="HoatDongNgoaiKhoaAccess.cs" />
     <Compile Include="HocVienAccess.cs" />
+    <Compile Include="LichDayAccess.cs" />
     <Compile Include="LichHocAccess.cs" />
     <Compile Include="LopHocAccess.cs" />
     <Compile Include="NhanVienAccess.cs" />
