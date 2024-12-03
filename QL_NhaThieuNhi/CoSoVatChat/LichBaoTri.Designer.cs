@@ -293,6 +293,7 @@
             this.BtnXoa.TabIndex = 8;
             this.BtnXoa.Text = "DELETE";
             this.BtnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.BtnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
             // 
             // btnThem
             // 
@@ -346,6 +347,7 @@
             this.btnSua.Size = new System.Drawing.Size(139, 45);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "EDIT";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // txt_MaLichBaoTri
             // 
@@ -453,6 +455,7 @@
             this.btnExportFileExcel.Name = "btnExportFileExcel";
             this.btnExportFileExcel.Size = new System.Drawing.Size(62, 45);
             this.btnExportFileExcel.TabIndex = 8;
+            this.btnExportFileExcel.Click += new System.EventHandler(this.btnExportFileExcel_Click);
             // 
             // label1
             // 
