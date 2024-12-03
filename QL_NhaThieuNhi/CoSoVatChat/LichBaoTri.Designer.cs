@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txt_MaNhanVienLapLich = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbb_TrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtp_ThoiGianKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_MaNhanVienBaoTri = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_MaCSVC = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,24 +41,20 @@
             this.dtp_ThoiGianBD = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.txt_MaLichBaoTri = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txt_TimKiem = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbLoc = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dgvLichBaoTri = new System.Windows.Forms.DataGridView();
-            this.BtnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btn_TimKiem = new Guna.UI2.WinForms.Guna2Button();
+            this.txt_TimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnExportFileExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.lb_SoLuongTK = new System.Windows.Forms.Label();
             this.btn_print = new Guna.UI2.WinForms.Guna2Button();
-            this.cbb_MaNhanVienLapLich = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtp_ThoiGianKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.cbb_TrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbLoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgvLichBaoTri = new System.Windows.Forms.DataGridView();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichBaoTri)).BeginInit();
@@ -67,10 +67,10 @@
             this.guna2GroupBox1.BackColor = System.Drawing.Color.White;
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.guna2GroupBox1.BorderRadius = 10;
+            this.guna2GroupBox1.Controls.Add(this.txt_MaNhanVienLapLich);
             this.guna2GroupBox1.Controls.Add(this.cbb_TrangThai);
             this.guna2GroupBox1.Controls.Add(this.dtp_ThoiGianKT);
             this.guna2GroupBox1.Controls.Add(this.label3);
-            this.guna2GroupBox1.Controls.Add(this.cbb_MaNhanVienLapLich);
             this.guna2GroupBox1.Controls.Add(this.label13);
             this.guna2GroupBox1.Controls.Add(this.txt_MaNhanVienBaoTri);
             this.guna2GroupBox1.Controls.Add(this.txt_MaCSVC);
@@ -92,6 +92,72 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(1507, 466);
             this.guna2GroupBox1.TabIndex = 24;
             this.guna2GroupBox1.Text = "Thông Tin Lịch Bão Trì";
+            // 
+            // txt_MaNhanVienLapLich
+            // 
+            this.txt_MaNhanVienLapLich.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txt_MaNhanVienLapLich.BorderRadius = 10;
+            this.txt_MaNhanVienLapLich.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_MaNhanVienLapLich.DefaultText = "";
+            this.txt_MaNhanVienLapLich.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_MaNhanVienLapLich.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_MaNhanVienLapLich.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_MaNhanVienLapLich.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_MaNhanVienLapLich.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_MaNhanVienLapLich.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNhanVienLapLich.ForeColor = System.Drawing.Color.Black;
+            this.txt_MaNhanVienLapLich.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_MaNhanVienLapLich.Location = new System.Drawing.Point(175, 121);
+            this.txt_MaNhanVienLapLich.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txt_MaNhanVienLapLich.Name = "txt_MaNhanVienLapLich";
+            this.txt_MaNhanVienLapLich.PasswordChar = '\0';
+            this.txt_MaNhanVienLapLich.PlaceholderText = "";
+            this.txt_MaNhanVienLapLich.SelectedText = "";
+            this.txt_MaNhanVienLapLich.Size = new System.Drawing.Size(374, 39);
+            this.txt_MaNhanVienLapLich.TabIndex = 45;
+            // 
+            // cbb_TrangThai
+            // 
+            this.cbb_TrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_TrangThai.BorderColor = System.Drawing.Color.Black;
+            this.cbb_TrangThai.BorderRadius = 10;
+            this.cbb_TrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_TrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_TrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbb_TrangThai.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.cbb_TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbb_TrangThai.ItemHeight = 30;
+            this.cbb_TrangThai.Location = new System.Drawing.Point(741, 63);
+            this.cbb_TrangThai.Name = "cbb_TrangThai";
+            this.cbb_TrangThai.Size = new System.Drawing.Size(374, 36);
+            this.cbb_TrangThai.TabIndex = 44;
+            // 
+            // dtp_ThoiGianKT
+            // 
+            this.dtp_ThoiGianKT.BorderRadius = 10;
+            this.dtp_ThoiGianKT.Checked = true;
+            this.dtp_ThoiGianKT.FillColor = System.Drawing.Color.Magenta;
+            this.dtp_ThoiGianKT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_ThoiGianKT.ForeColor = System.Drawing.Color.White;
+            this.dtp_ThoiGianKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ThoiGianKT.Location = new System.Drawing.Point(175, 259);
+            this.dtp_ThoiGianKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_ThoiGianKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_ThoiGianKT.Name = "dtp_ThoiGianKT";
+            this.dtp_ThoiGianKT.Size = new System.Drawing.Size(374, 39);
+            this.dtp_ThoiGianKT.TabIndex = 43;
+            this.dtp_ThoiGianKT.Value = new System.DateTime(2024, 11, 15, 15, 44, 13, 701);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 259);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 48);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Thời gian kết thúc:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label13
             // 
@@ -205,6 +271,53 @@
             this.label4.Text = "Nhân viên lập lịch:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // BtnXoa
+            // 
+            this.BtnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnXoa.BorderRadius = 20;
+            this.BtnXoa.BorderThickness = 1;
+            this.BtnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnXoa.FillColor = System.Drawing.Color.Transparent;
+            this.BtnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnXoa.ForeColor = System.Drawing.Color.Indigo;
+            this.BtnXoa.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
+            this.BtnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BtnXoa.ImageSize = new System.Drawing.Size(23, 23);
+            this.BtnXoa.Location = new System.Drawing.Point(395, 358);
+            this.BtnXoa.Name = "BtnXoa";
+            this.BtnXoa.Size = new System.Drawing.Size(139, 45);
+            this.BtnXoa.TabIndex = 8;
+            this.BtnXoa.Text = "DELETE";
+            this.BtnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnThem.BorderRadius = 20;
+            this.btnThem.BorderThickness = 1;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThem.FillColor = System.Drawing.Color.Transparent;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.Color.Indigo;
+            this.btnThem.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
+            this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThem.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThem.Location = new System.Drawing.Point(29, 358);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(140, 45);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Add";
+            this.btnThem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,6 +388,28 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1557, 89);
             this.guna2Panel1.TabIndex = 23;
             // 
+            // btn_TimKiem
+            // 
+            this.btn_TimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_TimKiem.BorderRadius = 20;
+            this.btn_TimKiem.BorderThickness = 1;
+            this.btn_TimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_TimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_TimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_TimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_TimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_TimKiem.FillColor = System.Drawing.Color.Transparent;
+            this.btn_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_TimKiem.ForeColor = System.Drawing.Color.Indigo;
+            this.btn_TimKiem.Image = global::QL_NhaThieuNhi.Properties.Resources.search;
+            this.btn_TimKiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_TimKiem.ImageSize = new System.Drawing.Size(23, 23);
+            this.btn_TimKiem.Location = new System.Drawing.Point(395, 21);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(70, 54);
+            this.btn_TimKiem.TabIndex = 26;
+            this.btn_TimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // txt_TimKiem
             // 
             this.txt_TimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -300,6 +435,25 @@
             this.txt_TimKiem.TabIndex = 26;
             this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
             // 
+            // btnExportFileExcel
+            // 
+            this.btnExportFileExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportFileExcel.BorderRadius = 10;
+            this.btnExportFileExcel.BorderThickness = 1;
+            this.btnExportFileExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportFileExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportFileExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportFileExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportFileExcel.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportFileExcel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnExportFileExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExportFileExcel.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
+            this.btnExportFileExcel.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnExportFileExcel.Location = new System.Drawing.Point(1432, 21);
+            this.btnExportFileExcel.Name = "btnExportFileExcel";
+            this.btnExportFileExcel.Size = new System.Drawing.Size(62, 45);
+            this.btnExportFileExcel.TabIndex = 8;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -310,6 +464,36 @@
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Sắp Xếp:";
+            // 
+            // lb_SoLuongTK
+            // 
+            this.lb_SoLuongTK.AutoSize = true;
+            this.lb_SoLuongTK.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoLuongTK.Image = global::QL_NhaThieuNhi.Properties.Resources.login2;
+            this.lb_SoLuongTK.Location = new System.Drawing.Point(20, 21);
+            this.lb_SoLuongTK.Name = "lb_SoLuongTK";
+            this.lb_SoLuongTK.Size = new System.Drawing.Size(366, 50);
+            this.lb_SoLuongTK.TabIndex = 7;
+            this.lb_SoLuongTK.Text = "Quản Lí Lịch Bảo Trì";
+            // 
+            // btn_print
+            // 
+            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_print.BorderRadius = 10;
+            this.btn_print.BorderThickness = 1;
+            this.btn_print.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_print.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_print.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_print.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_print.FillColor = System.Drawing.Color.Transparent;
+            this.btn_print.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_print.ForeColor = System.Drawing.Color.Black;
+            this.btn_print.Image = global::QL_NhaThieuNhi.Properties.Resources.printing;
+            this.btn_print.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_print.Location = new System.Drawing.Point(1348, 21);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(62, 45);
+            this.btn_print.TabIndex = 5;
             // 
             // cbLoc
             // 
@@ -343,183 +527,6 @@
             this.dgvLichBaoTri.Size = new System.Drawing.Size(1507, 295);
             this.dgvLichBaoTri.TabIndex = 25;
             this.dgvLichBaoTri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichBaoTri_CellClick);
-            // 
-            // BtnXoa
-            // 
-            this.BtnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnXoa.BorderRadius = 20;
-            this.BtnXoa.BorderThickness = 1;
-            this.BtnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnXoa.FillColor = System.Drawing.Color.Transparent;
-            this.BtnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.BtnXoa.ForeColor = System.Drawing.Color.Indigo;
-            this.BtnXoa.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
-            this.BtnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BtnXoa.ImageSize = new System.Drawing.Size(23, 23);
-            this.BtnXoa.Location = new System.Drawing.Point(395, 358);
-            this.BtnXoa.Name = "BtnXoa";
-            this.BtnXoa.Size = new System.Drawing.Size(139, 45);
-            this.BtnXoa.TabIndex = 8;
-            this.BtnXoa.Text = "DELETE";
-            this.BtnXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThem.BorderRadius = 20;
-            this.btnThem.BorderThickness = 1;
-            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThem.FillColor = System.Drawing.Color.Transparent;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThem.ForeColor = System.Drawing.Color.Indigo;
-            this.btnThem.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
-            this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThem.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThem.Location = new System.Drawing.Point(29, 358);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(140, 45);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Add";
-            this.btnThem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btn_TimKiem
-            // 
-            this.btn_TimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_TimKiem.BorderRadius = 20;
-            this.btn_TimKiem.BorderThickness = 1;
-            this.btn_TimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_TimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_TimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_TimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_TimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_TimKiem.FillColor = System.Drawing.Color.Transparent;
-            this.btn_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_TimKiem.ForeColor = System.Drawing.Color.Indigo;
-            this.btn_TimKiem.Image = global::QL_NhaThieuNhi.Properties.Resources.search;
-            this.btn_TimKiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_TimKiem.ImageSize = new System.Drawing.Size(23, 23);
-            this.btn_TimKiem.Location = new System.Drawing.Point(395, 21);
-            this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(70, 54);
-            this.btn_TimKiem.TabIndex = 26;
-            this.btn_TimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnExportFileExcel
-            // 
-            this.btnExportFileExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportFileExcel.BorderRadius = 10;
-            this.btnExportFileExcel.BorderThickness = 1;
-            this.btnExportFileExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportFileExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportFileExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExportFileExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExportFileExcel.FillColor = System.Drawing.Color.Transparent;
-            this.btnExportFileExcel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnExportFileExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExportFileExcel.Image = global::QL_NhaThieuNhi.Properties.Resources.import;
-            this.btnExportFileExcel.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnExportFileExcel.Location = new System.Drawing.Point(1432, 21);
-            this.btnExportFileExcel.Name = "btnExportFileExcel";
-            this.btnExportFileExcel.Size = new System.Drawing.Size(62, 45);
-            this.btnExportFileExcel.TabIndex = 8;
-            // 
-            // lb_SoLuongTK
-            // 
-            this.lb_SoLuongTK.AutoSize = true;
-            this.lb_SoLuongTK.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SoLuongTK.Image = global::QL_NhaThieuNhi.Properties.Resources.login2;
-            this.lb_SoLuongTK.Location = new System.Drawing.Point(20, 21);
-            this.lb_SoLuongTK.Name = "lb_SoLuongTK";
-            this.lb_SoLuongTK.Size = new System.Drawing.Size(366, 50);
-            this.lb_SoLuongTK.TabIndex = 7;
-            this.lb_SoLuongTK.Text = "Quản Lí Lịch Bảo Trì";
-            // 
-            // btn_print
-            // 
-            this.btn_print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_print.BorderRadius = 10;
-            this.btn_print.BorderThickness = 1;
-            this.btn_print.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_print.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_print.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_print.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_print.FillColor = System.Drawing.Color.Transparent;
-            this.btn_print.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btn_print.ForeColor = System.Drawing.Color.Black;
-            this.btn_print.Image = global::QL_NhaThieuNhi.Properties.Resources.printing;
-            this.btn_print.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_print.Location = new System.Drawing.Point(1348, 21);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(62, 45);
-            this.btn_print.TabIndex = 5;
-            // 
-            // cbb_MaNhanVienLapLich
-            // 
-            this.cbb_MaNhanVienLapLich.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_MaNhanVienLapLich.BorderColor = System.Drawing.Color.Black;
-            this.cbb_MaNhanVienLapLich.BorderRadius = 10;
-            this.cbb_MaNhanVienLapLich.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_MaNhanVienLapLich.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_MaNhanVienLapLich.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_MaNhanVienLapLich.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_MaNhanVienLapLich.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.cbb_MaNhanVienLapLich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbb_MaNhanVienLapLich.ItemHeight = 30;
-            this.cbb_MaNhanVienLapLich.Location = new System.Drawing.Point(175, 121);
-            this.cbb_MaNhanVienLapLich.Name = "cbb_MaNhanVienLapLich";
-            this.cbb_MaNhanVienLapLich.Size = new System.Drawing.Size(374, 36);
-            this.cbb_MaNhanVienLapLich.TabIndex = 41;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 48);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Thời gian kết thúc:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dtp_ThoiGianKT
-            // 
-            this.dtp_ThoiGianKT.BorderRadius = 10;
-            this.dtp_ThoiGianKT.Checked = true;
-            this.dtp_ThoiGianKT.FillColor = System.Drawing.Color.Magenta;
-            this.dtp_ThoiGianKT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_ThoiGianKT.ForeColor = System.Drawing.Color.White;
-            this.dtp_ThoiGianKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ThoiGianKT.Location = new System.Drawing.Point(175, 259);
-            this.dtp_ThoiGianKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtp_ThoiGianKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtp_ThoiGianKT.Name = "dtp_ThoiGianKT";
-            this.dtp_ThoiGianKT.Size = new System.Drawing.Size(374, 39);
-            this.dtp_ThoiGianKT.TabIndex = 43;
-            this.dtp_ThoiGianKT.Value = new System.DateTime(2024, 11, 15, 15, 44, 13, 701);
-            // 
-            // cbb_TrangThai
-            // 
-            this.cbb_TrangThai.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_TrangThai.BorderColor = System.Drawing.Color.Black;
-            this.cbb_TrangThai.BorderRadius = 10;
-            this.cbb_TrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_TrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_TrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbb_TrangThai.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.cbb_TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbb_TrangThai.ItemHeight = 30;
-            this.cbb_TrangThai.Location = new System.Drawing.Point(741, 63);
-            this.cbb_TrangThai.Name = "cbb_TrangThai";
-            this.cbb_TrangThai.Size = new System.Drawing.Size(374, 36);
-            this.cbb_TrangThai.TabIndex = 44;
             // 
             // LichBaoTri
             // 
@@ -563,9 +570,9 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cbLoc;
         private System.Windows.Forms.DataGridView dgvLichBaoTri;
-        private Guna.UI2.WinForms.Guna2ComboBox cbb_MaNhanVienLapLich;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_TrangThai;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtp_ThoiGianKT;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txt_MaNhanVienLapLich;
     }
 }

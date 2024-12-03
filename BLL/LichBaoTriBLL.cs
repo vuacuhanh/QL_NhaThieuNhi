@@ -30,14 +30,21 @@ namespace BLL
             if (lichBaoTri == null)
                 throw new ArgumentNullException("Lịch bảo trì không được để trống");
 
-            if (lichBaoTri.ThoiGianBD >= lichBaoTri.ThoiGianKT)
-                throw new ArgumentException("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc");
+            if (lichBaoTri.MaNhanVienLapLich == null || lichBaoTri.MaNhanVienLapLich <= 0)
+                throw new ArgumentException("Mã nhân viên lập lịch không hợp lệ");
 
-            if (!lichBaoTri.MaCSVC.HasValue)
-                throw new ArgumentException("Mã CSVC không được để trống");
+            if (lichBaoTri.ThoiGianBD == default || lichBaoTri.ThoiGianKT == default)
+                throw new ArgumentException("Thời gian bắt đầu và kết thúc không được để trống");
+
+            if (lichBaoTri.ThoiGianKT <= lichBaoTri.ThoiGianBD)
+                throw new ArgumentException("Thời gian kết thúc phải lớn hơn thời gian bắt đầu");
+
+            if (lichBaoTri.MaCSVC == null || lichBaoTri.MaCSVC <= 0)
+                throw new ArgumentException("Mã cơ sở vật chất không hợp lệ");
 
             try
             {
+                // Gọi lớp truy cập dữ liệu để thêm lịch bảo trì
                 return LichBaoTriAccess.AddLichBaoTri(lichBaoTri);
             }
             catch (Exception ex)
@@ -45,6 +52,7 @@ namespace BLL
                 throw new Exception("Có lỗi khi thêm lịch bảo trì: " + ex.Message);
             }
         }
+
 
         // Cập nhật thông tin lịch bảo trì
         public static bool SuaLichBaoTri(LichBaoTri lichBaoTri)

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using BLL;
 
@@ -29,6 +31,10 @@ namespace QL_NhaThieuNhi.CoSoVatChat
             this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
 
         }
+        // Phương thức tải danh sách nhân viên lên ComboBox
+        // Form - Tải dữ liệu lên ComboBox
+
+
         private void LoadLichBaoTri()
         {
             try
@@ -46,7 +52,7 @@ namespace QL_NhaThieuNhi.CoSoVatChat
         private void dgvLichBaoTri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-    {
+            {
                 // Kiểm tra xem có dòng nào được chọn không
                 if (e.RowIndex >= 0)
                 {
@@ -54,7 +60,7 @@ namespace QL_NhaThieuNhi.CoSoVatChat
 
                     // Cập nhật các trường nhập với dữ liệu từ dòng được chọn
                     txt_MaLichBaoTri.Text = row.Cells["MaLichBaoTri"].Value.ToString(); // Mã lịch bảo trì
-                    cbb_MaNhanVienLapLich.Text = row.Cells["MaNhanVienLapLich"].Value.ToString(); // Mã nhân viên lập lịch
+                    txt_MaNhanVienLapLich.Text = row.Cells["MaNhanVienLapLich"].Value.ToString(); // Mã nhân viên lập lịch
                     dtp_ThoiGianBD.Value = Convert.ToDateTime(row.Cells["ThoiGianBD"].Value); // Thời gian bắt đầu
                     dtp_ThoiGianKT.Value = Convert.ToDateTime(row.Cells["ThoiGianKT"].Value); // Thời gian kết thúc
                     cbb_TrangThai.Text = row.Cells["TrangThai"].Value.ToString(); // Trạng thái
@@ -158,5 +164,85 @@ namespace QL_NhaThieuNhi.CoSoVatChat
             }
         }
 
-    }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Define and initialize connection object
+                string connectionString = "Data Source=DESKTOP-MGLI1G6\\HUUPHU;Initial Catalog=QL_NhaThieuNhi;Integrated Security=True"; // Replace with your actual connection string
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Lấy dữ liệu từ các điều khiển
+                    var maLichBaoTri = Convert.ToInt32(txt_MaLichBaoTri.Text);  // Lấy MaLichBaoTri từ txt_MaLichBaoTri
+                    var maNhanVienLapLich = Convert.ToInt32(txt_MaNhanVienLapLich.Text);
+                    var thoiGianBD = dtp_ThoiGianBD.Value;
+                    var thoiGianKT = dtp_ThoiGianKT.Value;
+                    var trangThai = cbb_TrangThai.SelectedItem?.ToString();  // Lấy trạng thái từ ComboBox
+                    var maCSVC = Convert.ToInt32(txt_MaCSVC.Text);
+                    var maNhanVienBaoTri = Convert.ToInt32(txt_MaNhanVienBaoTri.Text);
+
+                    // Kiểm tra dữ liệu nhập
+                    if (maNhanVienLapLich <= 0 || maCSVC <= 0 || maNhanVienBaoTri <= 0)
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin lịch bảo trì.");
+                        return;
+                    }
+
+                    if (thoiGianBD >= thoiGianKT)
+                    {
+                        MessageBox.Show("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc.");
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(trangThai))
+                    {
+                        MessageBox.Show("Vui lòng chọn trạng thái của lịch bảo trì.");
+                        return;
+                    }
+
+                    // Tạo đối tượng Lịch bảo trì mới
+                    var lichBaoTriMoi = new DTO.LichBaoTri
+                    {
+                        MaLichBaoTri = maLichBaoTri,
+                        MaNhanVienLapLich = maNhanVienLapLich,
+                        ThoiGianBD = thoiGianBD,
+                        ThoiGianKT = thoiGianKT,
+                        TrangThai = trangThai,
+                        MaCSVC = maCSVC,
+                        MaNhanVienBaoTri = maNhanVienBaoTri
+                    };
+
+                    // Gọi thủ tục thêm lịch bảo trì
+                    SqlCommand cmd = new SqlCommand("SP_ThemLichBaoTri", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Truyền các tham số
+                    cmd.Parameters.AddWithValue("@MaLichBaoTri", lichBaoTriMoi.MaLichBaoTri); // Truyền MaLichBaoTri
+                    cmd.Parameters.AddWithValue("@MaNhanVienLapLich", lichBaoTriMoi.MaNhanVienLapLich);
+                    cmd.Parameters.AddWithValue("@ThoiGianBD", lichBaoTriMoi.ThoiGianBD);
+                    cmd.Parameters.AddWithValue("@ThoiGianKT", lichBaoTriMoi.ThoiGianKT);
+                    cmd.Parameters.AddWithValue("@TrangThai", lichBaoTriMoi.TrangThai);
+                    cmd.Parameters.AddWithValue("@MaCSVC", lichBaoTriMoi.MaCSVC);
+                    cmd.Parameters.AddWithValue("@MaNhanVienBaoTri", lichBaoTriMoi.MaNhanVienBaoTri);
+
+                    // Thực thi thủ tục
+                    cmd.ExecuteNonQuery();
+
+                    // Hiển thị thông báo thành công
+                    MessageBox.Show("Thêm lịch bảo trì thành công!");
+                    LoadLichBaoTri();  // Hàm tải lại danh sách lịch bảo trì
+                }
+            }
+            catch (FormatException fe)
+            {
+                MessageBox.Show("Lỗi định dạng dữ liệu: " + fe.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi thêm lịch bảo trì: " + ex.Message);
+            }
+        }
+    } 
 }
