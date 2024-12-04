@@ -1,5 +1,3 @@
-D:\kì 7\đồ án ra trường\code\DTO\bin\Debug\x86\SqlServerSpatial160.dll
-D:\kì 7\đồ án ra trường\code\DTO\bin\Debug\x64\SqlServerSpatial160.dll
 D:\kì 7\đồ án ra trường\code\DTO\bin\Debug\DTO.dll.config
 D:\kì 7\đồ án ra trường\code\DTO\bin\Debug\DTO.dll
 D:\kì 7\đồ án ra trường\code\DTO\bin\Debug\DTO.pdb
