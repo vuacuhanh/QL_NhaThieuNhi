@@ -255,7 +255,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 95);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(599, 702);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(599, 791);
             this.guna2GroupBox1.TabIndex = 18;
             this.guna2GroupBox1.Text = "Thông Tin Lớp Học";
             // 
@@ -512,7 +512,7 @@
             this.BtnXoa.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
             this.BtnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnXoa.ImageSize = new System.Drawing.Size(23, 23);
-            this.BtnXoa.Location = new System.Drawing.Point(212, 582);
+            this.BtnXoa.Location = new System.Drawing.Point(212, 671);
             this.BtnXoa.Name = "BtnXoa";
             this.BtnXoa.Size = new System.Drawing.Size(139, 45);
             this.BtnXoa.TabIndex = 8;
@@ -536,7 +536,7 @@
             this.btnThem.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
             this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThem.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThem.Location = new System.Drawing.Point(29, 582);
+            this.btnThem.Location = new System.Drawing.Point(29, 671);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(140, 45);
             this.btnThem.TabIndex = 6;
@@ -567,7 +567,7 @@
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Indigo;
             this.btnSua.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSua.Location = new System.Drawing.Point(383, 582);
+            this.btnSua.Location = new System.Drawing.Point(383, 671);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(139, 45);
             this.btnSua.TabIndex = 4;
