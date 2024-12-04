@@ -3,6 +3,7 @@ using QL_NhaThieuNhi.HocVien;
 using QL_NhaThieuNhi.LichHoc;
 using QL_NhaThieuNhi.NhanVien;
 using QL_NhaThieuNhi.NhanVienGUI;
+using QL_NhaThieuNhi.PhuHuynh;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace QL_NhaThieuNhi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LichBaoTri());
+            Application.Run(new QL_PhuHuynh());
         }
     }
 }

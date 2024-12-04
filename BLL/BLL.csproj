@@ -258,6 +258,7 @@
     <Compile Include="LopHocBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="PhongBanBLL.cs" />
+    <Compile Include="PhuHuynhBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBLL.cs" />
   </ItemGroup>
