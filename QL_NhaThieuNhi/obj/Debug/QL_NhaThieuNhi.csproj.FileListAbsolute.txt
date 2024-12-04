@@ -137,3 +137,4 @@ D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.csp
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaTh.29C25C05.Up2Date
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.exe
 D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.pdb
+D:\kì 7\đồ án ra trường\code\QL_NhaThieuNhi\obj\Debug\QL_NhaThieuNhi.PhuHuynh.QL_PhuHuynh.resources

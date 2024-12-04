@@ -338,6 +338,12 @@
     <Compile Include="PhongBanGUI\FrmPhongBan.Designer.cs">
       <DependentUpon>FrmPhongBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhuHuynh\QL_PhuHuynh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhuHuynh\QL_PhuHuynh.Designer.cs">
+      <DependentUpon>QL_PhuHuynh.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan\AddTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhongBanGUI\FrmPhongBan.resx">
       <DependentUpon>FrmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhuHuynh\QL_PhuHuynh.resx">
+      <DependentUpon>QL_PhuHuynh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNV.rdlc" />
     <EmbeddedResource Include="TaiKhoan\AddTaiKhoan.resx">
@@ -552,9 +561,7 @@
     <Content Include="img\hv\hinhE.jpg" />
     <None Include="Resources\refresh.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PhuHuynh\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
