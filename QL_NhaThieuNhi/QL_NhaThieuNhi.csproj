@@ -266,6 +266,12 @@
     <Compile Include="CoSoVatChat\FrmCoSoVatChat.Designer.cs">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoSoVatChat\LichBaoTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoSoVatChat\LichBaoTri.Designer.cs">
+      <DependentUpon>LichBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="FChuongTrinhNangKhieu\FrmChuongTrinhNangKhieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoSoVatChat\FrmCoSoVatChat.resx">
       <DependentUpon>FrmCoSoVatChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoSoVatChat\LichBaoTri.resx">
+      <DependentUpon>LichBaoTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FChuongTrinhNangKhieu\FrmChuongTrinhNangKhieu.resx">
       <DependentUpon>FrmChuongTrinhNangKhieu.cs</DependentUpon>
