@@ -263,3 +263,280 @@ BEGIN
     WHERE 
         NgayDay >= @StartDate AND NgayDay <= @EndDate;
 END
+
+
+
+-- CaHoc
+-- lấy danh sách ca học
+CREATE PROCEDURE SP_GetAllCaHoc
+AS
+BEGIN
+    SELECT MaCaHoc, TietHoc, ThoiGianBatDau, ThoiGianKetThuc FROM CaHoc
+END
+
+-- thêm ca học
+CREATE PROCEDURE SP_InsertCaHoc
+    @MaCaHoc INT,
+    @TietHoc NVARCHAR(20),
+    @ThoiGianBatDau TIME,
+    @ThoiGianKetThuc TIME
+AS
+BEGIN
+    INSERT INTO CaHoc (MaCaHoc, TietHoc, ThoiGianBatDau, ThoiGianKetThuc)
+    VALUES (@MaCaHoc, @TietHoc, @ThoiGianBatDau, @ThoiGianKetThuc)
+END
+
+-- sửa ca học
+CREATE PROCEDURE SP_UpdateCaHoc
+    @MaCaHoc INT,
+    @TietHoc NVARCHAR(20),
+    @ThoiGianBatDau TIME,
+    @ThoiGianKetThuc TIME
+AS
+BEGIN
+    UPDATE CaHoc
+    SET TietHoc = @TietHoc, ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc
+    WHERE MaCaHoc = @MaCaHoc
+END
+
+-- xóa ca học
+CREATE PROCEDURE SP_DeleteCaHoc
+    @MaCaHoc INT
+AS
+BEGIN
+    DELETE FROM CaHoc WHERE MaCaHoc = @MaCaHoc
+END
+
+--Stored Procedure: Load Lớp Học
+CREATE PROCEDURE SP_LoadLopHoc
+AS
+BEGIN
+    SELECT * FROM LopHoc;
+END
+
+CREATE PROCEDURE SP_DanhSachLopHoc
+AS
+BEGIN
+    SELECT MaLop, MaNhanVien, TenLop, ChuyenMon, SiSo, ThoiGianBatDau, ThoiGianKetThuc, TrangThai
+    FROM LopHoc;
+END;
+
+-- Stored Procedure: Thêm Lớp Học
+CREATE PROCEDURE SP_ThemLopHoc
+    @MaLop INT,
+    @MaNhanVien INT,
+    @TenLop NVARCHAR(100),
+    @ChuyenMon NVARCHAR(100),
+    @SiSo INT,
+    @ThoiGianBatDau DATE,
+    @ThoiGianKetThuc DATE,
+    @TrangThai NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO LopHoc (MaLop, MaNhanVien, TenLop, ChuyenMon, SiSo, ThoiGianBatDau, ThoiGianKetThuc, TrangThai)
+    VALUES (@MaLop, @MaNhanVien, @TenLop, @ChuyenMon, @SiSo, @ThoiGianBatDau, @ThoiGianKetThuc, @TrangThai);
+END
+
+
+-- Stored Procedure: Sửa Lớp Học
+CREATE PROCEDURE SP_SuaLopHoc
+    @MaLop INT,
+    @MaNhanVien INT,
+    @TenLop NVARCHAR(100),
+    @ChuyenMon NVARCHAR(100),
+    @SiSo INT,
+    @ThoiGianBatDau DATE,
+    @ThoiGianKetThuc DATE,
+    @TrangThai NVARCHAR(50)
+AS
+BEGIN
+    UPDATE LopHoc
+    SET MaNhanVien = @MaNhanVien, 
+        TenLop = @TenLop, 
+        ChuyenMon = @ChuyenMon, 
+        SiSo = @SiSo, 
+        ThoiGianBatDau = @ThoiGianBatDau, 
+        ThoiGianKetThuc = @ThoiGianKetThuc, 
+        TrangThai = @TrangThai
+    WHERE MaLop = @MaLop;
+END
+
+
+-- Stored Procedure: Xóa Lớp Học
+CREATE PROCEDURE SP_XoaLopHoc
+    @MaLop INT
+AS
+BEGIN
+    DELETE FROM LopHoc WHERE MaLop = @MaLop;
+END
+
+
+CREATE PROCEDURE SP_LocLopHocTheoChuyenMon
+    @ChuyenMon NVARCHAR(100)
+AS
+BEGIN
+    SELECT MaLop, MaNhanVien, TenLop, ChuyenMon, SiSo, ThoiGianBatDau, ThoiGianKetThuc, TrangThai
+    FROM LopHoc
+    WHERE ChuyenMon = @ChuyenMon;
+END
+
+CREATE PROCEDURE SP_GetLopHocById
+    @MaLop INT
+AS
+BEGIN
+    SELECT MaLop, MaNhanVien, TenLop, ChuyenMon, SiSo, ThoiGianBatDau, ThoiGianKetThuc, TrangThai
+    FROM LopHoc
+    WHERE MaLop = @MaLop;
+END
+
+-- Danh sách hóa đơn
+CREATE PROCEDURE SP_DanhSachHoaDon
+AS
+BEGIN
+    SELECT 
+        MaHoaDon,
+        SoTien,
+        NgayLap,
+        HinhThucThanhToan,
+        TrangThaiThanhToan,
+        ThoiGianBatDauDongTien,
+        ThoiGianKetThucDongTien,
+        MaHocVien,
+        MaLop
+    FROM HoaDon;
+END
+
+-- thêm hóa đơn
+CREATE PROCEDURE SP_ThemHoaDon
+	@MaHoaDon INT,
+    @SoTien DECIMAL(18, 2),
+    @NgayLap DATETIME,
+    @HinhThucThanhToan NVARCHAR(50),
+    @TrangThaiThanhToan NVARCHAR(50),
+    @ThoiGianBatDauDongTien DATETIME,
+    @ThoiGianKetThucDongTien DATETIME,
+    @MaHocVien INT,
+    @MaLop INT
+AS
+BEGIN
+    INSERT INTO HoaDon (MaHoaDon,SoTien, NgayLap, HinhThucThanhToan, TrangThaiThanhToan, 
+                        ThoiGianBatDauDongTien, ThoiGianKetThucDongTien, MaHocVien, MaLop)
+    VALUES (@MaHoaDon,@SoTien, @NgayLap, @HinhThucThanhToan, @TrangThaiThanhToan, 
+            @ThoiGianBatDauDongTien, @ThoiGianKetThucDongTien, @MaHocVien, @MaLop);
+END;
+
+-- xóa hóa đơn
+CREATE PROCEDURE SP_XoaHoaDon
+    @MaHoaDon INT
+AS
+BEGIN
+    DELETE FROM HoaDon WHERE MaHoaDon = @MaHoaDon;
+END;
+
+-- sửa hóa đơn
+CREATE PROCEDURE SP_SuaHoaDon
+    @MaHoaDon INT,
+    @SoTien DECIMAL(18, 2),
+    @NgayLap DATETIME,
+    @HinhThucThanhToan NVARCHAR(50),
+    @TrangThaiThanhToan NVARCHAR(50),
+    @ThoiGianBatDauDongTien DATETIME,
+    @ThoiGianKetThucDongTien DATETIME,
+    @MaHocVien INT,
+    @MaLop INT
+AS
+BEGIN
+    UPDATE HoaDon
+    SET SoTien = @SoTien,
+        NgayLap = @NgayLap,
+        HinhThucThanhToan = @HinhThucThanhToan,
+        TrangThaiThanhToan = @TrangThaiThanhToan,
+        ThoiGianBatDauDongTien = @ThoiGianBatDauDongTien,
+        ThoiGianKetThucDongTien = @ThoiGianKetThucDongTien,
+        MaHocVien = @MaHocVien,
+        MaLop = @MaLop
+    WHERE MaHoaDon = @MaHoaDon;
+END;
+
+
+CREATE PROCEDURE SP_GetHoaDonById
+    @MaHoaDon INT
+AS
+BEGIN
+    SELECT 
+        MaHoaDon,
+        SoTien,
+        NgayLap,
+        HinhThucThanhToan,
+        TrangThaiThanhToan,
+        ThoiGianBatDauDongTien,
+        ThoiGianKetThucDongTien,
+        MaHocVien,
+        MaLop
+    FROM HoaDon
+    WHERE MaHoaDon = @MaHoaDon;
+END;
+
+
+CREATE PROCEDURE SP_LocHoaDonTheoTrangThaiThanhToan
+    @TrangThaiThanhToan NVARCHAR(50)
+AS
+BEGIN
+    SELECT 
+        MaHoaDon,
+        SoTien,
+        NgayLap,
+        HinhThucThanhToan,
+        TrangThaiThanhToan,
+        ThoiGianBatDauDongTien,
+        ThoiGianKetThucDongTien,
+        MaHocVien,
+        MaLop
+    FROM HoaDon
+    WHERE TrangThaiThanhToan = @TrangThaiThanhToan;
+END;
+
+
+CREATE PROCEDURE SP_UpdateTrangThaiThanhToan
+    @MaHoaDon INT,
+    @TrangThaiThanhToan NVARCHAR(50)
+AS
+BEGIN
+    UPDATE HoaDon
+    SET TrangThaiThanhToan = @TrangThaiThanhToan
+    WHERE MaHoaDon = @MaHoaDon;
+END;
+
+
+CREATE PROCEDURE SP_UpdateHinhThucThanhToan
+    @MaHoaDon INT,
+    @HinhThucThanhToan NVARCHAR(50)
+AS
+BEGIN
+    UPDATE HoaDon
+    SET HinhThucThanhToan = @HinhThucThanhToan
+    WHERE MaHoaDon = @MaHoaDon;
+END;
+
+CREATE PROCEDURE SP_TimKiemHoaDon
+    @Keyword NVARCHAR(100)
+AS
+BEGIN
+    -- Kiểm tra nếu từ khóa trống hoặc NULL
+    IF @Keyword IS NULL OR @Keyword = ''
+    BEGIN
+        SELECT * 
+        FROM HoaDon
+    END
+    ELSE
+    BEGIN
+        SELECT * 
+        FROM HoaDon
+        WHERE 
+            (CAST(MaHoaDon AS NVARCHAR) LIKE '%' + @Keyword + '%') OR
+            (HinhThucThanhToan LIKE '%' + @Keyword + '%') OR
+            (TrangThaiThanhToan LIKE '%' + @Keyword + '%')
+    END
+END
+
+

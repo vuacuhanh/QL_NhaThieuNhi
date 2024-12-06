@@ -74,7 +74,10 @@ namespace QL_NhaThieuNhi.TrangChu
 
         private void btn_CaHoc_Click(object sender, EventArgs e)
         {
-
+            CaHocGUI.FrmCaHoc frmCaHoc = new CaHocGUI.FrmCaHoc();
+            frmCaHoc.FormClosed += (s, args) => this.Show();
+            this.Hide(); // Ẩn Menu2
+            frmCaHoc.Show();
         }
     }
 }
