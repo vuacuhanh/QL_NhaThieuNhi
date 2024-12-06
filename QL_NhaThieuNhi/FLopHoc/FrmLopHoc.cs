@@ -384,8 +384,20 @@ namespace QL_NhaThieuNhi.FLopHoc
             }
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            // Reset các trường nhập liệu
+            txtMaLop.Text = string.Empty;        // Mã lớp
+            txtMaNhanVien.Text = string.Empty;   // Mã nhân viên
+            txtTenLop.Text = string.Empty;       // Tên lớp
+            txtChuyenMon.Text = string.Empty;    // Chuyên môn
+            nbSiSo.Text = "0";                  // Sĩ số
+            dtpBatDau.Value = DateTime.Today;   // Ngày bắt đầu
+            dtpKetThuc.Value = DateTime.Today;  // Ngày kết thúc
+            txtTrangThai.Text = string.Empty;     // Trạng thái
 
-
-
+            // Làm mới bảng dgvLopHoc
+            LoadLopHoc();
+        }
     }
 }

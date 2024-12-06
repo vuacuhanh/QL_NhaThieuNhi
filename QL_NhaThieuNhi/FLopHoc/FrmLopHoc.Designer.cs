@@ -39,6 +39,7 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.ThoiGianKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiemLopHoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnExportFileExcel = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.label2 = new System.Windows.Forms.Label();
             this.btnSuaLopHoc = new Guna.UI2.WinForms.Guna2Button();
             this.txtMaLop = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -186,6 +187,28 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.guna2Panel1.Size = new System.Drawing.Size(1518, 89);
             this.guna2Panel1.TabIndex = 1;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Indigo;
+            this.guna2Button1.Image = global::QL_NhaThieuNhi.Properties.Resources.search;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(23, 23);
+            this.guna2Button1.Location = new System.Drawing.Point(395, 21);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(70, 54);
+            this.guna2Button1.TabIndex = 26;
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // txtTimKiemLopHoc
             // 
             this.txtTimKiemLopHoc.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -296,6 +319,7 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.guna2GroupBox1.BackColor = System.Drawing.Color.White;
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.guna2GroupBox1.BorderRadius = 10;
+            this.guna2GroupBox1.Controls.Add(this.btnReset);
             this.guna2GroupBox1.Controls.Add(this.dtpKetThuc);
             this.guna2GroupBox1.Controls.Add(this.dtpBatDau);
             this.guna2GroupBox1.Controls.Add(this.nbSiSo);
@@ -548,7 +572,7 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.BtnXoaLopHoc.Image = global::QL_NhaThieuNhi.Properties.Resources.trash;
             this.BtnXoaLopHoc.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnXoaLopHoc.ImageSize = new System.Drawing.Size(23, 23);
-            this.BtnXoaLopHoc.Location = new System.Drawing.Point(212, 506);
+            this.BtnXoaLopHoc.Location = new System.Drawing.Point(174, 527);
             this.BtnXoaLopHoc.Name = "BtnXoaLopHoc";
             this.BtnXoaLopHoc.Size = new System.Drawing.Size(139, 45);
             this.BtnXoaLopHoc.TabIndex = 8;
@@ -572,7 +596,7 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.btnThemLopHoc.Image = global::QL_NhaThieuNhi.Properties.Resources.add;
             this.btnThemLopHoc.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThemLopHoc.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThemLopHoc.Location = new System.Drawing.Point(29, 506);
+            this.btnThemLopHoc.Location = new System.Drawing.Point(18, 528);
             this.btnThemLopHoc.Name = "btnThemLopHoc";
             this.btnThemLopHoc.Size = new System.Drawing.Size(140, 45);
             this.btnThemLopHoc.TabIndex = 6;
@@ -603,7 +627,7 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.btnSuaLopHoc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaLopHoc.ForeColor = System.Drawing.Color.Indigo;
             this.btnSuaLopHoc.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSuaLopHoc.Location = new System.Drawing.Point(383, 506);
+            this.btnSuaLopHoc.Location = new System.Drawing.Point(330, 527);
             this.btnSuaLopHoc.Name = "btnSuaLopHoc";
             this.btnSuaLopHoc.Size = new System.Drawing.Size(139, 45);
             this.btnSuaLopHoc.TabIndex = 4;
@@ -633,27 +657,26 @@ namespace QL_NhaThieuNhi.FLopHoc
             this.txtMaLop.Size = new System.Drawing.Size(374, 39);
             this.txtMaLop.TabIndex = 2;
             // 
-            // guna2Button1
+            // btnReset
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Indigo;
-            this.guna2Button1.Image = global::QL_NhaThieuNhi.Properties.Resources.search;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(23, 23);
-            this.guna2Button1.Location = new System.Drawing.Point(395, 21);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(70, 54);
-            this.guna2Button1.TabIndex = 26;
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReset.BorderRadius = 20;
+            this.btnReset.BorderThickness = 1;
+            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReset.FillColor = System.Drawing.Color.Transparent;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Indigo;
+            this.btnReset.Image = global::QL_NhaThieuNhi.Properties.Resources.refresh;
+            this.btnReset.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnReset.Location = new System.Drawing.Point(480, 527);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(68, 45);
+            this.btnReset.TabIndex = 35;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FrmLopHoc
             // 
@@ -713,5 +736,6 @@ namespace QL_NhaThieuNhi.FLopHoc
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiemLopHoc;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnReset;
     }
 }
